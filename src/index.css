@@ -58,11 +58,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-brandGreen-DEFAULT hover:bg-brandGreen-dark text-white py-3 px-6 rounded-md font-medium transition-all duration-300 shadow-sm hover:shadow-md;
+    @apply bg-brand-green hover:bg-brand-green-dark text-white py-3 px-6 rounded-md font-medium transition-all duration-300 shadow-sm hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-white border-2 border-brandGreen-DEFAULT text-brandGreen-DEFAULT py-3 px-6 rounded-md font-medium transition-all duration-300 hover:bg-brandGreen-light;
+    @apply bg-white border-2 border-brand-green text-brand-green py-3 px-6 rounded-md font-medium transition-all duration-300 hover:bg-brand-green-light;
   }
 
   .section {
@@ -74,11 +74,11 @@
   }
 
   .nav-link {
-    @apply relative text-gray-700 hover:text-brandGreen-DEFAULT font-montserrat font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brandGreen-DEFAULT after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
+    @apply relative text-gray-700 hover:text-brand-green font-montserrat font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-green after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
   }
 
   .nav-link-active {
-    @apply text-brandGreen-DEFAULT after:scale-x-100;
+    @apply text-brand-green after:scale-x-100;
   }
 }
 

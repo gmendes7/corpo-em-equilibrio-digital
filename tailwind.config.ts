@@ -10,15 +10,15 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	safelist: [
-		"bg-brandGreen-DEFAULT",
-		"bg-brandGreen-light",
-		"bg-brandGreen-dark",
-		"hover:bg-brandGreen-DEFAULT",
-		"hover:bg-brandGreen-dark",
-		"hover:bg-brandGreen-light",
-		"text-brandGreen-DEFAULT",
-		"border-brandGreen-DEFAULT",
-		"after:bg-brandGreen-DEFAULT"
+		"bg-brand-green",
+		"bg-brand-green-light", 
+		"bg-brand-green-dark",
+		"hover:bg-brand-green",
+		"hover:bg-brand-green-dark",
+		"hover:bg-brand-green-light",
+		"text-brand-green",
+		"border-brand-green",
+		"after:bg-brand-green"
 	],
 	prefix: "",
 	theme: {
@@ -74,8 +74,8 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for CORPO EM EQUILÍBRIO
-				brandGreen: {
+				// Custom colors for CORPO EM EQUILÍBRIO - renamed from brandGreen to brand-green
+				'brand-green': {
 					light: '#F2FCE2',   // Light green background
 					DEFAULT: '#4A9D5C', // Default green (leafy accent)
 					dark: '#3A7A47',    // Darker green for hover states
