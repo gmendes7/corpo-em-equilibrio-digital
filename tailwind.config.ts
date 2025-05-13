@@ -9,6 +9,17 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
+	safelist: [
+		"bg-brandGreen-DEFAULT",
+		"bg-brandGreen-light",
+		"bg-brandGreen-dark",
+		"hover:bg-brandGreen-DEFAULT",
+		"hover:bg-brandGreen-dark",
+		"hover:bg-brandGreen-light",
+		"text-brandGreen-DEFAULT",
+		"border-brandGreen-DEFAULT",
+		"after:bg-brandGreen-DEFAULT"
+	],
 	prefix: "",
 	theme: {
 		container: {
