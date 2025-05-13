@@ -31,39 +31,39 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="container-custom flex justify-between items-center px-6 md:px-12">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <h1 className="text-2xl md:text-3xl font-montserrat font-semibold text-brandGreen-DEFAULT">
+          <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-verde-musgo">
             CORPO EM <span className="font-bold">EQUILÍBRIO</span>
           </h1>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
-          <button onClick={() => scrollToSection('home')} className="nav-link">
+          <button onClick={() => scrollToSection('home')} className="nav-link font-playfair">
             Início
           </button>
-          <button onClick={() => scrollToSection('about')} className="nav-link">
+          <button onClick={() => scrollToSection('about')} className="nav-link font-playfair">
             Sobre
           </button>
-          <button onClick={() => scrollToSection('specialties')} className="nav-link">
+          <button onClick={() => scrollToSection('specialties')} className="nav-link font-playfair">
             Especialidades
           </button>
-          <button onClick={() => scrollToSection('blog')} className="nav-link">
+          <button onClick={() => scrollToSection('blog')} className="nav-link font-playfair">
             Blog
           </button>
-          <button onClick={() => scrollToSection('contact')} className="nav-link">
+          <button onClick={() => scrollToSection('contact')} className="nav-link font-playfair">
             Contato
           </button>
           <a 
             href="https://www.instagram.com/drapatriciapolvora" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-brandGreen-DEFAULT transition-colors"
+            className="text-gray-600 hover:text-verde-musgo transition-colors"
             aria-label="Instagram"
           >
             <Instagram size={22} />
@@ -71,7 +71,10 @@ const Navbar = () => {
         </nav>
 
         {/* Book Appointment Button */}
-        <button className="hidden lg:block btn-primary">
+        <button 
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          className="hidden lg:block btn-primary"
+        >
           Agende sua Consulta
         </button>
 
@@ -93,20 +96,20 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white shadow-lg absolute top-full left-0 w-full py-4 px-6 flex flex-col gap-4 animate-fade-in">
-          <button onClick={() => scrollToSection('home')} className="text-left py-2 text-gray-700 font-medium">
+        <div className="lg:hidden bg-white/95 backdrop-blur-sm shadow-lg absolute top-full left-0 w-full py-4 px-6 flex flex-col gap-4 animate-fade-in">
+          <button onClick={() => scrollToSection('home')} className="text-left py-2 text-gray-700 font-medium font-playfair">
             Início
           </button>
-          <button onClick={() => scrollToSection('about')} className="text-left py-2 text-gray-700 font-medium">
+          <button onClick={() => scrollToSection('about')} className="text-left py-2 text-gray-700 font-medium font-playfair">
             Sobre
           </button>
-          <button onClick={() => scrollToSection('specialties')} className="text-left py-2 text-gray-700 font-medium">
+          <button onClick={() => scrollToSection('specialties')} className="text-left py-2 text-gray-700 font-medium font-playfair">
             Especialidades
           </button>
-          <button onClick={() => scrollToSection('blog')} className="text-left py-2 text-gray-700 font-medium">
+          <button onClick={() => scrollToSection('blog')} className="text-left py-2 text-gray-700 font-medium font-playfair">
             Blog
           </button>
-          <button onClick={() => scrollToSection('contact')} className="text-left py-2 text-gray-700 font-medium">
+          <button onClick={() => scrollToSection('contact')} className="text-left py-2 text-gray-700 font-medium font-playfair">
             Contato
           </button>
           <div className="flex justify-between items-center py-2">
@@ -120,7 +123,13 @@ const Navbar = () => {
               <span>@drapatriciapolvora</span>
             </a>
           </div>
-          <button className="btn-primary mt-2">
+          <button 
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              setIsMobileMenuOpen(false);
+            }} 
+            className="btn-primary mt-2"
+          >
             Agende sua Consulta
           </button>
         </div>

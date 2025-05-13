@@ -10,15 +10,14 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	safelist: [
-		"bg-brand-green",
-		"bg-brand-green-light", 
-		"bg-brand-green-dark",
-		"hover:bg-brand-green",
-		"hover:bg-brand-green-dark",
-		"hover:bg-brand-green-light",
-		"text-brand-green",
-		"border-brand-green",
-		"after:bg-brand-green"
+		"bg-verde-musgo",
+		"bg-verde-claro", 
+		"bg-marrom-terra",
+		"hover:bg-verde-musgo",
+		"hover:bg-verde-claro",
+		"text-verde-musgo",
+		"border-verde-claro",
+		"after:bg-verde-musgo"
 	],
 	prefix: "",
 	theme: {
@@ -74,15 +73,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for CORPO EM EQUILÍBRIO - renamed from brandGreen to brand-green
-				'brand-green': {
-					light: '#F2FCE2',   // Light green background
-					DEFAULT: '#4A9D5C', // Default green (leafy accent)
-					dark: '#3A7A47',    // Darker green for hover states
+				// New natural color palette
+				'verde-musgo': {
+					DEFAULT: 'hsl(var(--verde-musgo))', // #6B8E23
+					light: 'hsl(var(--verde-claro))', // #A8D5BA
+				},
+				'verde-claro': {
+					DEFAULT: 'hsl(var(--verde-claro))', // #A8D5BA
+				},
+				'branco-areia': {
+					DEFAULT: 'hsl(var(--branco-areia))', // #F9F9F6
+				},
+				'marrom-terra': {
+					DEFAULT: 'hsl(var(--marrom-terra))', // #D9C4A2
 				},
 			},
 			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
+				playfair: ['Playfair Display', 'serif'],
 				lato: ['Lato', 'sans-serif'],
 			},
 			borderRadius: {

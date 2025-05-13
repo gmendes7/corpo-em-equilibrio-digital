@@ -7,11 +7,14 @@ import Blog from '../components/Blog';
 import Appointment from '../components/Appointment';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import PlantDecorations from '../components/PlantDecorations';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-branco-areia">
       <Navbar />
+      <PlantDecorations />
       <Hero />
       <About />
       <Specialties />
@@ -19,6 +22,7 @@ const Index = () => {
       <Appointment />
       <Contact />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

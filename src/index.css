@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -45,6 +45,12 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom color variables for natural palette */
+    --verde-musgo: 82 61% 35%;
+    --verde-claro: 141 36% 75%;
+    --branco-areia: 60 30% 96%;
+    --marrom-terra: 40 36% 74%;
   }
 
   body {
@@ -52,17 +58,17 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-semibold;
+    @apply font-playfair font-semibold;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-green hover:bg-brand-green-dark text-white py-3 px-6 rounded-md font-medium transition-all duration-300 shadow-sm hover:shadow-md;
+    @apply bg-verde-musgo hover:bg-verde-musgo/80 text-white py-3 px-6 rounded-md font-medium transition-all duration-300 shadow-sm hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-white border-2 border-brand-green text-brand-green py-3 px-6 rounded-md font-medium transition-all duration-300 hover:bg-brand-green-light;
+    @apply bg-white border-2 border-verde-claro text-verde-musgo py-3 px-6 rounded-md font-medium transition-all duration-300 hover:bg-verde-claro/20;
   }
 
   .section {
@@ -74,11 +80,11 @@
   }
 
   .nav-link {
-    @apply relative text-gray-700 hover:text-brand-green font-montserrat font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-green after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
+    @apply relative text-gray-700 hover:text-verde-musgo font-playfair font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-musgo after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
   }
 
   .nav-link-active {
-    @apply text-brand-green after:scale-x-100;
+    @apply text-verde-musgo after:scale-x-100;
   }
 }
 
@@ -92,6 +98,14 @@ html {
   animation: gentle-sway 7s ease-in-out infinite;
 }
 
+.leaf-float {
+  animation: leaf-float 10s ease-in-out infinite;
+}
+
+.leaf-rotate {
+  animation: leaf-rotate 15s linear infinite;
+}
+
 .staggered-fade-in > * {
   opacity: 0;
   animation: fade-in 0.6s ease-out forwards;
@@ -102,3 +116,58 @@ html {
 .staggered-fade-in > *:nth-child(3) { animation-delay: 0.5s; }
 .staggered-fade-in > *:nth-child(4) { animation-delay: 0.7s; }
 .staggered-fade-in > *:nth-child(5) { animation-delay: 0.9s; }
+
+/* Plant animations */
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes leaf-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(15px) rotate(-5deg); }
+}
+
+@keyframes leaf-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Adding the creeper vine animation */
+.creeper-animation {
+  animation: grow-vine 15s ease-out forwards;
+  transform-origin: bottom left;
+}
+
+@keyframes grow-vine {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+/* Additional animations */
+.slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* WhatsApp floating button */
+.float-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 157, 92, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(74, 157, 92, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 157, 92, 0); }
+}
