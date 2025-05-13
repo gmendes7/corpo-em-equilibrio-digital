@@ -33,6 +33,20 @@ const PlantDecorations = () => {
       <div className="absolute top-2/3 left-10 w-20 h-20 opacity-15 leaf-rotate" style={{ animationDelay: '1.5s' }}>
         <img src="/leaf1.png" alt="" className="w-full" />
       </div>
+      
+      {/* Additional floating leaves */}
+      <div className="absolute top-1/4 left-1/4 w-16 h-16 opacity-10 leaf-float" style={{ animationDelay: '3.5s' }}>
+        <img src="/leaf2.png" alt="" className="w-full" />
+      </div>
+      
+      <div className="absolute bottom-1/4 right-1/4 w-14 h-14 opacity-10 leaf-rotate" style={{ animationDelay: '4.2s' }}>
+        <img src="/leaf1.png" alt="" className="w-full" />
+      </div>
+      
+      {/* Subtle moving vine in right margin */}
+      <div className="absolute top-1/2 right-0 w-24 h-[40vh] opacity-15 gentle-sway" style={{ animationDelay: '1s' }}>
+        <img src="/vine1.png" alt="" className="w-full h-full object-contain object-top" />
+      </div>
     </div>
   );
 };

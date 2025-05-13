@@ -25,6 +25,11 @@ const Appointment = () => {
             <img src="/leaf1.png" alt="" className="w-full" />
           </div>
           
+          {/* Added another decorative leaf */}
+          <div className="absolute bottom-5 left-1/4 w-20 h-20 opacity-20 leaf-wobble hidden lg:block">
+            <img src="/leaf2.png" alt="" className="w-full" />
+          </div>
+          
           <div className="flex flex-col md:flex-row items-center justify-between relative z-10">
             <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 font-playfair">
