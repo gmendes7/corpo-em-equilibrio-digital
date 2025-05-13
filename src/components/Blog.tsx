@@ -1,4 +1,6 @@
 
+import { leaf } from 'lucide-react';
+
 const blogPosts = [
   {
     id: 1,
@@ -30,11 +32,20 @@ const categories = ['Todos', 'Diabetes', 'Emagrecimento', 'Menopausa', 'Genétic
 
 const Blog = () => {
   return (
-    <section id="blog" className="section bg-white">
+    <section id="blog" className="section bg-white relative overflow-hidden">
+      {/* Elementos decorativos de plantas */}
+      <div className="absolute top-0 right-0 w-40 h-40 opacity-20 leaf-animation">
+        <img src="/leaf1.png" alt="" className="w-full" />
+      </div>
+      
+      <div className="absolute bottom-20 left-0 w-32 h-32 opacity-20 leaf-animation" style={{ animationDelay: '1.5s' }}>
+        <img src="/leaf2.png" alt="" className="w-full" />
+      </div>
+      
       <div className="container-custom">
         <div className="text-center mb-12 staggered-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Nosso <span className="text-brandGreen-DEFAULT">Blog</span>
+            Nosso <span className="text-brand-green">Blog</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Artigos informativos e baseados em ciência para ajudar você a entender melhor sua saúde e as opções de tratamento disponíveis.
@@ -48,8 +59,8 @@ const Blog = () => {
               key={index}
               className={`px-4 py-2 rounded-full font-medium transition-all ${
                 index === 0
-                  ? 'bg-brandGreen-DEFAULT text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-brandGreen-light'
+                  ? 'bg-brand-green text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-brand-green-light'
               }`}
             >
               {category}
@@ -70,7 +81,7 @@ const Blog = () => {
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs font-medium bg-brandGreen-light text-brandGreen-DEFAULT px-3 py-1 rounded-full">
+                  <span className="text-xs font-medium bg-brand-green-light text-brand-green px-3 py-1 rounded-full">
                     {post.category}
                   </span>
                   <span className="text-xs text-gray-500">{post.date}</span>
@@ -81,7 +92,7 @@ const Blog = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                <button className="text-brandGreen-DEFAULT hover:text-brandGreen-dark font-medium flex items-center transition-colors">
+                <button className="text-brand-green hover:text-brand-green-dark font-medium flex items-center transition-colors">
                   Leia mais
                   <svg
                     className="ml-2 w-4 h-4"
