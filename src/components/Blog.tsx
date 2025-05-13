@@ -1,5 +1,4 @@
-
-import { leaf } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
 const blogPosts = [
   {
