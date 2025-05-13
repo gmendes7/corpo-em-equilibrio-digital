@@ -1,5 +1,5 @@
 
-import { Instagram, Mail, WhatsApp } from 'lucide-react';
+import { Instagram, Mail, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -39,7 +39,7 @@ const Footer = () => {
                 className="w-10 h-10 bg-brandGreen-light rounded-full flex items-center justify-center text-brandGreen-DEFAULT hover:bg-brandGreen-DEFAULT hover:text-white transition-colors"
                 aria-label="WhatsApp"
               >
-                <WhatsApp size={20} />
+                <MessageCircle size={20} />
               </a>
             </div>
           </div>
