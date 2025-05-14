@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -91,6 +90,122 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Plant animation base classes */
+.plant-sway {
+  animation: plant-sway 15s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-float {
+  animation: plant-float 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.plant-rotate {
+  animation: plant-rotate 25s linear infinite;
+  will-change: transform;
+}
+
+.plant-gentle-sway {
+  animation: plant-gentle-sway 12s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-gentle-sway-delayed {
+  animation: plant-gentle-sway 12s ease-in-out 1.5s infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-breathe {
+  animation: plant-breathe 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+.plant-leaf-left, .plant-leaf-right {
+  transform-origin: bottom center;
+  animation: branch-sway 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Optimized plant animations with subtle movement */
+@keyframes plant-sway {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-5px); }
+}
+
+@keyframes plant-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes plant-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes plant-gentle-sway {
+  0%, 100% { transform: rotate(-1.5deg) translateY(0px); }
+  50% { transform: rotate(1.5deg) translateY(-4px); }
+}
+
+@keyframes plant-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes branch-sway {
+  0% { transform: rotate(-2deg) scale(0.98); }
+  100% { transform: rotate(2deg) scale(1.02); }
+}
+
+/* For leaf veins and details */
+@keyframes leaf-wobble {
+  0%, 100% { transform: rotate(-1deg) scale(1); }
+  50% { transform: rotate(1deg) scale(1.03); }
+}
+
+/* Media query for reduced motion preference */
+@media (prefers-reduced-motion) {
+  .plant-sway,
+  .plant-float,
+  .plant-rotate,
+  .plant-gentle-sway,
+  .plant-gentle-sway-delayed,
+  .plant-breathe,
+  .plant-leaf-left,
+  .plant-leaf-right {
+    animation: none;
+  }
+}
+
+/* Target SVG internal elements for additional animations */
+.leaf-path {
+  animation: leaf-wobble 16s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.leaf-vein {
+  animation: leaf-wobble 14s ease-in-out 0.5s infinite;
+  transform-origin: center;
+}
+
+.fern-path {
+  animation: leaf-wobble 10s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.fern-stem {
+  animation: leaf-wobble 12s ease-in-out 0.3s infinite;
+  transform-origin: bottom;
+}
+
+.monstera-leaf {
+  filter: drop-shadow(0 0 2px rgba(125, 177, 0, 0.1));
 }
 
 /* Enhanced plant animation classes */

@@ -12,17 +12,22 @@ import PlantDecorations from '../components/PlantDecorations';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-branco-areia">
-      <Navbar />
+    <div className="min-h-screen bg-branco-areia relative">
+      {/* Plant decorations are positioned with fixed positioning */}
       <PlantDecorations />
-      <Hero />
-      <About />
-      <Specialties />
-      <Blog />
-      <Appointment />
-      <Contact />
-      <Footer />
-      <FloatingWhatsApp />
+      
+      {/* Main content positioned above the decorative plants */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Specialties />
+        <Blog />
+        <Appointment />
+        <Contact />
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
     </div>
   );
 };
