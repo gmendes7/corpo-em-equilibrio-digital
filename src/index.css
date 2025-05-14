@@ -110,6 +110,36 @@ html {
   animation: gentle-sway 7s ease-in-out infinite;
 }
 
+/* New SVG plant animations */
+.svg-plant-animation {
+  animation: svg-plant-sway 8s ease-in-out infinite;
+}
+
+.svg-plant-sway {
+  animation: svg-plant-sway 10s ease-in-out infinite alternate;
+}
+
+.svg-plant-float {
+  animation: svg-plant-float 12s ease-in-out infinite;
+}
+
+.svg-plant-rotate {
+  animation: svg-plant-rotate 25s linear infinite;
+}
+
+.svg-plant-bounce {
+  animation: svg-plant-bounce 7s ease-in-out infinite;
+}
+
+.plant-branch-left, .plant-branch-right {
+  transform-origin: bottom center;
+  animation: branch-sway 8s ease-in-out infinite alternate;
+}
+
+.plant-leaf {
+  animation: leaf-wobble 6s ease-in-out infinite;
+}
+
 .staggered-fade-in > * {
   opacity: 0;
   animation: fade-in 0.6s ease-out forwards;
@@ -139,6 +169,35 @@ html {
 @keyframes leaf-rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* SVG plant specific animations */
+@keyframes svg-plant-sway {
+  0%, 100% { transform: rotate(-5deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.05); }
+}
+
+@keyframes svg-plant-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(15px) rotate(-5deg); }
+}
+
+@keyframes svg-plant-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes svg-plant-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+@keyframes branch-sway {
+  0% { transform: rotate(-5deg) scale(0.95); }
+  100% { transform: rotate(5deg) scale(1.05); }
 }
 
 /* Adding the creeper vine animation */
@@ -198,4 +257,10 @@ html {
 @keyframes plant-breathe {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
