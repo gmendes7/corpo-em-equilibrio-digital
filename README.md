@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+ultilizei como dominio a minha IA lovable que me ajudou a desenvolver esse projeto aqui esta a mais informações. # Welcome to your Lovable project
 
 ## Project info
 
