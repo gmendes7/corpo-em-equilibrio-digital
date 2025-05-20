@@ -3,13 +3,44 @@ import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showUpdatePanel, setShowUpdatePanel] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Show update panel on load
+    setShowUpdatePanel(true);
+    
+    // Hide update panel after 7 seconds
+    const timer = setTimeout(() => {
+      setShowUpdatePanel(false);
+    }, 7000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden pt-28 pb-16 bg-gradient-to-b from-verde-claro/30 to-branco-areia">      
+      {/* Update Panel - Fixed position notification */}
+      {showUpdatePanel && (
+        <div className="fixed top-20 right-4 z-50 bg-white shadow-lg rounded-lg p-4 max-w-xs animate-fade-in">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="font-semibold text-verde-musgo">Atualização do Site</h3>
+            <button 
+              onClick={() => setShowUpdatePanel(false)}
+              className="text-gray-500 hover:text-gray-700"
+              aria-label="Fechar"
+            >
+              ×
+            </button>
+          </div>
+          <p className="text-sm text-gray-600">
+            Nosso site está sendo constantemente atualizado para melhorar sua experiência.
+            Confira nossas novas funcionalidades!
+          </p>
+        </div>
+      )}
+      
       <div className="container-custom px-6 md:px-12 flex flex-col lg:flex-row items-center">
         {/* Text content */}
         <div className={`w-full lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 ${isLoaded ? 'staggered-fade-in' : 'opacity-0'}`}>
@@ -50,7 +81,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Highlight cards */}
+      {/* Highlight cards with improved spacing */}
       <div className="container-custom px-6 md:px-12 mt-16 lg:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 staggered-fade-in">
           <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-verde-musgo">
@@ -74,6 +105,22 @@ const Hero = () => {
             </p>
           </div>
         </div>
+      </div>
+      
+      {/* Call to action with green text */}
+      <div className="container-custom px-6 md:px-12 mt-16 text-center">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 font-playfair">
+          Pronto para dar o primeiro passo rumo à saúde equilibrada?
+        </h3>
+        <p className="text-verde-musgo text-lg mb-8 max-w-2xl mx-auto font-lato">
+          Agende uma consulta hoje mesmo e descubra como podemos ajudar você a alcançar o seu melhor estado de saúde através de abordagens integrativas e personalizadas.
+        </p>
+        <button 
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          className="btn-primary"
+        >
+          Entrar em Contato
+        </button>
       </div>
     </section>
   );

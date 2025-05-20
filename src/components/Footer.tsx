@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Links column 1 */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-800 font-playfair">Navegação</h3>
-            <ul className="space-y-2 font-lato">
+            <ul className="space-y-3 font-lato">
               <li>
                 <button 
                   onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
@@ -94,7 +94,7 @@ const Footer = () => {
           {/* Links column 2 */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-800 font-playfair">Especialidades</h3>
-            <ul className="space-y-2 font-lato">
+            <ul className="space-y-3 font-lato">
               <li>
                 <button 
                   onClick={() => {
@@ -185,10 +185,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom section with copyright */}
+        {/* Bottom section with copyright and developer credits */}
         <div className="border-t border-gray-200 pt-8">
-          <p className="text-center text-gray-600 font-lato">
+          <p className="text-center text-gray-600 font-lato mb-2">
             © {new Date().getFullYear()} CORPO EM EQUILÍBRIO - Dra. Patrícia Pólvora. Todos os direitos reservados.
+          </p>
+          <p className="text-center text-gray-600 font-lato text-sm">
+            Desenvolvido por <span className="text-verde-musgo">@trinitytecnlogias</span> e <span className="text-verde-musgo">@schjneiderr</span>
           </p>
         </div>
       </div>

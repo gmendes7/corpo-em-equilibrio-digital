@@ -3,11 +3,11 @@ import { MessageCircle, Mail, MapPin, Instagram } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section bg-brand-green-light/20">
+    <section id="contact" className="section bg-verde-claro/20">
       <div className="container-custom">
         <div className="text-center mb-12 staggered-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-            Entre em <span className="text-brand-green">Contato</span>
+            Entre em <span className="text-verde-musgo">Contato</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Estamos aqui para ajudar você a iniciar sua jornada de saúde e bem-estar. Não hesite em nos contatar para agendar uma consulta ou esclarecer suas dúvidas.
@@ -26,7 +26,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>
@@ -36,7 +36,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>
@@ -47,7 +47,7 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
                 />
               </div>
               <div>
@@ -55,7 +55,7 @@ const Contact = () => {
                 <select
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
                 >
                   <option value="">Selecione um assunto</option>
                   <option value="appointment">Agendamento</option>
@@ -70,7 +70,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all resize-none"
                   required
                 ></textarea>
               </div>
@@ -103,32 +103,32 @@ const Contact = () => {
             {/* Contact cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-brand-green-light rounded-full flex items-center justify-center mb-4">
-                  <MessageCircle className="text-brand-green" size={24} />
+                <div className="w-12 h-12 bg-verde-claro rounded-full flex items-center justify-center mb-4">
+                  <MessageCircle className="text-verde-musgo" size={24} />
                 </div>
                 <h4 className="font-semibold mb-1 text-gray-800">WhatsApp</h4>
                 <p className="text-gray-600">(67) 99341-7073</p>
               </div>
               
               <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-brand-green-light rounded-full flex items-center justify-center mb-4">
-                  <Mail className="text-brand-green" size={24} />
+                <div className="w-12 h-12 bg-verde-claro rounded-full flex items-center justify-center mb-4">
+                  <Mail className="text-verde-musgo" size={24} />
                 </div>
                 <h4 className="font-semibold mb-1 text-gray-800">E-mail</h4>
                 <p className="text-gray-600">contato@corpoemequilibrio.com</p>
               </div>
               
               <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-brand-green-light rounded-full flex items-center justify-center mb-4">
-                  <MapPin className="text-brand-green" size={24} />
+                <div className="w-12 h-12 bg-verde-claro rounded-full flex items-center justify-center mb-4">
+                  <MapPin className="text-verde-musgo" size={24} />
                 </div>
                 <h4 className="font-semibold mb-1 text-gray-800">Endereço</h4>
                 <p className="text-gray-600">Campo Grande, MS</p>
               </div>
               
               <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-brand-green-light rounded-full flex items-center justify-center mb-4">
-                  <Instagram className="text-brand-green" size={24} />
+                <div className="w-12 h-12 bg-verde-claro rounded-full flex items-center justify-center mb-4">
+                  <Instagram className="text-verde-musgo" size={24} />
                 </div>
                 <h4 className="font-semibold mb-1 text-gray-800">Instagram</h4>
                 <p className="text-gray-600">@drapatriciapolvora</p>
