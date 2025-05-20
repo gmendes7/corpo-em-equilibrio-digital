@@ -1,22 +1,27 @@
 
 import { useState, useEffect } from 'react';
+import { logError } from '../utils/errorLogger';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showUpdatePanel, setShowUpdatePanel] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
-    
-    // Show update panel on load
-    setShowUpdatePanel(true);
-    
-    // Hide update panel after 7 seconds
-    const timer = setTimeout(() => {
-      setShowUpdatePanel(false);
-    }, 7000);
-    
-    return () => clearTimeout(timer);
+    try {
+      setIsLoaded(true);
+      
+      // Show update panel on load
+      setShowUpdatePanel(true);
+      
+      // Hide update panel after 7 seconds
+      const timer = setTimeout(() => {
+        setShowUpdatePanel(false);
+      }, 7000);
+      
+      return () => clearTimeout(timer);
+    } catch (error) {
+      logError('error', 'Error in Hero component initialization', error);
+    }
   }, []);
 
   return (
@@ -112,7 +117,7 @@ const Hero = () => {
         <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 font-playfair">
           Pronto para dar o primeiro passo rumo à saúde equilibrada?
         </h3>
-        <p className="text-verde-musgo text-lg mb-8 max-w-2xl mx-auto font-lato">
+        <p className="text-verde-musgo font-medium text-lg mb-8 max-w-2xl mx-auto font-lato">
           Agende uma consulta hoje mesmo e descubra como podemos ajudar você a alcançar o seu melhor estado de saúde através de abordagens integrativas e personalizadas.
         </p>
         <button 
