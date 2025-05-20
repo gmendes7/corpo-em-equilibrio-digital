@@ -33,7 +33,7 @@ const Footer = () => {
                 <Mail size={20} />
               </a>
               <a
-                href="https://wa.me/5567999999999"
+                href="https://wa.me/5567993417073"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-verde-claro rounded-full flex items-center justify-center text-verde-musgo hover:bg-verde-musgo hover:text-white transition-colors"

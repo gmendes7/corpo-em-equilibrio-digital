@@ -107,7 +107,7 @@ const Contact = () => {
                   <MessageCircle className="text-brand-green" size={24} />
                 </div>
                 <h4 className="font-semibold mb-1 text-gray-800">WhatsApp</h4>
-                <p className="text-gray-600">(67) 99999-9999</p>
+                <p className="text-gray-600">(67) 99341-7073</p>
               </div>
               
               <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">

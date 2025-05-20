@@ -1,9 +1,11 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Leaf } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import { useToast } from '@/hooks/use-toast';
 
 const blogPosts = [
   {
@@ -36,15 +38,44 @@ const categories = ['Todos', 'Diabetes', 'Emagrecimento', 'Menopausa', 'Genétic
 
 const BlogPage = () => {
   const [activeCategory, setActiveCategory] = useState('Todos');
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    const loadBlogData = async () => {
+      setIsLoading(true);
+      
+      try {
+        // Here we simulate an API call
+        await new Promise(resolve => setTimeout(resolve, 500));
+        // If this was a real API call, we'd handle the data here
+      } catch (error) {
+        console.error('Erro ao carregar os artigos do blog:', error);
+        toast({
+          title: "Erro ao carregar artigos",
+          description: "Não foi possível carregar os artigos. Por favor, tente novamente mais tarde.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadBlogData();
+  }, [activeCategory, toast]);
 
   // Filtra os posts com base na categoria selecionada
   const filteredPosts = activeCategory === 'Todos' 
     ? blogPosts 
     : blogPosts.filter(post => post.category === activeCategory);
 
+  const handlePostClick = (id: number) => {
+    navigate(`/blog/${id}`);
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-branco-areia">
       <Navbar />
       <div className="pt-24 pb-16 relative overflow-hidden">
         {/* Elementos decorativos de plantas */}
@@ -59,7 +90,7 @@ const BlogPage = () => {
         <div className="container-custom px-6">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-              Blog <span className="text-brand-green">Saúde</span> & Bem-estar
+              Blog <span className="text-verde-musgo">Saúde</span> & Bem-estar
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Artigos informativos e baseados em ciência para ajudar você a entender melhor sua saúde e as opções de tratamento disponíveis.
@@ -73,74 +104,106 @@ const BlogPage = () => {
                 key={index}
                 className={`px-4 py-2 rounded-full font-medium transition-all ${
                   category === activeCategory
-                    ? 'bg-brand-green text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-brand-green-light'
+                    ? 'bg-verde-musgo text-white shadow-md'
+                    : 'bg-gray-100 text-gray-700 hover:bg-verde-claro'
                 }`}
                 onClick={() => setActiveCategory(category)}
+                aria-label={`Filtrar por ${category}`}
               >
                 {category}
               </button>
             ))}
           </div>
 
-          {/* Blog posts - Grid mais amplo */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <div 
-                key={post.id} 
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-                onClick={() => navigate(`/blog/${post.id}`)}
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-medium bg-brand-green-light text-brand-green px-3 py-1 rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-xs text-gray-500">{post.date}</span>
+          {/* Blog posts */}
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((_, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-pulse">
+                  <div className="h-48 bg-gray-200"></div>
+                  <div className="p-6">
+                    <div className="h-6 bg-gray-200 rounded mb-3 w-3/4"></div>
+                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-200 rounded mb-2 w-5/6"></div>
+                    <div className="h-4 bg-gray-200 rounded mb-4 w-4/6"></div>
+                    <div className="h-6 w-24 bg-gray-200 rounded"></div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {post.excerpt}
-                  </p>
-                  <button onClick={() => navigate(`/blog/${post.id}`)} className="text-brand-green hover:text-brand-green-dark font-medium flex items-center transition-colors">
-                    Leia mais
-                    <svg
-                      className="ml-2 w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </button>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <div 
+                  key={post.id} 
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+                  onClick={() => handlePostClick(post.id)}
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-xs font-medium bg-verde-claro text-verde-musgo px-3 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-gray-500">{post.date}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      {post.excerpt}
+                    </p>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePostClick(post.id);
+                      }} 
+                      className="text-verde-musgo hover:text-verde-musgo/80 font-medium flex items-center transition-colors"
+                    >
+                      Leia mais
+                      <svg
+                        className="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
-          {filteredPosts.length === 0 && (
+          {!isLoading && filteredPosts.length === 0 && (
             <div className="text-center py-10">
               <p className="text-gray-600 text-lg">Nenhum artigo encontrado nesta categoria.</p>
+              <button 
+                onClick={() => setActiveCategory('Todos')}
+                className="mt-4 text-verde-musgo hover:text-verde-musgo/80 font-medium"
+              >
+                Mostrar todos os artigos
+              </button>
             </div>
           )}
         </div>
       </div>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

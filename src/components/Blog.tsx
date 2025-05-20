@@ -1,7 +1,8 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 
 const blogPosts = [
   {
@@ -137,11 +138,30 @@ const categories = ['Todos', 'Diabetes', 'Emagrecimento', 'Menopausa', 'Genétic
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('Todos');
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  // Simulating API load effect when changing categories
+  useEffect(() => {
+    const loadPosts = async () => {
+      setIsLoading(true);
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+      setIsLoading(false);
+    };
+    
+    loadPosts();
+  }, [activeCategory]);
 
   // Filtra os posts com base na categoria selecionada
   const filteredPosts = activeCategory === 'Todos' 
     ? blogPosts 
     : blogPosts.filter(post => post.category === activeCategory);
+
+  const handleReadMore = (postId: number) => {
+    // Track that a user clicked on a specific post
+    console.log(`User clicked on post ${postId}`);
+  };
 
   return (
     <section id="blog" className="section bg-white relative overflow-hidden">
@@ -164,68 +184,103 @@ const Blog = () => {
           </p>
         </div>
 
-        {/* Categories filter - agora funcionais */}
+        {/* Categories filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-10 staggered-fade-in">
           {categories.map((category, index) => (
             <button
               key={index}
               className={`px-4 py-2 rounded-full font-medium transition-all ${
                 category === activeCategory
-                  ? 'bg-brand-green text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-brand-green-light'
+                  ? 'bg-verde-musgo text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-verde-claro'
               }`}
               onClick={() => setActiveCategory(category)}
+              aria-label={`Filtrar por ${category}`}
             >
               {category}
             </button>
           ))}
         </div>
 
-        {/* Blog posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 staggered-fade-in">
-          {filteredPosts.map((post) => (
-            <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs font-medium bg-brand-green-light text-brand-green px-3 py-1 rounded-full">
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-gray-500">{post.date}</span>
+        {/* Blog posts with loading state */}
+        {isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((_, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-pulse">
+                <div className="h-48 bg-gray-200"></div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="h-6 w-16 bg-gray-200 rounded-full"></span>
+                    <span className="h-4 w-24 bg-gray-200 rounded"></span>
+                  </div>
+                  <div className="h-6 bg-gray-200 rounded mb-3 w-3/4"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-2 w-5/6"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-4 w-4/6"></div>
+                  <div className="h-6 w-24 bg-gray-200 rounded"></div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-800 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <Link to={`/blog/${post.id}`} className="text-brand-green hover:text-brand-green-dark font-medium flex items-center transition-colors">
-                  Leia mais
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </Link>
               </div>
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 staggered-fade-in">
+              {filteredPosts.map((post) => (
+                <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-xs font-medium bg-verde-claro text-verde-musgo px-3 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-gray-500">{post.date}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <Link 
+                      to={`/blog/${post.id}`} 
+                      className="text-verde-musgo hover:text-verde-musgo/80 font-medium flex items-center transition-colors"
+                      onClick={() => handleReadMore(post.id)}
+                    >
+                      Leia mais
+                      <svg
+                        className="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+
+            {filteredPosts.length === 0 && (
+              <div className="text-center py-10">
+                <p className="text-gray-600 text-lg">Nenhum artigo encontrado nesta categoria.</p>
+              </div>
+            )}
+          </>
+        )}
 
         <div className="text-center mt-12">
           <Link to="/blog" className="btn-secondary">
