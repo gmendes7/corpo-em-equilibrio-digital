@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { ArrowRight, Play } from 'lucide-react';
 import { logError } from '../utils/errorLogger';
 
 const Hero = () => {
@@ -25,107 +26,143 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden pt-28 pb-16 bg-gradient-to-b from-verde-claro/30 to-branco-areia">      
-      {/* Update Panel - Fixed position notification */}
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+      {/* Geometric background patterns */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-verde-musgo/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-verde-claro/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-verde-musgo/5 to-transparent rounded-full"></div>
+      </div>
+
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-verde-claro/30 rounded-full animate-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-verde-musgo/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-slate-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Update Panel */}
       {showUpdatePanel && (
-        <div className="fixed top-20 right-4 z-50 bg-white shadow-lg rounded-lg p-4 max-w-xs animate-fade-in">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-semibold text-verde-musgo">Atualização do Site</h3>
+        <div className="fixed top-24 right-6 z-50 bg-white/95 backdrop-blur-sm shadow-2xl rounded-2xl p-6 max-w-sm animate-slide-in-right border border-verde-claro/20">
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 bg-verde-musgo rounded-full animate-pulse"></div>
+              <h3 className="font-semibold text-slate-800 text-sm">Sistema Atualizado</h3>
+            </div>
             <button 
               onClick={() => setShowUpdatePanel(false)}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-slate-400 hover:text-slate-600 transition-colors text-lg leading-none"
               aria-label="Fechar"
             >
               ×
             </button>
           </div>
-          <p className="text-sm text-gray-600">
-            Nosso site está sendo constantemente atualizado para melhorar sua experiência.
-            Confira nossas novas funcionalidades!
+          <p className="text-sm text-slate-600 leading-relaxed">
+            Design completamente reformulado com melhorias em UX/UI, tipografia e responsividade.
           </p>
+          <div className="mt-3 text-xs text-verde-musgo font-medium">
+            ✨ Layout profissional ativo
+          </div>
         </div>
       )}
       
-      <div className="container-custom px-6 md:px-12 flex flex-col lg:flex-row items-center">
-        {/* Text content */}
-        <div className={`w-full lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 ${isLoaded ? 'staggered-fade-in' : 'opacity-0'}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800 leading-tight font-playfair">
-            Seu corpo em harmonia, <br/>
-            <span className="text-verde-musgo">sua saúde em primeiro lugar</span>
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-lato">
-            Tratamentos personalizados com foco em saúde integrativa, unindo o melhor da medicina tradicional com abordagens naturais.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button 
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} 
-              className="btn-secondary"
-            >
-              Conheça a Dra. Patrícia
-            </button>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
-              className="btn-primary"
-            >
-              Agende Agora
-            </button>
+      <div className="relative z-10 container-custom px-6 md:px-12 pt-32 pb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-12rem)]">
+          {/* Content Column */}
+          <div className={`space-y-8 ${isLoaded ? 'staggered-fade-in' : 'opacity-0'}`}>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-verde-musgo/10 border border-verde-musgo/20 rounded-full px-4 py-2 text-sm font-medium text-verde-claro backdrop-blur-sm">
+              <div className="w-2 h-2 bg-verde-musgo rounded-full animate-pulse"></div>
+              Medicina Integrativa Personalizada
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-50 leading-tight">
+                Seu corpo em 
+                <span className="block text-transparent bg-gradient-to-r from-verde-claro to-verde-musgo bg-clip-text">
+                  perfeita harmonia
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed max-w-2xl">
+                Tratamentos personalizados que combinam o melhor da medicina tradicional com abordagens naturais inovadoras.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
+                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-verde-musgo to-verde-musgo/90 hover:from-verde-musgo/90 hover:to-verde-musgo text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-verde-musgo/25 transform hover:-translate-y-1"
+              >
+                Agende sua Consulta
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} 
+                className="group inline-flex items-center justify-center gap-3 bg-slate-800/50 backdrop-blur-sm border border-slate-600 hover:bg-slate-700/50 text-slate-100 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:border-verde-claro/50"
+              >
+                <Play size={18} className="text-verde-claro" />
+                Conheça a Dra. Patrícia
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-700/50">
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-verde-claro">500+</div>
+                <div className="text-sm text-slate-400 font-medium">Pacientes atendidos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-verde-claro">15+</div>
+                <div className="text-sm text-slate-400 font-medium">Anos de experiência</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-verde-claro">98%</div>
+                <div className="text-sm text-slate-400 font-medium">Satisfação</div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* Image */}
-        <div className={`w-full lg:w-1/2 flex justify-center ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-          <div className="relative">
-            <div className="absolute -top-12 -left-12 w-40 h-40 bg-verde-claro rounded-full opacity-60"></div>
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-verde-musgo rounded-full opacity-20"></div>
-            <img 
-              src="/doctor.png" 
-              alt="Dra. Patrícia Pólvora" 
-              className="w-4/5 md:w-auto max-h-[500px] object-cover rounded-lg relative z-10 shadow-xl"
-            />
+          
+          {/* Image Column */}
+          <div className={`relative ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+            <div className="relative">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-verde-musgo/20 to-verde-claro/20 rounded-3xl blur-3xl transform rotate-6"></div>
+              
+              {/* Main image container */}
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-700/50">
+                <img 
+                  src="/doctor.png" 
+                  alt="Dra. Patrícia Pólvora" 
+                  className="w-full h-auto rounded-2xl shadow-xl"
+                />
+                
+                {/* Floating badges */}
+                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-slate-200">
+                  <div className="text-center">
+                    <div className="text-verde-musgo font-bold text-lg">CRM</div>
+                    <div className="text-slate-600 text-sm font-medium">Ativo</div>
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-4 -left-4 bg-verde-musgo rounded-2xl p-4 shadow-xl">
+                  <div className="text-center">
+                    <div className="text-white font-bold text-lg">★ 5.0</div>
+                    <div className="text-verde-claro text-sm font-medium">Avaliação</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Highlight cards with improved spacing */}
-      <div className="container-custom px-6 md:px-12 mt-16 lg:mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 staggered-fade-in">
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-verde-musgo">
-            <h3 className="text-xl font-semibold mb-3 text-gray-800 font-playfair">Atendimento personalizado</h3>
-            <p className="text-gray-600 font-lato">
-              Cada paciente é único. Por isso, desenvolvemos um plano de cuidados adaptado às suas necessidades específicas.
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-verde-musgo">
-            <h3 className="text-xl font-semibold mb-3 text-gray-800 font-playfair">Foco em saúde da mulher</h3>
-            <p className="text-gray-600 font-lato">
-              Cuidados específicos para cada fase da vida feminina, com atenção especial à menopausa e mudanças hormonais.
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-verde-musgo">
-            <h3 className="text-xl font-semibold mb-3 text-gray-800 font-playfair">Tratamentos naturais e genéticos</h3>
-            <p className="text-gray-600 font-lato">
-              Combinamos a medicina moderna e análise genética com abordagens naturais para resultados duradouros.
-            </p>
-          </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-slate-400 animate-bounce">
+        <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-verde-claro rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
-      
-      {/* Call to action with green text */}
-      <div className="container-custom px-6 md:px-12 mt-16 text-center">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 font-playfair">
-          Pronto para dar o primeiro passo rumo à saúde equilibrada?
-        </h3>
-        <p className="text-verde-musgo font-medium text-lg mb-8 max-w-2xl mx-auto font-lato">
-          Agende uma consulta hoje mesmo e descubra como podemos ajudar você a alcançar o seu melhor estado de saúde através de abordagens integrativas e personalizadas.
-        </p>
-        <button 
-          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          className="btn-primary"
-        >
-          Entrar em Contato
-        </button>
       </div>
     </section>
   );

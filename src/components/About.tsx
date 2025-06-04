@@ -1,77 +1,124 @@
 
-import { Instagram } from 'lucide-react';
+import { Instagram, Award, Users, Clock } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="section bg-white">
-      <div className="container-custom">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+    <section id="about" className="relative py-24 bg-slate-50 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-musgo to-transparent"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23059669" fill-opacity="0.02"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+      </div>
+
+      <div className="relative z-10 container-custom px-6 md:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image column */}
-          <div className="w-full lg:w-2/5 mb-8 lg:mb-0">
+          <div className="relative order-2 lg:order-1">
             <div className="relative">
-              <div className="absolute inset-0 bg-verde-musgo/10 rounded-xl -rotate-3 transform-gpu"></div>
-              <img 
-                src="/doctor-portrait.png" 
-                alt="Dra. Patrícia Pólvora" 
-                className="w-full h-auto rounded-xl shadow-lg relative z-10 rotate-3 transform-gpu"
-              />
-              <div className="absolute top-6 -right-6 bg-verde-claro w-24 h-24 rounded-full plant-breathe"></div>
-              <div className="absolute -bottom-6 -left-6 bg-verde-musgo/20 w-16 h-16 rounded-full plant-breathe" style={{ animationDelay: '1.5s' }}></div>
+              {/* Decorative elements */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-verde-claro/10 rounded-3xl blur-2xl"></div>
+              <div className="absolute top-8 -right-8 w-32 h-32 bg-verde-claro/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-verde-musgo/15 rounded-full blur-3xl"></div>
               
-              {/* Added subtle leaf decoration */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 opacity-30 leaf-wobble">
-                <img src="/leaf2.png" alt="" className="w-full" />
+              {/* Main image */}
+              <div className="relative bg-white rounded-3xl p-6 shadow-2xl border border-slate-200/50">
+                <img 
+                  src="/doctor-portrait.png" 
+                  alt="Dra. Patrícia Pólvora" 
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                />
+                
+                {/* Professional badges */}
+                <div className="absolute -top-3 -left-3 bg-verde-musgo rounded-2xl p-3 shadow-xl">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                
+                <div className="absolute -bottom-3 -right-3 bg-white rounded-2xl p-3 shadow-xl border border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-verde-musgo" />
+                    <span className="text-sm font-semibold text-slate-700">500+ pacientes</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
           {/* Content column */}
-          <div className="w-full lg:w-3/5">
-            <div className="staggered-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                Sobre a <span className="text-verde-musgo">Dra. Patrícia Pólvora</span>
-              </h2>
+          <div className="order-1 lg:order-2 space-y-8">
+            <div className="staggered-fade-in space-y-6">
+              {/* Section badge */}
+              <div className="inline-flex items-center gap-2 bg-verde-musgo/10 border border-verde-musgo/20 rounded-full px-4 py-2 text-sm font-semibold text-verde-musgo">
+                <Clock size={16} />
+                Sobre a Especialista
+              </div>
+
+              {/* Headline */}
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
+                  Dra. <span className="text-verde-musgo">Patrícia Pólvora</span>
+                </h2>
+                <p className="text-xl text-slate-600 font-light leading-relaxed">
+                  Especialista em medicina integrativa com foco em transformar vidas através de abordagens personalizadas e baseadas em evidências científicas.
+                </p>
+              </div>
               
-              <p className="text-lg text-gray-600 mb-6">
-                Sou médica especialista em saúde integrativa, com foco em emagrecimento, saúde hormonal feminina e controle da diabetes através de abordagens naturais e baseadas em evidências científicas.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="bg-verde-claro/40 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-1">Formação Acadêmica</h3>
-                  <p className="text-gray-600">
-                    Medicina pela Universidade Federal do Rio de Janeiro, com especialização em Endocrinologia e Metabologia, além de formação em Medicina Integrativa pela Harvard Medical School.
-                  </p>
+              {/* Experience cards */}
+              <div className="space-y-4">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-verde-musgo/10 rounded-xl flex items-center justify-center">
+                      <Award className="w-6 h-6 text-verde-musgo" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-800 mb-2">Formação Acadêmica de Excelência</h3>
+                      <p className="text-slate-600 leading-relaxed">
+                        Medicina pela Universidade Federal do Rio de Janeiro, especialização em Endocrinologia e Metabologia, 
+                        com formação em Medicina Integrativa pela Harvard Medical School.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="bg-verde-claro/40 rounder-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-1">Especializações</h3>
-                  <p className="text-gray-600">
-                    Medicina Funcional, Nutrigenômica, Medicina Anti-aging e tratamentos avançados para diabetes e distúrbios hormonais femininos.
-                  </p>
-                </div>
-                
-                <div className="bg-verde-claro/40 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-1">Filosofia de Trabalho</h3>
-                  <p className="text-gray-600">
-                    Acredito que cada paciente é único e merece um olhar integrado que considere fatores físicos, emocionais, genéticos e ambientais para alcançar o verdadeiro equilíbrio e bem-estar.
-                  </p>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-verde-claro/10 rounded-xl flex items-center justify-center">
+                      <Users className="w-6 h-6 text-verde-musgo" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-800 mb-2">Especializações Avançadas</h3>
+                      <p className="text-slate-600 leading-relaxed">
+                        Medicina Funcional, Nutrigenômica, Medicina Anti-aging e tratamentos inovadores 
+                        para diabetes e distúrbios hormonais femininos.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <blockquote className="border-l-4 border-verde-musgo pl-4 italic text-gray-700 mb-8">
-                "Minha missão é ajudar cada pessoa a encontrar o equilíbrio natural do corpo, utilizando a ciência moderna aliada à sabedoria da natureza."
+              {/* Quote */}
+              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-verde-claro/5 rounded-2xl p-6 border-l-4 border-verde-musgo">
+                <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">"</div>
+                <p className="text-slate-700 font-medium italic leading-relaxed pt-6">
+                  Minha missão é transformar vidas através de uma medicina que vê o ser humano de forma integral, 
+                  utilizando a ciência moderna aliada à sabedoria natural do corpo.
+                </p>
+                <cite className="block text-sm text-verde-musgo font-semibold mt-3 not-italic">
+                  — Dra. Patrícia Pólvora
+                </cite>
               </blockquote>
               
-              <a 
-                href="https://www.instagram.com/drapatriciapolvora" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-verde-musgo hover:text-verde-musgo/70 transition-colors"
-              >
-                <Instagram size={22} />
-                <span>@drapatriciapolvora</span>
-              </a>
+              {/* Social link */}
+              <div className="pt-4">
+                <a 
+                  href="https://www.instagram.com/drapatriciapolvora" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Instagram size={20} />
+                  <span>Seguir @drapatriciapolvora</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -79,4 +126,5 @@ const About = () => {
     </section>
   );
 };
+
 export default About;
