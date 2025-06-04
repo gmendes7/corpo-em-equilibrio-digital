@@ -1,17 +1,15 @@
-
-import { useState, useEffect } from 'react';
-import { Leaf } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useToast } from '@/hooks/use-toast';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
     id: 1,
-    title: 'Como a genética pode influenciar seu emagrecimento',
-    excerpt: 'Descubra como seu DNA afeta sua capacidade de perder peso e como personalizar sua abordagem para resultados melhores.',
-    image: '/blog1.jpg',
-    category: 'Emagrecimento',
-    date: '10 de maio, 2023',
+    title: "Como a genética pode influenciar seu emagrecimento",
+    excerpt:
+      "Descubra como seu DNA afeta sua capacidade de perder peso e como personalizar sua abordagem para resultados melhores.",
+    image: "/blog1.jpg",
+    category: "Emagrecimento",
+    date: "10 de maio, 2023",
     content: `
       <h2>A relação entre genética e emagrecimento</h2>
       <p>A genética desempenha um papel fundamental no processo de emagrecimento. Estudos científicos mostram que cerca de 40-70% da variação no Índice de Massa Corporal (IMC) entre indivíduos pode ser atribuída a fatores genéticos. Isso significa que algumas pessoas têm uma predisposição genética que pode facilitar ou dificultar a perda de peso.</p>
@@ -21,7 +19,7 @@ const blogPosts = [
       <ul>
         <li><strong>Gene FTO</strong> - Considerado o "gene da obesidade", está relacionado à sensação de saciedade e controle da fome</li>
         <li><strong>Gene MC4R</strong> - Regula o apetite e o gasto energético</li>
-        <li><strong>Gene ADIPOQ</strong> - Influencia na sensibilidade à insulina e metabolismo das gorduras</li>
+        <li><strong>Gene ADIPOSE</strong> - Influência na sensibilidade à insulina e metabolismo das gorduras</li>
       </ul>
       
       <h2>Como personalizar sua dieta com base na genética</h2>
@@ -33,20 +31,21 @@ const blogPosts = [
       <p>Embora a genética seja importante, fatores ambientais e de estilo de vida podem "ligar" ou "desligar" certos genes. A epigenética estuda essas modificações que não alteram o DNA em si, mas afetam como os genes são expressos.</p>
       
       <p>Isso significa que, mesmo com predisposição genética para ganho de peso, hábitos saudáveis de alimentação e atividade física podem superar parcialmente essas tendências genéticas, demonstrando que você sempre tem controle sobre sua saúde, independentemente do seu DNA.</p>
-    `
+    `,
   },
   {
     id: 2,
-    title: 'Gerenciando a diabetes naturalmente: abordagem integrativa',
-    excerpt: 'Estratégias naturais comprovadas cientificamente para ajudar no controle da glicemia e melhorar a qualidade de vida.',
-    image: '/blog2.jpg',
-    category: 'Diabetes',
-    date: '23 de abril, 2023',
+    title: "Gerenciando a diabetes naturalmente: abordagem integrativa",
+    excerpt:
+      "Estratégias naturais comprovadas cientificamente para ajudar no controle da glicemia e melhorar a qualidade de vida.",
+    image: "/blog2.jpg",
+    category: "Diabetes",
+    date: "23 de abril, 2023",
     content: `
-      <h2>Entendendo a diabetes</h2>
-      <p>A diabetes é uma doença metabólica crônica caracterizada por níveis elevados de glicose no sangue. Existem principalmente dois tipos: diabetes tipo 1 (quando o corpo não produz insulina suficiente) e diabetes tipo 2 (quando o corpo não usa eficientemente a insulina produzida).</p>
+      <h2>Entendendo a diabete</h2>
+      <p>A diabete é uma doença metabólica crônica caracterizada por níveis elevados de glicose no sangue. Existem principalmente dois tipos: diabetes tipo 1 (quando o corpo não produz insulina suficiente) e diabetes tipo 2 (quando o corpo não usa eficientemente a insulina produzida).</p>
       
-      <h2>Abordagens naturais para gerenciar a diabetes</h2>
+      <h2>Abordagens naturais para gerenciar a diabete</h2>
       <p>Embora o tratamento médico convencional seja fundamental, diversas abordagens naturais e integrativas podem complementar o tratamento e melhorar significativamente a qualidade de vida:</p>
       
       <h3>1. Nutrição terapêutica</h3>
@@ -61,7 +60,7 @@ const blogPosts = [
       <h3>2. Fitoterápicos com evidências científicas</h3>
       <p>Algumas plantas medicinais demonstram efeitos positivos no controle glicêmico:</p>
       <ul>
-        <li><strong>Gymnema sylvestre</strong> - Pode reduzir a absorção de açúcar no intestino</li>
+        <li><strong>Gimnema sylvestre</strong> - Pode reduzir a absorção de açúcar no intestino</li>
         <li><strong>Canela</strong> - Ajuda a melhorar a sensibilidade à insulina</li>
         <li><strong>Berberina</strong> - Estudos mostram eficácia similar a alguns medicamentos convencionais</li>
       </ul>
@@ -73,15 +72,16 @@ const blogPosts = [
       <p>O estresse crônico eleva os níveis de cortisol, que por sua vez aumenta a glicose sanguínea. Técnicas como meditação, yoga e respiração profunda podem ser aliadas importantes no controle do diabetes.</p>
       
       <p>É importante ressaltar que qualquer abordagem integrativa deve ser discutida com seu médico e não substitui o tratamento convencional prescrito.</p>
-    `
+    `,
   },
   {
     id: 3,
-    title: 'Menopausa e equilíbrio hormonal: o que você precisa saber',
-    excerpt: 'Um guia completo sobre as mudanças hormonais na menopausa e como lidar com os sintomas de forma natural.',
-    image: '/blog3.jpg',
-    category: 'Menopausa',
-    date: '5 de abril, 2023',
+    title: "Menopausa e equilíbrio hormonal: o que você precisa saber",
+    excerpt:
+      "Um guia completo sobre as mudanças hormonais na menopausa e como lidar com os sintomas de forma natural.",
+    image: "/blog3.jpg",
+    category: "Menopausa",
+    date: "5 de abril, 2023",
     content: `
       <h2>Entendendo a menopausa</h2>
       <p>A menopausa marca o fim do período reprodutivo feminino e ocorre quando os ovários reduzem significativamente a produção de hormônios, principalmente estrogênio e progesterona. A idade média para o início da menopausa é entre 45 e 55 anos, embora possa ocorrer mais cedo ou mais tarde em algumas mulheres.</p>
@@ -127,36 +127,41 @@ const blogPosts = [
       </ul>
       
       <h3>4. Técnicas de gerenciamento do estresse</h3>
-      <p>O estresse pode exacerbar os sintomas da menopausa. Práticas como yoga, meditação e técnicas de respiração profunda podem ajudar a restaurar o equilíbrio e melhorar o bem-estar geral durante essa fase.</p>
+      <p>O estresse pode exacerbar os sintomas da menopausa. Práticas como ioga, meditação e técnicas de respiração profunda podem ajudar a restaurar o equilíbrio e melhorar o bem-estar geral durante essa fase.</p>
       
       <p>É importante consultar um profissional de saúde especializado em saúde da mulher para desenvolver um plano personalizado que atenda às suas necessidades específicas durante a menopausa.</p>
-    `
-  }
+    `,
+  },
 ];
 
-const categories = ['Todos', 'Diabetes', 'Emagrecimento', 'Menopausa', 'Genética'];
+const categories = [
+  "Todos",
+  "Diabetes",
+  "Emagrecimento",
+  "Menopausa",
+  "Genética",
+];
 
 const Blog = () => {
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const [activeCategory, setActiveCategory] = useState("Todos");
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
   // Simulating API load effect when changing categories
   useEffect(() => {
     const loadPosts = async () => {
       setIsLoading(true);
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 300));
       setIsLoading(false);
     };
-    
+
     loadPosts();
   }, [activeCategory]);
 
   // Filtra os posts com base na categoria selecionada
-  const filteredPosts = activeCategory === 'Todos' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
+  const filteredPosts =
+    activeCategory === "Todos"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === activeCategory);
 
   const handleReadMore = (postId: number) => {
     // Track that a user clicked on a specific post
@@ -169,18 +174,22 @@ const Blog = () => {
       <div className="absolute top-0 right-0 w-40 h-40 opacity-20 leaf-animation">
         <img src="/leaf1.png" alt="" className="w-full" />
       </div>
-      
-      <div className="absolute bottom-20 left-0 w-32 h-32 opacity-20 leaf-animation" style={{ animationDelay: '1.5s' }}>
+
+      <div
+        className="absolute bottom-20 left-0 w-32 h-32 opacity-20 leaf-animation"
+        style={{ animationDelay: "1.5s" }}
+      >
         <img src="/leaf2.png" alt="" className="w-full" />
       </div>
-      
+
       <div className="container-custom">
         <div className="text-center mb-12 staggered-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
             Nosso <span className="text-brand-green">Blog</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Artigos informativos e baseados em ciência para ajudar você a entender melhor sua saúde e as opções de tratamento disponíveis.
+            Artigos informativos e baseados em ciência para ajudar você a
+            entender melhor sua saúde e as opções de tratamento disponíveis.
           </p>
         </div>
 
@@ -191,8 +200,8 @@ const Blog = () => {
               key={index}
               className={`px-4 py-2 rounded-full font-medium transition-all ${
                 category === activeCategory
-                  ? 'bg-verde-musgo text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-verde-claro'
+                  ? "bg-verde-musgo text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 hover:bg-verde-claro"
               }`}
               onClick={() => setActiveCategory(category)}
               aria-label={`Filtrar por ${category}`}
@@ -206,7 +215,10 @@ const Blog = () => {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((_, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-pulse">
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow animate-pulse"
+              >
                 <div className="h-48 bg-gray-200"></div>
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-3">
@@ -226,7 +238,10 @@ const Blog = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 staggered-fade-in">
               {filteredPosts.map((post) => (
-                <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div
+                  key={post.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                >
                   <div className="h-48 overflow-hidden">
                     <img
                       src={post.image}
@@ -248,8 +263,8 @@ const Blog = () => {
                     <p className="text-gray-600 mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
-                    <Link 
-                      to={`/blog/${post.id}`} 
+                    <Link
+                      to={`/blog/${post.id}`}
                       className="text-verde-musgo hover:text-verde-musgo/80 font-medium flex items-center transition-colors"
                       onClick={() => handleReadMore(post.id)}
                     >
@@ -276,7 +291,9 @@ const Blog = () => {
 
             {filteredPosts.length === 0 && (
               <div className="text-center py-10">
-                <p className="text-gray-600 text-lg">Nenhum artigo encontrado nesta categoria.</p>
+                <p className="text-gray-600 text-lg">
+                  Nenhum artigo encontrado nesta categoria.
+                </p>
               </div>
             )}
           </>

@@ -1,6 +1,5 @@
 
 import { MessageCircle } from 'lucide-react';
-import { logBugFix, logSystemUpdate } from '../utils/updateLogger';
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "5567993417073"; // Número com código do país
@@ -10,15 +9,7 @@ const FloatingWhatsApp = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
   const handleClick = () => {
-    // Log da correção aplicada
-    logBugFix(
-      'Botão WhatsApp corrigido - agora abre link externo corretamente',
-      'FloatingWhatsApp',
-      'Convertido de <Link> para <a> com target="_blank"'
-    );
-    
-    logSystemUpdate('WhatsApp aberto com mensagem pré-preenchida', 'FloatingWhatsApp');
-    
+    // Log para debug
     console.log('WhatsApp button clicked, opening:', whatsappUrl);
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };

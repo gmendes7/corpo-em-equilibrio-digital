@@ -44,7 +44,7 @@ const About = () => {
                   </p>
                 </div>
                 
-                <div className="bg-verde-claro/40 rounded-lg p-4">
+                <div className="bg-verde-claro/40 rounder-lg p-4">
                   <h3 className="font-semibold text-gray-800 mb-1">Especializações</h3>
                   <p className="text-gray-600">
                     Medicina Funcional, Nutrigenômica, Medicina Anti-aging e tratamentos avançados para diabetes e distúrbios hormonais femininos.
@@ -79,5 +79,4 @@ const About = () => {
     </section>
   );
 };
-
 export default About;
