@@ -9,40 +9,43 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import PlantDecorations from '../components/PlantDecorations';
+import { ThemeProvider } from '../hooks/useTheme';
 import { logStyleChange, logSystemUpdate } from '../utils/updateLogger';
 import { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
     // Registrar inicialização da página principal
-    logSystemUpdate('Página principal carregada com tema escuro', 'Index');
+    logSystemUpdate('Página principal carregada com sistema de tema dinâmico', 'Index');
     
     // Registrar mudanças aplicadas
     logStyleChange(
-      'Tema escuro aplicado como padrão permanente',
+      'Sistema de tema escuro/claro implementado com acessibilidade completa',
       'Index',
-      'Removido tema branco, melhorada acessibilidade'
+      'Adicionado toggle de tema, animações melhoradas, contraste otimizado'
     );
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-900 relative">
-      {/* Plant decorations are positioned with fixed positioning */}
-      <PlantDecorations />
-      
-      {/* Main content positioned above the decorative plants */}
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <About />
-        <Specialties />
-        <Blog />
-        <Appointment />
-        <Contact />
-        <Footer />
-        <FloatingWhatsApp />
+    <ThemeProvider>
+      <div className="min-h-screen bg-background relative transition-colors duration-300">
+        {/* Plant decorations are positioned with fixed positioning */}
+        <PlantDecorations />
+        
+        {/* Main content positioned above the decorative plants */}
+        <div className="relative z-10">
+          <Navbar />
+          <Hero />
+          <About />
+          <Specialties />
+          <Blog />
+          <Appointment />
+          <Contact />
+          <Footer />
+          <FloatingWhatsApp />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

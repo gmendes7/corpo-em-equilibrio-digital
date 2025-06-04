@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -6,6 +7,48 @@
 
 @layer base {
   :root {
+    /* Light theme colors */
+    --background: 248 250 252; /* slate-50 */
+    --foreground: 30 41 59; /* slate-800 */
+
+    --card: 255 255 255; /* white */
+    --card-foreground: 30 41 59;
+
+    --popover: 255 255 255;
+    --popover-foreground: 30 41 59;
+
+    --primary: 82 61% 35%; /* verde-musgo */
+    --primary-foreground: 248 250 252;
+
+    --secondary: 241 245 249; /* slate-100 */
+    --secondary-foreground: 30 41 59;
+
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139; /* slate-500 */
+
+    --accent: 241 245 249;
+    --accent-foreground: 30 41 59;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 248 250 252;
+
+    --border: 226 232 240; /* slate-200 */
+    --input: 226 232 240;
+    --ring: 82 61% 35%;
+
+    --radius: 0.5rem;
+
+    /* Custom color variables for light natural palette */
+    --verde-musgo: 82 61% 35%;
+    --verde-claro: 141 36% 75%;
+    --branco-areia: 248 250 252;
+    --marrom-terra: 40 36% 74%;
+    --roxo-espiritual: 270 50% 25%;
+    --lilas-tranquilo: 270 50% 90%;
+  }
+
+  [data-theme="dark"] {
+    /* Dark theme colors */
     --background: 15 23 42; /* slate-900 */
     --foreground: 248 250 252; /* slate-50 */
 
@@ -34,44 +77,39 @@
     --input: 51 65 85;
     --ring: 82 61% 35%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 30 41 59;
-    --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 82 61% 35%;
-    --sidebar-primary-foreground: 248 250 252;
-    --sidebar-accent: 51 65 85;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 51 65 85;
-    --sidebar-ring: 82 61% 35%;
-
     /* Custom color variables for dark natural palette */
-    --verde-musgo: 82 61% 35%;
-    --verde-claro: 141 36% 75%;
-    --branco-areia: 15 23 42; /* Darker background */
-    --marrom-terra: 40 36% 74%;
+    --verde-musgo: 82 61% 40%;
+    --verde-claro: 141 36% 65%;
+    --branco-areia: 15 23 42;
+    --marrom-terra: 40 36% 50%;
+    --roxo-espiritual: 270 50% 35%;
+    --lilas-tranquilo: 270 30% 20%;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {
-    @apply font-lato text-slate-100 bg-slate-900;
+    @apply bg-background text-foreground font-lato transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-semibold text-slate-50;
+    @apply font-playfair font-semibold text-foreground;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-verde-musgo to-verde-musgo/90 hover:from-verde-musgo/90 hover:to-verde-musgo text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-verde-musgo/25 transform hover:-translate-y-1;
+    @apply bg-gradient-to-r from-verde-musgo to-verde-musgo/90 hover:from-verde-musgo/90 hover:to-verde-musgo text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-verde-musgo/25 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-verde-musgo focus:ring-offset-2 focus:ring-offset-background;
   }
   
   .btn-secondary {
-    @apply bg-slate-800/50 backdrop-blur-sm border border-slate-600 hover:bg-slate-700/50 text-slate-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:border-verde-claro/50;
+    @apply bg-card/50 backdrop-blur-sm border border-border hover:bg-card/70 text-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:border-verde-claro/50 focus:outline-none focus:ring-2 focus:ring-verde-musgo focus:ring-offset-2 focus:ring-offset-background;
   }
 
   .section {
-    @apply py-20 px-6 md:px-12 bg-slate-900;
+    @apply py-20 px-6 md:px-12 bg-background transition-colors duration-300;
   }
 
   .container-custom {
@@ -79,11 +117,11 @@
   }
 
   .nav-link {
-    @apply relative text-slate-300 hover:text-verde-claro font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-musgo after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
+    @apply relative text-muted-foreground hover:text-foreground font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-musgo after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
   }
 
   .nav-link-active {
-    @apply text-verde-claro after:scale-x-100;
+    @apply text-foreground after:scale-x-100;
   }
 
   .card-hover {
@@ -91,7 +129,7 @@
   }
 
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply bg-card/10 backdrop-blur-md border border-border/20;
   }
 
   .gradient-text {
@@ -99,55 +137,94 @@
   }
 }
 
-/* Enhanced animations */
-@keyframes float {
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Improved plant animations with better performance */
+@keyframes plant-gentle-sway {
   0%, 100% { 
-    transform: translateY(0px) rotate(0deg); 
+    transform: rotate(-2deg) translateY(0px); 
+  }
+  25% { 
+    transform: rotate(1deg) translateY(-3px); 
   }
   50% { 
-    transform: translateY(-20px) rotate(3deg); 
+    transform: rotate(2deg) translateY(0px); 
+  }
+  75% { 
+    transform: rotate(-1deg) translateY(3px); 
   }
 }
 
-@keyframes slide-in-right {
-  0% { 
-    transform: translateX(100px); 
-    opacity: 0; 
-  }
-  100% { 
-    transform: translateX(0); 
-    opacity: 1; 
-  }
-}
-
-@keyframes gentle-pulse {
+@keyframes plant-float {
   0%, 100% { 
-    opacity: 1; 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-12px) scale(1.02); 
+  }
+}
+
+@keyframes plant-breathe {
+  0%, 100% { 
     transform: scale(1); 
+    opacity: 0.8; 
   }
   50% { 
-    opacity: 0.8; 
     transform: scale(1.05); 
+    opacity: 1; 
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+@keyframes leaf-shimmer {
+  0%, 100% { 
+    filter: brightness(1) saturate(1); 
+  }
+  50% { 
+    filter: brightness(1.1) saturate(1.2); 
+  }
 }
 
-.animate-slide-in-right {
-  animation: slide-in-right 0.5s ease-out forwards;
+/* Plant animation classes */
+.plant-sway {
+  animation: plant-gentle-sway 8s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
 }
 
-.animate-gentle-pulse {
-  animation: gentle-pulse 3s ease-in-out infinite;
+.plant-float {
+  animation: plant-float 12s ease-in-out infinite;
+  will-change: transform;
 }
 
-/* Improved staggered animations */
+.plant-breathe {
+  animation: plant-breathe 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.plant-gentle-sway {
+  animation: plant-gentle-sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-gentle-sway-delayed {
+  animation: plant-gentle-sway 6s ease-in-out 2s infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.leaf-shimmer {
+  animation: leaf-shimmer 4s ease-in-out infinite;
+}
+
+/* Staggered fade-in animations */
 .staggered-fade-in > * {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fade-in-up 0.8s ease-out forwards;
+  transform: translateY(20px);
+  animation: fade-in-up 0.6s ease-out forwards;
 }
 
 .staggered-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
@@ -155,12 +232,11 @@
 .staggered-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
 .staggered-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
 .staggered-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
-.staggered-fade-in > *:nth-child(6) { animation-delay: 0.6s; }
 
 @keyframes fade-in-up {
   0% { 
     opacity: 0; 
-    transform: translateY(30px); 
+    transform: translateY(20px); 
   }
   100% { 
     opacity: 1; 
@@ -168,36 +244,64 @@
   }
 }
 
-/* Modern button effects */
-.btn-primary:active {
-  transform: translateY(-1px) scale(0.98);
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-.btn-secondary:active {
-  transform: translateY(-1px) scale(0.98);
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
 }
 
-/* Gradient backgrounds */
-.bg-gradient-radial {
-  background: radial-gradient(circle, var(--tw-gradient-stops));
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .plant-sway,
+  .plant-float,
+  .plant-breathe,
+  .plant-gentle-sway,
+  .plant-gentle-sway-delayed {
+    animation-duration: 4s;
+  }
 }
 
-/* Custom scrollbar */
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .plant-sway,
+  .plant-float,
+  .plant-breathe,
+  .plant-gentle-sway,
+  .plant-gentle-sway-delayed,
+  .leaf-shimmer {
+    animation: none;
+  }
+  
+  * {
+    transition: none !important;
+  }
+}
+
+/* Custom scrollbar for both themes */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #059669;
+  background: hsl(var(--verde-musgo));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #047857;
+  background: hsl(var(--verde-musgo) / 0.8);
 }
 
 /* Smooth scrolling */
@@ -205,290 +309,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Plant animation base classes */
-.plant-sway {
-  animation: plant-sway 15s ease-in-out infinite;
-  transform-origin: bottom center;
-  will-change: transform;
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid hsl(var(--verde-musgo));
+  outline-offset: 2px;
 }
 
-.plant-float {
-  animation: plant-float 18s ease-in-out infinite;
-  will-change: transform;
-}
-
-.plant-rotate {
-  animation: plant-rotate 25s linear infinite;
-  will-change: transform;
-}
-
-.plant-gentle-sway {
-  animation: plant-gentle-sway 12s ease-in-out infinite;
-  transform-origin: bottom center;
-  will-change: transform;
-}
-
-.plant-gentle-sway-delayed {
-  animation: plant-gentle-sway 12s ease-in-out 1.5s infinite;
-  transform-origin: bottom center;
-  will-change: transform;
-}
-
-.plant-breathe {
-  animation: plant-breathe 12s ease-in-out infinite;
-  will-change: transform;
-}
-
-.plant-leaf-left, .plant-leaf-right {
-  transform-origin: bottom center;
-  animation: branch-sway 14s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-/* Optimized plant animations with subtle movement */
-@keyframes plant-sway {
-  0%, 100% { transform: rotate(-3deg) translateY(0); }
-  50% { transform: rotate(3deg) translateY(-5px); }
-}
-
-@keyframes plant-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-@keyframes plant-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes plant-gentle-sway {
-  0%, 100% { transform: rotate(-1.5deg) translateY(0px); }
-  50% { transform: rotate(1.5deg) translateY(-4px); }
-}
-
-@keyframes plant-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-@keyframes branch-sway {
-  0% { transform: rotate(-2deg) scale(0.98); }
-  100% { transform: rotate(2deg) scale(1.02); }
-}
-
-/* For leaf veins and details */
-@keyframes leaf-wobble {
-  0%, 100% { transform: rotate(-1deg) scale(1); }
-  50% { transform: rotate(1deg) scale(1.03); }
-}
-
-/* Media query for reduced motion preference */
-@media (prefers-reduced-motion) {
-  .plant-sway,
-  .plant-float,
-  .plant-rotate,
-  .plant-gentle-sway,
-  .plant-gentle-sway-delayed,
-  .plant-breathe,
-  .plant-leaf-left,
-  .plant-leaf-right {
-    animation: none;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --verde-musgo: 82 100% 25%;
+    --verde-claro: 141 100% 35%;
   }
-}
-
-/* Target SVG internal elements for additional animations */
-.leaf-path {
-  animation: leaf-wobble 16s ease-in-out infinite;
-  transform-origin: center;
-}
-
-.leaf-vein {
-  animation: leaf-wobble 14s ease-in-out 0.5s infinite;
-  transform-origin: center;
-}
-
-.fern-path {
-  animation: leaf-wobble 10s ease-in-out infinite;
-  transform-origin: bottom;
-}
-
-.fern-stem {
-  animation: leaf-wobble 12s ease-in-out 0.3s infinite;
-  transform-origin: bottom;
-}
-
-.monstera-leaf {
-  filter: drop-shadow(0 0 2px rgba(125, 177, 0, 0.1));
-}
-
-/* Enhanced plant animation classes */
-.leaf-animation {
-  animation: gentle-sway 7s ease-in-out infinite;
-}
-
-.leaf-float {
-  animation: leaf-float 10s ease-in-out infinite;
-}
-
-.leaf-rotate {
-  animation: leaf-rotate 15s linear infinite;
-}
-
-.gentle-sway {
-  animation: gentle-sway 7s ease-in-out infinite;
-}
-
-/* New SVG plant animations */
-.svg-plant-animation {
-  animation: svg-plant-sway 8s ease-in-out infinite;
-}
-
-.svg-plant-sway {
-  animation: svg-plant-sway 10s ease-in-out infinite alternate;
-}
-
-.svg-plant-float {
-  animation: svg-plant-float 12s ease-in-out infinite;
-}
-
-.svg-plant-rotate {
-  animation: svg-plant-rotate 25s linear infinite;
-}
-
-.svg-plant-bounce {
-  animation: svg-plant-bounce 7s ease-in-out infinite;
-}
-
-.plant-branch-left, .plant-branch-right {
-  transform-origin: bottom center;
-  animation: branch-sway 8s ease-in-out infinite alternate;
-}
-
-.plant-leaf {
-  animation: leaf-wobble 6s ease-in-out infinite;
-}
-
-.staggered-fade-in > * {
-  opacity: 0;
-  animation: fade-in 0.6s ease-out forwards;
-}
-
-.staggered-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
-.staggered-fade-in > *:nth-child(2) { animation-delay: 0.3s; }
-.staggered-fade-in > *:nth-child(3) { animation-delay: 0.5s; }
-.staggered-fade-in > *:nth-child(4) { animation-delay: 0.7s; }
-.staggered-fade-in > *:nth-child(5) { animation-delay: 0.9s; }
-
-/* Enhanced plant animations */
-@keyframes gentle-sway {
-  0%, 100% { transform: rotate(-3deg) translateY(0); }
-  25% { transform: rotate(0deg) translateY(-5px); }
-  50% { transform: rotate(3deg) translateY(0); }
-  75% { transform: rotate(0deg) translateY(5px); }
-}
-
-@keyframes leaf-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-15px) rotate(5deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(15px) rotate(-5deg); }
-}
-
-@keyframes leaf-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* SVG plant specific animations */
-@keyframes svg-plant-sway {
-  0%, 100% { transform: rotate(-5deg) scale(1); }
-  50% { transform: rotate(5deg) scale(1.05); }
-}
-
-@keyframes svg-plant-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-20px) rotate(5deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(15px) rotate(-5deg); }
-}
-
-@keyframes svg-plant-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes svg-plant-bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-20px); }
-  60% { transform: translateY(-10px); }
-}
-
-@keyframes branch-sway {
-  0% { transform: rotate(-5deg) scale(0.95); }
-  100% { transform: rotate(5deg) scale(1.05); }
-}
-
-/* Adding the creeper vine animation */
-.creeper-animation {
-  animation: grow-vine 15s ease-out forwards;
-  transform-origin: bottom left;
-}
-
-@keyframes grow-vine {
-  0% { transform: scaleY(0); opacity: 0; }
-  100% { transform: scaleY(1); opacity: 1; }
-}
-
-/* Additional animations */
-.slide-in-right {
-  animation: slide-in-right 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes slide-in-right {
-  0% { transform: translateX(50px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-/* WhatsApp floating button */
-.float-whatsapp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 100;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 157, 92, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(74, 157, 92, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74, 157, 92, 0); }
-}
-
-/* New subtle wobble animation for leaves */
-.leaf-wobble {
-  animation: leaf-wobble 8s ease-in-out infinite;
-}
-
-@keyframes leaf-wobble {
-  0%, 100% { transform: rotate(-2deg) scale(1); }
-  25% { transform: rotate(0deg) scale(1.03); }
-  50% { transform: rotate(2deg) scale(1); }
-  75% { transform: rotate(0deg) scale(0.98); }
-}
-
-/* Breathing effect for plants */
-.plant-breathe {
-  animation: plant-breathe 12s ease-in-out infinite;
-}
-
-@keyframes plant-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* Fade in animation */
-@keyframes fade-in {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  
+  [data-theme="dark"] {
+    --verde-musgo: 82 100% 45%;
+    --verde-claro: 141 100% 65%;
+  }
 }

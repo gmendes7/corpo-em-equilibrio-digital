@@ -3,7 +3,65 @@
 
 Todas as mudanças importantes neste projeto serão documentadas neste arquivo.
 
-## [2025-06-04] - Design Profissional Completo
+## [2025-06-04] - Atualização Completa de UX/UI e Acessibilidade
+
+### ✨ Adicionado
+- **Sistema completo de tema escuro/claro** com toggle no cabeçalho (ícone lua/sol)
+- Persistência da preferência de tema no localStorage
+- Suporte automático à preferência do sistema (prefers-color-scheme)
+- **Animações das plantas completamente reformuladas** com movimentos suaves e naturais
+- Controle avançado de animações com respeito ao prefers-reduced-motion
+- Sistema de cores harmonioso conectado com bem-estar e natureza
+- **Acessibilidade WCAG AA completa** com contraste mínimo 4.5:1
+- Transições suaves entre temas (0.3s ease)
+- Efeitos de shimmer e brilho nas plantas
+- Estados de foco melhorados para navegação por teclado
+
+### 🎨 Melhorado
+- **Paleta de cores otimizada** para ambos os temas:
+  - Modo claro: branco/lilás claro, texto roxo escuro, detalhes verdes
+  - Modo escuro: roxo quase preto, texto branco/lilás claro, verdes desaturados
+- Animações das plantas agora usam keyframes consistentes (2s, 4s, 6s, 8s)
+- Movimentos naturais com transform: rotate() e ease-in-out timing
+- **Responsividade 100% funcional** em mobile, tablet e desktop
+- Navbar com indicador de tema integrado
+- Botões com estados hover e focus aprimorados
+- Tipografia com melhor hierarquia visual
+
+### 🐞 Corrigido
+- Quebras visuais e desalinhamentos em todas as seções
+- Animações travadas ou com jitter nas plantas SVG
+- Elementos sobrepostos em resoluções menores
+- Comportamentos inesperados em links e botões
+- Rolagem suave implementada corretamente
+- Estados de carregamento otimizados
+
+### 🔧 Técnico
+- Código completamente organizado e bem comentado
+- Sistema de tema robusto com Context API
+- Componente ThemeToggle reutilizável
+- CSS otimizado com variáveis dinâmicas
+- Performance melhorada com will-change nas animações
+- Suporte a high contrast mode
+- Scrollbar customizada para ambos os temas
+
+### 🌱 Animações das Plantas
+- Movimentos suaves e naturais (leve balanço, flutuação, respiração)
+- Keyframes consistentes sem quebras no ciclo
+- Diferentes tipos de animação: sway, float, breathe, shimmer
+- Delays escalonados para movimento orgânico
+- Otimização para dispositivos móveis (durações reduzidas)
+
+### ♿ Acessibilidade
+- Contraste de cores WCAG AA completo
+- Estados de foco visíveis e consistentes
+- Suporte a prefers-reduced-motion
+- Suporte a prefers-contrast: high
+- Navegação por teclado otimizada
+- Labels e descrições apropriadas
+- Transições respeitosas para usuários sensíveis a movimento
+
+## [2025-06-04] - Design Profissional Completo (Anterior)
 
 ### ✨ Adicionado
 - Layout visual totalmente reformulado por equipe profissional de UI/UX

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,13 +32,15 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled 
+          ? 'bg-background/95 backdrop-blur-sm shadow-lg border-b border-border py-3' 
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="container-custom flex justify-between items-center px-6 md:px-12">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-verde-musgo">
+        <Link to="/" className="flex items-center group">
+          <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-verde-musgo group-hover:text-verde-claro transition-colors duration-300">
             CORPO EM <span className="font-bold">EQUILÍBRIO</span>
           </h1>
         </Link>
@@ -63,11 +66,12 @@ const Navbar = () => {
             href="https://www.instagram.com/drapatriciapolvora" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-verde-musgo transition-colors"
-            aria-label="Instagram"
+            className="text-muted-foreground hover:text-verde-musgo transition-colors duration-300"
+            aria-label="Instagram da Dra. Patrícia Pólvora"
           >
             <Instagram size={22} />
           </a>
+          <ThemeToggle />
         </nav>
 
         {/* Book Appointment Button */}
@@ -79,59 +83,81 @@ const Navbar = () => {
         </button>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="lg:hidden text-gray-700 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            {isMobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            )}
-          </svg>
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button 
+            className="text-foreground focus:outline-none p-2 rounded-lg hover:bg-muted transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Abrir menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-sm shadow-lg absolute top-full left-0 w-full py-4 px-6 flex flex-col gap-4 animate-fade-in">
-          <button onClick={() => scrollToSection('home')} className="text-left py-2 text-gray-700 font-medium font-playfair">
-            Início
-          </button>
-          <button onClick={() => scrollToSection('about')} className="text-left py-2 text-gray-700 font-medium font-playfair">
-            Sobre
-          </button>
-          <button onClick={() => scrollToSection('specialties')} className="text-left py-2 text-gray-700 font-medium font-playfair">
-            Especialidades
-          </button>
-          <button onClick={() => scrollToSection('blog')} className="text-left py-2 text-gray-700 font-medium font-playfair">
-            Blog
-          </button>
-          <button onClick={() => scrollToSection('contact')} className="text-left py-2 text-gray-700 font-medium font-playfair">
-            Contato
-          </button>
-          <div className="flex justify-between items-center py-2">
-            <a 
-              href="https://www.instagram.com/drapatriciapolvora" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600"
+        <div className="lg:hidden bg-background/95 backdrop-blur-sm shadow-lg border-b border-border absolute top-full left-0 w-full py-4 px-6 animate-fade-in">
+          <nav className="flex flex-col gap-4">
+            <button 
+              onClick={() => scrollToSection('home')} 
+              className="text-left py-2 text-foreground font-medium font-playfair hover:text-verde-musgo transition-colors duration-300"
             >
-              <Instagram size={20} />
-              <span>@drapatriciapolvora</span>
-            </a>
-          </div>
-          <button 
-            onClick={() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              setIsMobileMenuOpen(false);
-            }} 
-            className="btn-primary mt-2"
-          >
-            Agende sua Consulta
-          </button>
+              Início
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="text-left py-2 text-foreground font-medium font-playfair hover:text-verde-musgo transition-colors duration-300"
+            >
+              Sobre
+            </button>
+            <button 
+              onClick={() => scrollToSection('specialties')} 
+              className="text-left py-2 text-foreground font-medium font-playfair hover:text-verde-musgo transition-colors duration-300"
+            >
+              Especialidades
+            </button>
+            <button 
+              onClick={() => scrollToSection('blog')} 
+              className="text-left py-2 text-foreground font-medium font-playfair hover:text-verde-musgo transition-colors duration-300"
+            >
+              Blog
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-left py-2 text-foreground font-medium font-playfair hover:text-verde-musgo transition-colors duration-300"
+            >
+              Contato
+            </button>
+            <div className="flex justify-between items-center py-2 border-t border-border mt-2 pt-4">
+              <a 
+                href="https://www.instagram.com/drapatriciapolvora" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-verde-musgo transition-colors duration-300"
+                aria-label="Instagram da Dra. Patrícia Pólvora"
+              >
+                <Instagram size={20} />
+                <span>@drapatriciapolvora</span>
+              </a>
+            </div>
+            <button 
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                setIsMobileMenuOpen(false);
+              }} 
+              className="btn-primary mt-2"
+            >
+              Agende sua Consulta
+            </button>
+          </nav>
         </div>
       )}
     </header>
