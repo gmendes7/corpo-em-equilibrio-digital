@@ -15,13 +15,13 @@ const ThemeToggle = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <Sun 
           size={18} 
-          className={`text-yellow-600 transition-all duration-300 ${
+          className={`text-verde-musgo transition-all duration-300 ${
             theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
           }`}
         />
         <Moon 
           size={18} 
-          className={`absolute text-blue-400 transition-all duration-300 ${
+          className={`absolute text-verde-claro dark:text-white transition-all duration-300 ${
             theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
           }`}
         />
