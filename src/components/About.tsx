@@ -7,7 +7,7 @@ const About = () => {
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-musgo to-transparent"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23059669" fill-opacity="0.02"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23059669\" fill-opacity=\"0.02\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
       </div>
 
       <div className="relative z-10 container-custom px-6 md:px-12">
@@ -97,7 +97,7 @@ const About = () => {
               
               {/* Quote */}
               <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-verde-claro/5 rounded-2xl p-6 border-l-4 border-verde-musgo">
-                <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">"</div>
+                <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">&quot;</div>
                 <p className="text-slate-700 font-medium italic leading-relaxed pt-6">
                   Minha missão é transformar vidas através de uma medicina que vê o ser humano de forma integral, 
                   utilizando a ciência moderna aliada à sabedoria natural do corpo.
