@@ -76,7 +76,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Natural color palette - original design
+				// Natural color palette - corrected colors
 				'verde-musgo': {
 					DEFAULT: 'hsl(var(--verde-musgo))', // Deep forest green
 					light: 'hsl(var(--verde-claro))', // Light natural green
