@@ -1,0 +1,144 @@
+
+/* Improved plant animations with better performance */
+@keyframes plant-gentle-sway {
+  0%, 100% { 
+    transform: rotate(-2deg) translateY(0px); 
+  }
+  25% { 
+    transform: rotate(1deg) translateY(-3px); 
+  }
+  50% { 
+    transform: rotate(2deg) translateY(0px); 
+  }
+  75% { 
+    transform: rotate(-1deg) translateY(3px); 
+  }
+}
+
+@keyframes plant-float {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-12px) scale(1.02); 
+  }
+}
+
+@keyframes plant-breathe {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 1; 
+  }
+}
+
+@keyframes leaf-shimmer {
+  0%, 100% { 
+    filter: brightness(1) saturate(1); 
+  }
+  50% { 
+    filter: brightness(1.1) saturate(1.2); 
+  }
+}
+
+@keyframes fade-in-up {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Plant animation classes */
+.plant-sway {
+  animation: plant-gentle-sway 8s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-float {
+  animation: plant-float 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+.plant-breathe {
+  animation: plant-breathe 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.plant-gentle-sway {
+  animation: plant-gentle-sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.plant-gentle-sway-delayed {
+  animation: plant-gentle-sway 6s ease-in-out 2s infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.leaf-shimmer {
+  animation: leaf-shimmer 4s ease-in-out infinite;
+}
+
+/* Staggered fade-in animations */
+.staggered-fade-in > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.staggered-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+.staggered-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+.staggered-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+.staggered-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+.staggered-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .plant-sway,
+  .plant-float,
+  .plant-breathe,
+  .plant-gentle-sway,
+  .plant-gentle-sway-delayed {
+    animation-duration: 4s;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .plant-sway,
+  .plant-float,
+  .plant-breathe,
+  .plant-gentle-sway,
+  .plant-gentle-sway-delayed,
+  .leaf-shimmer {
+    animation: none;
+  }
+  
+  * {
+    transition: none !important;
+  }
+}
