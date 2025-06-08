@@ -7,83 +7,83 @@
 
 @layer base {
   :root {
-    /* Light theme colors */
-    --background: 248 250 252; /* slate-50 */
-    --foreground: 30 41 59; /* slate-800 */
+    /* Light theme colors - Natural palette */
+    --background: 249 250 251; /* Natural off-white */
+    --foreground: 59 69 47; /* Verde escuro natural */
 
-    --card: 255 255 255; /* white */
-    --card-foreground: 30 41 59;
+    --card: 255 255 255; /* Pure white */
+    --card-foreground: 59 69 47;
 
     --popover: 255 255 255;
-    --popover-foreground: 30 41 59;
+    --popover-foreground: 59 69 47;
 
     --primary: 82 61% 35%; /* verde-musgo */
-    --primary-foreground: 248 250 252;
+    --primary-foreground: 249 250 251;
 
-    --secondary: 241 245 249; /* slate-100 */
-    --secondary-foreground: 30 41 59;
+    --secondary: 246 248 246; /* Verde muito claro */
+    --secondary-foreground: 59 69 47;
 
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139; /* slate-500 */
+    --muted: 246 248 246;
+    --muted-foreground: 107 114 128; /* Cinza natural */
 
-    --accent: 241 245 249;
-    --accent-foreground: 30 41 59;
+    --accent: 246 248 246;
+    --accent-foreground: 59 69 47;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 249 250 251;
 
-    --border: 226 232 240; /* slate-200 */
-    --input: 226 232 240;
+    --border: 209 213 219; /* Cinza claro natural */
+    --input: 209 213 219;
     --ring: 82 61% 35%;
 
     --radius: 0.5rem;
 
-    /* Custom color variables for light natural palette */
-    --verde-musgo: 82 61% 35%;
-    --verde-claro: 141 36% 75%;
-    --branco-areia: 248 250 252;
-    --marrom-terra: 40 36% 74%;
-    --roxo-espiritual: 270 50% 25%;
-    --lilas-tranquilo: 270 50% 90%;
+    /* Custom color variables for natural palette */
+    --verde-musgo: 82 61% 35%; /* #6B8E23 */
+    --verde-claro: 141 45% 70%; /* #A8D5BA */
+    --branco-areia: 249 250 251; /* #F9FAFB */
+    --marrom-terra: 40 36% 60%; /* #B8956A */
+    --roxo-espiritual: 270 30% 25%;
+    --lilas-tranquilo: 270 30% 85%;
   }
 
   [data-theme="dark"] {
-    /* Dark theme colors */
-    --background: 15 23 42; /* slate-900 */
-    --foreground: 248 250 252; /* slate-50 */
+    /* Dark theme colors - Natural dark palette */
+    --background: 28 25 23; /* Marrom escuro natural */
+    --foreground: 248 250 252; /* Branco natural */
 
-    --card: 30 41 59; /* slate-800 */
+    --card: 41 37 36; /* Marrom médio */
     --card-foreground: 248 250 252;
 
-    --popover: 30 41 59;
+    --popover: 41 37 36;
     --popover-foreground: 248 250 252;
 
-    --primary: 82 61% 35%; /* verde-musgo */
+    --primary: 82 61% 40%; /* verde-musgo mais claro */
     --primary-foreground: 248 250 252;
 
-    --secondary: 51 65 85; /* slate-600 */
+    --secondary: 68 64 60; /* Marrom acinzentado */
     --secondary-foreground: 248 250 252;
 
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184; /* slate-400 */
+    --muted: 68 64 60;
+    --muted-foreground: 161 161 170; /* Cinza claro */
 
-    --accent: 51 65 85;
+    --accent: 68 64 60;
     --accent-foreground: 248 250 252;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 248 250 252;
 
-    --border: 51 65 85; /* slate-600 */
-    --input: 51 65 85;
-    --ring: 82 61% 35%;
+    --border: 68 64 60;
+    --input: 68 64 60;
+    --ring: 82 61% 40%;
 
     /* Custom color variables for dark natural palette */
-    --verde-musgo: 82 61% 40%;
-    --verde-claro: 141 36% 65%;
-    --branco-areia: 15 23 42;
-    --marrom-terra: 40 36% 50%;
-    --roxo-espiritual: 270 50% 35%;
-    --lilas-tranquilo: 270 30% 20%;
+    --verde-musgo: 82 61% 45%;
+    --verde-claro: 141 35% 60%;
+    --branco-areia: 28 25 23;
+    --marrom-terra: 40 36% 40%;
+    --roxo-espiritual: 270 30% 35%;
+    --lilas-tranquilo: 270 20% 25%;
   }
 
   * {

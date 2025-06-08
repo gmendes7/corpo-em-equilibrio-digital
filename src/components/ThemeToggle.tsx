@@ -8,7 +8,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-verde-musgo focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
+      className="relative w-10 h-10 rounded-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm border border-verde-claro/30 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-verde-musgo focus:ring-offset-2 focus:ring-offset-background shadow-lg"
       aria-label={`Alternar para modo ${theme === 'light' ? 'escuro' : 'claro'}`}
       title={`Modo ${theme === 'light' ? 'escuro' : 'claro'}`}
     >
@@ -21,7 +21,7 @@ const ThemeToggle = () => {
         />
         <Moon 
           size={18} 
-          className={`absolute text-verde-claro dark:text-white transition-all duration-300 ${
+          className={`absolute text-slate-600 dark:text-slate-300 transition-all duration-300 ${
             theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
           }`}
         />
