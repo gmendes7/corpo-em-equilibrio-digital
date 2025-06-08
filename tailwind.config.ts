@@ -78,17 +78,17 @@ export default {
 				},
 				// Natural color palette - original design
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // #6B8E23
-					light: 'hsl(var(--verde-claro))', // #A8D5BA
+					DEFAULT: 'hsl(var(--verde-musgo))', // Deep forest green
+					light: 'hsl(var(--verde-claro))', // Light natural green
 				},
 				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // #A8D5BA
+					DEFAULT: 'hsl(var(--verde-claro))', // Light natural green
 				},
 				'branco-areia': {
 					DEFAULT: 'hsl(var(--branco-areia))', // Natural off-white
 				},
 				'marrom-terra': {
-					DEFAULT: 'hsl(var(--marrom-terra))', // Natural brown
+					DEFAULT: 'hsl(var(--marrom-terra))', // Natural earth brown
 				},
 			},
 			fontFamily: {

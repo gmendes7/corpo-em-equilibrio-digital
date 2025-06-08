@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -8,78 +7,78 @@
 @layer base {
   :root {
     /* Light theme colors - Natural palette */
-    --background: 249 250 251; /* Natural off-white */
-    --foreground: 59 69 47; /* Verde escuro natural */
+    --background: 250 251 252; /* Natural off-white */
+    --foreground: 28 25 23; /* Dark brown natural */
 
     --card: 255 255 255; /* Pure white */
-    --card-foreground: 59 69 47;
+    --card-foreground: 28 25 23;
 
     --popover: 255 255 255;
-    --popover-foreground: 59 69 47;
+    --popover-foreground: 28 25 23;
 
-    --primary: 82 61% 35%; /* verde-musgo */
-    --primary-foreground: 249 250 251;
+    --primary: 120 60% 25%; /* Deep natural green */
+    --primary-foreground: 250 251 252;
 
-    --secondary: 246 248 246; /* Verde muito claro */
-    --secondary-foreground: 59 69 47;
+    --secondary: 120 30% 85%; /* Very light green */
+    --secondary-foreground: 28 25 23;
 
-    --muted: 246 248 246;
-    --muted-foreground: 107 114 128; /* Cinza natural */
+    --muted: 120 15% 92;
+    --muted-foreground: 120 10% 40; /* Natural gray-green */
 
-    --accent: 246 248 246;
-    --accent-foreground: 59 69 47;
+    --accent: 120 30% 85;
+    --accent-foreground: 28 25 23;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 249 250 251;
+    --destructive-foreground: 250 251 252;
 
-    --border: 209 213 219; /* Cinza claro natural */
-    --input: 209 213 219;
-    --ring: 82 61% 35%;
+    --border: 120 20% 80; /* Light natural green-gray */
+    --input: 120 20% 80;
+    --ring: 120 60% 25;
 
     --radius: 0.5rem;
 
     /* Custom color variables for natural palette */
-    --verde-musgo: 82 61% 35%; /* #6B8E23 */
-    --verde-claro: 141 45% 70%; /* #A8D5BA */
-    --branco-areia: 249 250 251; /* #F9FAFB */
-    --marrom-terra: 40 36% 45%; /* #8B7355 */
+    --verde-musgo: 120 60% 25%; /* Deep forest green */
+    --verde-claro: 120 40% 70%; /* Light natural green */
+    --branco-areia: 250 251 252; /* Natural off-white */
+    --marrom-terra: 30 30% 35%; /* Natural earth brown */
   }
 
   [data-theme="dark"] {
     /* Dark theme colors - Natural dark palette */
-    --background: 28 25 23; /* Marrom escuro natural */
-    --foreground: 248 250 252; /* Branco natural */
+    --background: 28 25 23; /* Dark brown natural */
+    --foreground: 250 251 252; /* Natural white */
 
-    --card: 41 37 36; /* Marrom médio */
-    --card-foreground: 248 250 252;
+    --card: 30 25 20; /* Dark brown */
+    --card-foreground: 250 251 252;
 
-    --popover: 41 37 36;
-    --popover-foreground: 248 250 252;
+    --popover: 30 25 20;
+    --popover-foreground: 250 251 252;
 
-    --primary: 82 61% 40%; /* verde-musgo mais claro */
-    --primary-foreground: 248 250 252;
+    --primary: 120 50% 35%; /* Lighter green for dark mode */
+    --primary-foreground: 250 251 252;
 
-    --secondary: 68 64 60; /* Marrom acinzentado */
-    --secondary-foreground: 248 250 252;
+    --secondary: 30 20% 25; /* Dark brown-gray */
+    --secondary-foreground: 250 251 252;
 
-    --muted: 68 64 60;
-    --muted-foreground: 161 161 170; /* Cinza claro */
+    --muted: 30 20% 25;
+    --muted-foreground: 120 15% 70; /* Light green-gray */
 
-    --accent: 68 64 60;
-    --accent-foreground: 248 250 252;
+    --accent: 30 20% 25;
+    --accent-foreground: 250 251 252;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 250 251 252;
 
-    --border: 68 64 60;
-    --input: 68 64 60;
-    --ring: 82 61% 40%;
+    --border: 30 20% 30;
+    --input: 30 20% 30;
+    --ring: 120 50% 35;
 
     /* Custom color variables for dark natural palette */
-    --verde-musgo: 82 61% 45%;
-    --verde-claro: 141 35% 60%;
+    --verde-musgo: 120 50% 40%;
+    --verde-claro: 120 30% 60%;
     --branco-areia: 28 25 23;
-    --marrom-terra: 40 36% 40%;
+    --marrom-terra: 30 25% 30%;
   }
 
   * {
@@ -314,12 +313,12 @@ html {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
-    --verde-musgo: 82 100% 25%;
-    --verde-claro: 141 100% 35%;
+    --verde-musgo: 120 100% 20%;
+    --verde-claro: 120 100% 35%;
   }
   
   [data-theme="dark"] {
-    --verde-musgo: 82 100% 45%;
-    --verde-claro: 141 100% 65%;
+    --verde-musgo: 120 100% 45%;
+    --verde-claro: 120 100% 65%;
   }
 }
