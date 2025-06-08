@@ -42,9 +42,7 @@
     --verde-musgo: 82 61% 35%; /* #6B8E23 */
     --verde-claro: 141 45% 70%; /* #A8D5BA */
     --branco-areia: 249 250 251; /* #F9FAFB */
-    --marrom-terra: 40 36% 60%; /* #B8956A */
-    --roxo-espiritual: 270 30% 25%;
-    --lilas-tranquilo: 270 30% 85%;
+    --marrom-terra: 40 36% 45%; /* #8B7355 */
   }
 
   [data-theme="dark"] {
@@ -82,8 +80,6 @@
     --verde-claro: 141 35% 60%;
     --branco-areia: 28 25 23;
     --marrom-terra: 40 36% 40%;
-    --roxo-espiritual: 270 30% 35%;
-    --lilas-tranquilo: 270 20% 25%;
   }
 
   * {
