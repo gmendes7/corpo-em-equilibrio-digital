@@ -59,10 +59,18 @@ const Index = () => {
       'Index',
       '@Gabrielmendes'
     );
+
+    // Registrar nova paleta profissional baseada na imagem de referência
+    logStyleChange(
+      'Aplicada paleta profissional conforme imagem de referência',
+      'Index',
+      'Cores atualizadas: Gradiente cinza escuro (#2A2E30) para azul petróleo (#1F3A3D), verde musgo (#7A9C32) para destaques, azul escuro (#1B2B36) para botões secundários, removidos tons fluorescentes',
+      'Sistema'
+    );
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-cinza-escuro via-background to-azul-petroleo relative transition-colors duration-300">
       {/* Plant decorations are positioned with fixed positioning */}
       <PlantDecorations />
       

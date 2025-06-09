@@ -1,52 +1,54 @@
 
 @layer base {
   :root {
-    /* Paleta verde musgo conforme especificado */
-    --background: 85 107 47; /* Verde musgo #556B2F */
-    --foreground: 255 255 255; /* Branco para texto #FFFFFF */
+    /* Paleta baseada na segunda imagem - tons profissionais e suaves */
+    --background: 42 46 48; /* Cinza escuro #2A2E30 */
+    --foreground: 255 255 255; /* Branco para texto principal */
 
-    --card: 223 240 216; /* Verde claro pastel #DFF0D8 */
-    --card-foreground: 46 74 23; /* Verde escuro para texto nos cards #2E4A17 */
+    --card: 255 255 255; /* Branco para cards */
+    --card-foreground: 27 43 54; /* Azul escuro para texto nos cards #1B2B36 */
 
-    --popover: 223 240 216; /* Verde claro pastel */
-    --popover-foreground: 46 74 23; /* Verde escuro */
+    --popover: 255 255 255; /* Branco para popovers */
+    --popover-foreground: 27 43 54; /* Azul escuro */
 
-    --primary: 46 74 23; /* Verde escuro #2E4A17 */
+    --primary: 122 156 50; /* Verde musgo #7A9C32 */
     --primary-foreground: 255 255 255; /* Branco */
 
-    --secondary: 223 240 216; /* Verde claro pastel */
-    --secondary-foreground: 46 74 23; /* Verde escuro */
+    --secondary: 27 43 54; /* Azul escuro #1B2B36 */
+    --secondary-foreground: 255 255 255; /* Branco */
 
-    --muted: 85 107 47; /* Verde musgo */
-    --muted-foreground: 223 240 216; /* Verde claro pastel para texto */
+    --muted: 142 154 163; /* Cinza médio para elementos secundários #8E9AA3 */
+    --muted-foreground: 111 122 133; /* Cinza escuro para texto secundário #6F7A85 */
 
-    --accent: 46 74 23; /* Verde escuro para destaques */
+    --accent: 122 156 50; /* Verde musgo para destaques */
     --accent-foreground: 255 255 255; /* Branco */
 
     --destructive: 239 68 68; /* Vermelho para ações destrutivas */
     --destructive-foreground: 255 255 255;
 
-    --border: 46 74 23; /* Verde escuro para bordas */
-    --input: 223 240 216; /* Verde claro para inputs */
-    --ring: 46 74 23; /* Verde escuro para focus ring */
+    --border: 220 227 218; /* Bordas suaves #DCE3DA */
+    --input: 255 255 255; /* Branco para inputs */
+    --ring: 122 156 50; /* Verde musgo para focus ring */
 
     --radius: 0.5rem;
 
-    /* Variáveis de cores customizadas - paleta verde musgo */
-    --verde-musgo: 85 107 47; /* Verde musgo principal #556B2F */
-    --verde-claro: 223 240 216; /* Verde claro pastel #DFF0D8 */
-    --verde-medio: 46 74 23; /* Verde escuro #2E4A17 */
-    --branco-areia: 255 255 255; /* Branco puro #FFFFFF */
-    --marrom-terra: 46 74 23; /* Verde escuro para elementos terra */
+    /* Cores customizadas baseadas na segunda imagem */
+    --cinza-escuro: 42 46 48; /* Cinza escuro principal #2A2E30 */
+    --azul-petroleo: 31 58 61; /* Azul petróleo para gradiente #1F3A3D */
+    --verde-musgo: 122 156 50; /* Verde musgo #7A9C32 */
+    --azul-escuro: 27 43 54; /* Azul escuro #1B2B36 */
+    --cinza-medio: 142 154 163; /* Cinza médio #8E9AA3 */
+    --cinza-texto: 111 122 133; /* Cinza para texto secundário #6F7A85 */
+    --branco-puro: 255 255 255; /* Branco puro */
+    --borda-suave: 220 227 218; /* Bordas suaves #DCE3DA */
   }
 }
 
 /* Suporte para modo de alto contraste */
 @media (prefers-contrast: high) {
   :root {
-    --verde-musgo: 70 90 35; /* Verde musgo mais escuro para alto contraste */
-    --verde-claro: 240 250 235; /* Verde ainda mais claro */
-    --background: 70 90 35;
+    --background: 20 24 26; /* Fundo ainda mais escuro para alto contraste */
     --foreground: 255 255 255;
+    --muted-foreground: 180 190 200; /* Texto mais claro para melhor contraste */
   }
 }

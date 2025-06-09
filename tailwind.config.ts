@@ -11,15 +11,15 @@ export default {
 	],
 	safelist: [
 		"bg-verde-musgo",
-		"bg-verde-claro", 
-		"bg-verde-medio",
-		"bg-marrom-terra",
+		"bg-azul-escuro", 
+		"bg-cinza-escuro",
+		"bg-azul-petroleo",
 		"hover:bg-verde-musgo",
-		"hover:bg-verde-claro",
+		"hover:bg-azul-escuro",
 		"text-verde-musgo",
-		"text-verde-claro",
-		"border-verde-claro",
-		"after:bg-verde-claro",
+		"text-azul-escuro",
+		"border-borda-suave",
+		"after:bg-verde-musgo",
 		"gradient-text",
 		"glass-effect",
 		"card-hover"
@@ -78,21 +78,30 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta verde musgo original
+				// Paleta baseada na segunda imagem
+				'cinza-escuro': {
+					DEFAULT: 'hsl(var(--cinza-escuro))', // #2A2E30
+				},
+				'azul-petroleo': {
+					DEFAULT: 'hsl(var(--azul-petroleo))', // #1F3A3D
+				},
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // Verde musgo principal #556B2F
+					DEFAULT: 'hsl(var(--verde-musgo))', // #7A9C32
 				},
-				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro pastel #DFF0D8
+				'azul-escuro': {
+					DEFAULT: 'hsl(var(--azul-escuro))', // #1B2B36
 				},
-				'verde-medio': {
-					DEFAULT: 'hsl(var(--verde-medio))', // Verde escuro #2E4A17
+				'cinza-medio': {
+					DEFAULT: 'hsl(var(--cinza-medio))', // #8E9AA3
 				},
-				'branco-areia': {
-					DEFAULT: 'hsl(var(--branco-areia))', // Branco puro #FFFFFF
+				'cinza-texto': {
+					DEFAULT: 'hsl(var(--cinza-texto))', // #6F7A85
 				},
-				'marrom-terra': {
-					DEFAULT: 'hsl(var(--marrom-terra))', // Verde escuro para elementos terra
+				'branco-puro': {
+					DEFAULT: 'hsl(var(--branco-puro))', // #FFFFFF
+				},
+				'borda-suave': {
+					DEFAULT: 'hsl(var(--borda-suave))', // #DCE3DA
 				},
 			},
 			fontFamily: {
@@ -161,6 +170,7 @@ export default {
 			backgroundImage: {
 				'leaf-pattern': "url('/leaf-bg.png')",
 				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+				'hero-gradient': 'linear-gradient(135deg, hsl(var(--cinza-escuro)), hsl(var(--azul-petroleo)))',
 			},
 		}
 	},

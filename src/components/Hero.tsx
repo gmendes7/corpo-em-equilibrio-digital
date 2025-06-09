@@ -15,18 +15,18 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-cinza-escuro via-background to-azul-petroleo overflow-hidden">
       {/* Geometric background patterns */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-verde-musgo/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-verde-claro/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-azul-escuro/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-verde-musgo/5 to-transparent rounded-full"></div>
       </div>
 
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-verde-claro/30 rounded-full plant-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-verde-musgo/30 rounded-full plant-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-verde-musgo/30 rounded-full plant-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-azul-escuro/30 rounded-full plant-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-muted-foreground/30 rounded-full plant-float" style={{ animationDelay: '2s' }}></div>
       </div>
       
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Seu corpo em 
-                <span className="block text-transparent bg-gradient-to-r from-verde-claro to-verde-musgo bg-clip-text">
+                <span className="block text-transparent bg-gradient-to-r from-verde-musgo to-azul-escuro bg-clip-text">
                   perfeita harmonia
                 </span>
               </h1>
@@ -66,7 +66,7 @@ const Hero = () => {
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} 
                 className="group inline-flex items-center justify-center gap-3 btn-secondary"
               >
-                <Play size={18} className="text-verde-claro" />
+                <Play size={18} className="text-white" />
                 Conheça a Dra. Patrícia
               </button>
             </div>
@@ -74,15 +74,15 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-verde-claro">500+</div>
+                <div className="text-2xl md:text-3xl font-bold text-verde-musgo">500+</div>
                 <div className="text-sm text-muted-foreground font-medium">Pacientes atendidos</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-verde-claro">15+</div>
+                <div className="text-2xl md:text-3xl font-bold text-verde-musgo">15+</div>
                 <div className="text-sm text-muted-foreground font-medium">Anos de experiência</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-verde-claro">98%</div>
+                <div className="text-2xl md:text-3xl font-bold text-verde-musgo">98%</div>
                 <div className="text-sm text-muted-foreground font-medium">Satisfação</div>
               </div>
             </div>
@@ -92,10 +92,10 @@ const Hero = () => {
           <div className={`relative ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               {/* Background decoration */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-verde-musgo/20 to-verde-claro/20 rounded-3xl blur-3xl transform rotate-6"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-verde-musgo/20 to-azul-escuro/20 rounded-3xl blur-3xl transform rotate-6"></div>
               
               {/* Main image container */}
-              <div className="relative bg-gradient-to-br from-card to-card/80 rounded-3xl p-8 shadow-2xl border border-border">
+              <div className="relative bg-gradient-to-br from-card to-card/80 rounded-3xl p-8 shadow-2xl border border-borda-suave">
                 <img 
                   src="/doctor.png" 
                   alt="Dra. Patrícia Pólvora" 
@@ -103,9 +103,9 @@ const Hero = () => {
                 />
                 
                 {/* Floating badges */}
-                <div className="absolute -top-4 -right-4 bg-card rounded-2xl p-4 shadow-xl border border-border">
+                <div className="absolute -top-4 -right-4 bg-card rounded-2xl p-4 shadow-xl border border-borda-suave">
                   <div className="text-center">
-                    <div className="text-verde-musgo font-bold text-lg">CRM</div>
+                    <div className="text-azul-escuro font-bold text-lg">CRM</div>
                     <div className="text-muted-foreground text-sm font-medium">Ativo</div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const Hero = () => {
                 <div className="absolute -bottom-4 -left-4 bg-verde-musgo rounded-2xl p-4 shadow-xl">
                   <div className="text-center">
                     <div className="text-white font-bold text-lg">★ 5.0</div>
-                    <div className="text-verde-claro text-sm font-medium">Avaliação</div>
+                    <div className="text-white/80 text-sm font-medium">Avaliação</div>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Hero = () => {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground animate-bounce">
         <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-verde-claro rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-verde-musgo rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
