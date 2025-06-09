@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -14,12 +13,12 @@ import { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
-    // Registrar mudança para verde escuro
+    // Registrar mudança para paleta verde escura profissional
     logStyleChange(
-      'Cores alteradas para verde escuro no lugar do amarelo',
+      'Site alterado para paleta verde escura profissional',
       'Index',
-      'Aplicação da paleta verde escuro em todo o site',
-      '@Viniciushadid'
+      'Aplicação de cores verde escuro (#064e3b) como fundo principal e verde claro (#10b981) para destaques, removendo completamente o amarelo',
+      '@pedroricaldes'
     );
 
     // Registrar reversão para cores originais

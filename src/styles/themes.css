@@ -1,49 +1,52 @@
 
 @layer base {
   :root {
-    /* Cores originais - Paleta natural verde-musgo */
-    --background: 250 251 252; /* Branco natural */
-    --foreground: 28 25 23; /* Marrom natural escuro */
+    /* Cores atualizadas - Paleta verde escura profissional */
+    --background: 6 78 59; /* Verde escuro principal #064e3b */
+    --foreground: 224 242 241; /* Verde muito claro para texto #e0f2f1 */
 
-    --card: 255 255 255; /* Branco puro para cards */
-    --card-foreground: 28 25 23;
+    --card: 17 94 89; /* Verde escuro médio para cards #115e59 */
+    --card-foreground: 224 242 241;
 
-    --popover: 255 255 255;
-    --popover-foreground: 28 25 23;
+    --popover: 17 94 89;
+    --popover-foreground: 224 242 241;
 
-    --primary: 120 40% 25%; /* Verde escuro */
+    --primary: 4 120 87; /* Verde médio vibrante #047857 */
     --primary-foreground: 255 255 255;
 
-    --secondary: 120 30% 85%; /* Verde claro de fundo */
-    --secondary-foreground: 28 25 23;
+    --secondary: 17 94 89; /* Verde escuro médio */
+    --secondary-foreground: 224 242 241;
 
-    --muted: 120 20% 90; /* Verde-cinza muito claro */
-    --muted-foreground: 120 15% 40; /* Verde-cinza médio */
+    --muted: 6 78 59; /* Verde escuro */
+    --muted-foreground: 209 250 229; /* Verde claro para texto #d1fae5 */
 
-    --accent: 120 30% 85;
-    --accent-foreground: 28 25 23;
+    --accent: 16 185 129; /* Verde claro vibrante #10b981 */
+    --accent-foreground: 6 78 59;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 239 68 68; /* Vermelho para ações destrutivas */
     --destructive-foreground: 255 255 255;
 
-    --border: 120 20% 85; /* Borda verde claro */
-    --input: 120 20% 95; /* Verde muito claro para inputs */
-    --ring: 120 40% 25; /* Verde escuro para focus ring */
+    --border: 17 94 89; /* Verde escuro médio para bordas */
+    --input: 6 78 59; /* Verde escuro para inputs */
+    --ring: 16 185 129; /* Verde claro para focus ring */
 
     --radius: 0.5rem;
 
-    /* Variáveis de cores customizadas - paleta com verde escuro */
-    --verde-musgo: 120 40% 25%; /* Verde escuro */
-    --verde-claro: 120 30% 70; /* Verde natural claro */
-    --branco-areia: 250 251 252; /* Branco natural */
-    --marrom-terra: 30 25% 25; /* Marrom terra natural */
+    /* Variáveis de cores customizadas - paleta verde escura profissional */
+    --verde-musgo: 6 78 59; /* Verde escuro principal #064e3b */
+    --verde-claro: 16 185 129; /* Verde claro vibrante #10b981 */
+    --verde-medio: 4 120 87; /* Verde médio #047857 */
+    --branco-areia: 224 242 241; /* Verde muito claro #e0f2f1 */
+    --marrom-terra: 17 94 89; /* Verde escuro médio #115e59 */
   }
 }
 
 /* Suporte para modo de alto contraste */
 @media (prefers-contrast: high) {
   :root {
-    --verde-musgo: 120 100% 15%; /* Verde ainda mais escuro para alto contraste */
-    --verde-claro: 120 100% 35%;
+    --verde-musgo: 3 59 44; /* Verde ainda mais escuro para alto contraste */
+    --verde-claro: 34 197 94; /* Verde mais vibrante */
+    --background: 3 59 44;
+    --foreground: 240 253 244;
   }
 }

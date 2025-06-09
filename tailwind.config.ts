@@ -12,12 +12,14 @@ export default {
 	safelist: [
 		"bg-verde-musgo",
 		"bg-verde-claro", 
+		"bg-verde-medio",
 		"bg-marrom-terra",
 		"hover:bg-verde-musgo",
 		"hover:bg-verde-claro",
 		"text-verde-musgo",
+		"text-verde-claro",
 		"border-verde-claro",
-		"after:bg-verde-musgo",
+		"after:bg-verde-claro",
 		"gradient-text",
 		"glass-effect",
 		"card-hover"
@@ -76,19 +78,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Natural color palette - corrected colors
+				// Paleta verde escura profissional
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // Deep forest green
-					light: 'hsl(var(--verde-claro))', // Light natural green
+					DEFAULT: 'hsl(var(--verde-musgo))', // Verde escuro principal
 				},
 				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // Light natural green
+					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro vibrante
+				},
+				'verde-medio': {
+					DEFAULT: 'hsl(var(--verde-medio))', // Verde médio
 				},
 				'branco-areia': {
-					DEFAULT: 'hsl(var(--branco-areia))', // Natural off-white
+					DEFAULT: 'hsl(var(--branco-areia))', // Verde muito claro para texto
 				},
 				'marrom-terra': {
-					DEFAULT: 'hsl(var(--marrom-terra))', // Natural earth brown
+					DEFAULT: 'hsl(var(--marrom-terra))', // Verde escuro médio
 				},
 			},
 			fontFamily: {
