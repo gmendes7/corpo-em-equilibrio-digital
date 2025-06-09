@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +70,6 @@ const Navbar = () => {
           >
             <Instagram size={22} />
           </a>
-          <ThemeToggle />
         </nav>
 
         {/* Book Appointment Button */}
@@ -83,8 +81,7 @@ const Navbar = () => {
         </button>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-3">
-          <ThemeToggle />
+        <div className="lg:hidden">
           <button 
             className="text-foreground focus:outline-none p-2 rounded-lg hover:bg-muted transition-colors duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

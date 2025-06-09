@@ -11,7 +11,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-lato transition-colors duration-300;
+    @apply bg-background text-foreground font-lato;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -19,12 +19,7 @@
   }
 }
 
-/* Smooth transitions for theme switching */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-/* Custom scrollbar for both themes */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

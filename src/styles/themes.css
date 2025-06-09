@@ -1,91 +1,49 @@
 
 @layer base {
   :root {
-    /* Light theme colors - Natural palette */
-    --background: 250 251 252; /* Natural off-white */
-    --foreground: 28 25 23; /* Dark natural brown */
+    /* Cores originais - Paleta natural verde-musgo */
+    --background: 250 251 252; /* Branco natural */
+    --foreground: 28 25 23; /* Marrom natural escuro */
 
-    --card: 255 255 255; /* Pure white for cards */
+    --card: 255 255 255; /* Branco puro para cards */
     --card-foreground: 28 25 23;
 
     --popover: 255 255 255;
     --popover-foreground: 28 25 23;
 
-    --primary: 120 40% 30%; /* Natural forest green */
-    --primary-foreground: 250 251 252;
+    --primary: 120 40% 30%; /* Verde musgo original */
+    --primary-foreground: 255 255 255;
 
-    --secondary: 120 30% 85%; /* Light green background */
+    --secondary: 120 30% 85%; /* Verde claro de fundo */
     --secondary-foreground: 28 25 23;
 
-    --muted: 120 20% 90; /* Very light green-gray */
-    --muted-foreground: 120 15% 40; /* Medium green-gray */
+    --muted: 120 20% 90; /* Verde-cinza muito claro */
+    --muted-foreground: 120 15% 40; /* Verde-cinza médio */
 
     --accent: 120 30% 85;
     --accent-foreground: 28 25 23;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 250 251 252;
+    --destructive-foreground: 255 255 255;
 
-    --border: 120 20% 85; /* Light green border */
-    --input: 120 20% 95; /* Very light green for inputs */
+    --border: 120 20% 85; /* Borda verde claro */
+    --input: 120 20% 95; /* Verde muito claro para inputs */
     --ring: 120 40% 30;
 
     --radius: 0.5rem;
 
-    /* Custom color variables for natural palette */
-    --verde-musgo: 120 40% 30%; /* Forest green */
-    --verde-claro: 120 30% 70%; /* Light natural green */
-    --branco-areia: 250 251 252; /* Natural off-white */
-    --marrom-terra: 30 25% 25%; /* Natural earth brown */
-  }
-
-  [data-theme="dark"] {
-    /* Dark theme colors - Natural dark palette */
-    --background: 28 25 23; /* Dark brown natural */
-    --foreground: 250 251 252; /* Natural white */
-
-    --card: 30 25 20; /* Dark brown */
-    --card-foreground: 250 251 252;
-
-    --popover: 30 25 20;
-    --popover-foreground: 250 251 252;
-
-    --primary: 120 40% 35%; /* Lighter green for dark mode */
-    --primary-foreground: 250 251 252;
-
-    --secondary: 30 20% 25; /* Dark brown-gray */
-    --secondary-foreground: 120 30% 80; /* Light green text */
-
-    --muted: 30 20% 25;
-    --muted-foreground: 120 30% 70; /* Light green-gray */
-
-    --accent: 30 20% 25;
-    --accent-foreground: 120 30% 80; /* Light green text */
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 250 251 252;
-
-    --border: 30 20% 30;
-    --input: 30 20% 30;
-    --ring: 120 40% 35;
-
-    /* Custom color variables for dark natural palette */
-    --verde-musgo: 120 40% 40%;
-    --verde-claro: 120 30% 75%; /* Lighter green for dark mode */
-    --branco-areia: 250 251 252;
-    --marrom-terra: 30 25% 30%;
+    /* Variáveis de cores customizadas - paleta original */
+    --verde-musgo: 120 40% 30%; /* Verde musgo original */
+    --verde-claro: 120 30% 70; /* Verde natural claro */
+    --branco-areia: 250 251 252; /* Branco natural */
+    --marrom-terra: 30 25% 25; /* Marrom terra natural */
   }
 }
 
-/* High contrast mode support */
+/* Suporte para modo de alto contraste */
 @media (prefers-contrast: high) {
   :root {
     --verde-musgo: 120 100% 20%;
     --verde-claro: 120 100% 35%;
-  }
-  
-  [data-theme="dark"] {
-    --verde-musgo: 120 100% 45%;
-    --verde-claro: 120 100% 65%;
   }
 }

@@ -1,3 +1,4 @@
+
 import { Instagram, Mail, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
@@ -190,7 +191,7 @@ const Footer = () => {
             © {new Date().getFullYear()} CORPO EM EQUILÍBRIO - Dra. Patrícia Pólvora. Todos os direitos reservados.
           </p>
           <p className="text-center text-slate-400 font-lato text-sm">
-            Desenvolvido por <span className="text-verde-claro">@trinitytecnlogias</span> e <span className="text-verde-claro">@schjneiderr</span>
+            Desenvolvido por <span className="text-verde-claro">@Gabrielmendes</span>, <span className="text-verde-claro">@Viniciushadid</span>, <span className="text-verde-claro">@pedroricaldes</span> e <span className="text-verde-claro">@schjneiderr</span>
           </p>
         </div>
       </div>
