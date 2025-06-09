@@ -11,7 +11,7 @@
     --popover: 255 255 255;
     --popover-foreground: 28 25 23;
 
-    --primary: 120 40% 30%; /* Verde musgo original */
+    --primary: 120 40% 25%; /* Verde escuro */
     --primary-foreground: 255 255 255;
 
     --secondary: 120 30% 85%; /* Verde claro de fundo */
@@ -28,12 +28,12 @@
 
     --border: 120 20% 85; /* Borda verde claro */
     --input: 120 20% 95; /* Verde muito claro para inputs */
-    --ring: 120 40% 30;
+    --ring: 120 40% 25; /* Verde escuro para focus ring */
 
     --radius: 0.5rem;
 
-    /* Variáveis de cores customizadas - paleta original */
-    --verde-musgo: 120 40% 30%; /* Verde musgo original */
+    /* Variáveis de cores customizadas - paleta com verde escuro */
+    --verde-musgo: 120 40% 25%; /* Verde escuro */
     --verde-claro: 120 30% 70; /* Verde natural claro */
     --branco-areia: 250 251 252; /* Branco natural */
     --marrom-terra: 30 25% 25; /* Marrom terra natural */
@@ -43,7 +43,7 @@
 /* Suporte para modo de alto contraste */
 @media (prefers-contrast: high) {
   :root {
-    --verde-musgo: 120 100% 20%;
+    --verde-musgo: 120 100% 15%; /* Verde ainda mais escuro para alto contraste */
     --verde-claro: 120 100% 35%;
   }
 }

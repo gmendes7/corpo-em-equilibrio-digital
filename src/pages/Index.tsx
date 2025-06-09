@@ -14,6 +14,14 @@ import { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
+    // Registrar mudança para verde escuro
+    logStyleChange(
+      'Cores alteradas para verde escuro no lugar do amarelo',
+      'Index',
+      'Aplicação da paleta verde escuro em todo o site',
+      '@Viniciushadid'
+    );
+
     // Registrar reversão para cores originais
     logStyleChange(
       'Cores revertidas para paleta original verde-musgo',
