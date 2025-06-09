@@ -78,21 +78,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta verde escura profissional
+				// Paleta verde musgo original
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // Verde escuro principal
+					DEFAULT: 'hsl(var(--verde-musgo))', // Verde musgo principal #556B2F
 				},
 				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro vibrante
+					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro pastel #DFF0D8
 				},
 				'verde-medio': {
-					DEFAULT: 'hsl(var(--verde-medio))', // Verde médio
+					DEFAULT: 'hsl(var(--verde-medio))', // Verde escuro #2E4A17
 				},
 				'branco-areia': {
-					DEFAULT: 'hsl(var(--branco-areia))', // Verde muito claro para texto
+					DEFAULT: 'hsl(var(--branco-areia))', // Branco puro #FFFFFF
 				},
 				'marrom-terra': {
-					DEFAULT: 'hsl(var(--marrom-terra))', // Verde escuro médio
+					DEFAULT: 'hsl(var(--marrom-terra))', // Verde escuro para elementos terra
 				},
 			},
 			fontFamily: {

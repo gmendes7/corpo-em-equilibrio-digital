@@ -1,3 +1,4 @@
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -13,6 +14,14 @@ import { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
+    // Registrar correção para paleta verde musgo original
+    logStyleChange(
+      'Cores corrigidas para paleta verde musgo original especificada',
+      'Index',
+      'Aplicação das cores corretas: Verde musgo (#556B2F) como fundo, Verde escuro (#2E4A17) para destaques, Verde claro (#DFF0D8) para cards e Branco (#FFFFFF) para textos',
+      '@Viniciushadid'
+    );
+
     // Registrar mudança para paleta verde escura profissional
     logStyleChange(
       'Site alterado para paleta verde escura profissional',

@@ -1,11 +1,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-verde-medio to-verde-claro hover:from-verde-claro hover:to-verde-medio text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-verde-claro/25 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-verde-claro focus:ring-offset-2 focus:ring-offset-background;
+    @apply bg-gradient-to-r from-verde-medio to-verde-musgo hover:from-verde-musgo hover:to-verde-medio text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-verde-medio/25 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-verde-medio focus:ring-offset-2 focus:ring-offset-background;
   }
   
   .btn-secondary {
-    @apply bg-card/50 backdrop-blur-sm border border-border hover:bg-card/70 text-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:border-verde-claro/50 focus:outline-none focus:ring-2 focus:ring-verde-claro focus:ring-offset-2 focus:ring-offset-background;
+    @apply bg-card/50 backdrop-blur-sm border border-border hover:bg-card/70 text-card-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:border-verde-medio/50 focus:outline-none focus:ring-2 focus:ring-verde-medio focus:ring-offset-2 focus:ring-offset-background;
   }
 
   .section {
@@ -17,7 +17,7 @@
   }
 
   .nav-link {
-    @apply relative text-muted-foreground hover:text-foreground font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-claro after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
+    @apply relative text-muted-foreground hover:text-foreground font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-medio after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
   }
 
   .nav-link-active {
@@ -25,7 +25,7 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-verde-claro/10 hover:-translate-y-2;
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-verde-medio/10 hover:-translate-y-2;
   }
 
   .glass-effect {
@@ -33,6 +33,6 @@
   }
 
   .gradient-text {
-    @apply text-transparent bg-gradient-to-r from-verde-claro to-verde-medio bg-clip-text;
+    @apply text-transparent bg-gradient-to-r from-verde-medio to-verde-musgo bg-clip-text;
   }
 }
