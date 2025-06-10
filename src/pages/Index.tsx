@@ -1,3 +1,4 @@
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -8,7 +9,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import PlantDecorations from '../components/PlantDecorations';
-import { logStyleChange } from '../utils/updateLogger';
+import { logStyleChange, logFeature, logSystemUpdate } from '../utils/updateLogger';
 import { useEffect } from 'react';
 
 const Index = () => {
