@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -9,7 +8,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import PlantDecorations from '../components/PlantDecorations';
-import { logStyleChange, logSystemUpdate, logFeature } from '../utils/updateLogger';
+import { logStyleChange } from '../utils/updateLogger';
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -65,6 +64,14 @@ const Index = () => {
       'Aplicada paleta profissional conforme imagem de referência',
       'Index',
       'Cores atualizadas: Gradiente cinza escuro (#2A2E30) para azul petróleo (#1F3A3D), verde musgo (#7A9C32) para destaques, azul escuro (#1B2B36) para botões secundários, removidos tons fluorescentes',
+      'Sistema'
+    );
+
+    // Registrar restauração para paleta original conforme imagem de referência
+    logStyleChange(
+      'Cores restauradas para paleta original conforme imagem de referência',
+      'Index',
+      'Aplicação de cores suaves e profissionais: Fundo cinza azulado escuro, verde musgo suave (#8BA443) para destaques, azul escuro suave para botões secundários, removidos tons fluorescentes',
       'Sistema'
     );
   }, []);

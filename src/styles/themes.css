@@ -1,53 +1,54 @@
 
 @layer base {
   :root {
-    /* Paleta baseada na segunda imagem - tons profissionais e suaves */
-    --background: 42 46 48; /* Cinza escuro #2A2E30 */
+    /* Paleta baseada na imagem de referência - tons profissionais e suaves */
+    --background: 58 64 68; /* Cinza azulado escuro do fundo */
     --foreground: 255 255 255; /* Branco para texto principal */
 
     --card: 255 255 255; /* Branco para cards */
-    --card-foreground: 27 43 54; /* Azul escuro para texto nos cards #1B2B36 */
+    --card-foreground: 45 55 65; /* Cinza escuro para texto nos cards */
 
     --popover: 255 255 255; /* Branco para popovers */
-    --popover-foreground: 27 43 54; /* Azul escuro */
+    --popover-foreground: 45 55 65; /* Cinza escuro */
 
-    --primary: 122 156 50; /* Verde musgo #7A9C32 */
+    --primary: 139 164 67; /* Verde musgo suave da imagem #8BA443 */
     --primary-foreground: 255 255 255; /* Branco */
 
-    --secondary: 27 43 54; /* Azul escuro #1B2B36 */
+    --secondary: 45 55 65; /* Azul escuro suave #2D3741 */
     --secondary-foreground: 255 255 255; /* Branco */
 
-    --muted: 142 154 163; /* Cinza médio para elementos secundários #8E9AA3 */
-    --muted-foreground: 111 122 133; /* Cinza escuro para texto secundário #6F7A85 */
+    --muted: 120 130 140; /* Cinza médio para elementos secundários */
+    --muted-foreground: 80 90 100; /* Cinza escuro para texto secundário */
 
-    --accent: 122 156 50; /* Verde musgo para destaques */
+    --accent: 139 164 67; /* Verde musgo para destaques */
     --accent-foreground: 255 255 255; /* Branco */
 
     --destructive: 239 68 68; /* Vermelho para ações destrutivas */
     --destructive-foreground: 255 255 255;
 
-    --border: 220 227 218; /* Bordas suaves #DCE3DA */
+    --border: 200 210 220; /* Bordas suaves */
     --input: 255 255 255; /* Branco para inputs */
-    --ring: 122 156 50; /* Verde musgo para focus ring */
+    --ring: 139 164 67; /* Verde musgo para focus ring */
 
     --radius: 0.5rem;
 
-    /* Cores customizadas baseadas na segunda imagem */
-    --cinza-escuro: 42 46 48; /* Cinza escuro principal #2A2E30 */
-    --azul-petroleo: 31 58 61; /* Azul petróleo para gradiente #1F3A3D */
-    --verde-musgo: 122 156 50; /* Verde musgo #7A9C32 */
-    --azul-escuro: 27 43 54; /* Azul escuro #1B2B36 */
-    --cinza-medio: 142 154 163; /* Cinza médio #8E9AA3 */
-    --cinza-texto: 111 122 133; /* Cinza para texto secundário #6F7A85 */
+    /* Cores customizadas baseadas na imagem de referência */
+    --cinza-escuro: 58 64 68; /* Fundo principal da imagem */
+    --azul-petroleo: 45 55 65; /* Tom azulado escuro */
+    --verde-musgo: 139 164 67; /* Verde suave da imagem #8BA443 */
+    --azul-escuro: 45 55 65; /* Azul escuro suave */
+    --cinza-medio: 120 130 140; /* Cinza médio */
+    --cinza-texto: 80 90 100; /* Cinza para texto */
     --branco-puro: 255 255 255; /* Branco puro */
-    --borda-suave: 220 227 218; /* Bordas suaves #DCE3DA */
+    --borda-suave: 200 210 220; /* Bordas suaves */
+    --verde-claro: 180 200 160; /* Verde claro suave para áreas secundárias */
   }
 }
 
 /* Suporte para modo de alto contraste */
 @media (prefers-contrast: high) {
   :root {
-    --background: 20 24 26; /* Fundo ainda mais escuro para alto contraste */
+    --background: 40 46 50; /* Fundo ainda mais escuro para alto contraste */
     --foreground: 255 255 255;
     --muted-foreground: 180 190 200; /* Texto mais claro para melhor contraste */
   }

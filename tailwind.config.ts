@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,6 +13,7 @@ export default {
 		"bg-azul-escuro", 
 		"bg-cinza-escuro",
 		"bg-azul-petroleo",
+		"bg-verde-claro",
 		"hover:bg-verde-musgo",
 		"hover:bg-azul-escuro",
 		"text-verde-musgo",
@@ -78,30 +78,33 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta baseada na segunda imagem
+				// Paleta suave baseada na imagem de referência
 				'cinza-escuro': {
-					DEFAULT: 'hsl(var(--cinza-escuro))', // #2A2E30
+					DEFAULT: 'hsl(var(--cinza-escuro))', // Fundo principal
 				},
 				'azul-petroleo': {
-					DEFAULT: 'hsl(var(--azul-petroleo))', // #1F3A3D
+					DEFAULT: 'hsl(var(--azul-petroleo))', // Tom azulado
 				},
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // #7A9C32
+					DEFAULT: 'hsl(var(--verde-musgo))', // Verde suave #8BA443
 				},
 				'azul-escuro': {
-					DEFAULT: 'hsl(var(--azul-escuro))', // #1B2B36
+					DEFAULT: 'hsl(var(--azul-escuro))', // Azul escuro suave
 				},
 				'cinza-medio': {
-					DEFAULT: 'hsl(var(--cinza-medio))', // #8E9AA3
+					DEFAULT: 'hsl(var(--cinza-medio))', // Cinza médio
 				},
 				'cinza-texto': {
-					DEFAULT: 'hsl(var(--cinza-texto))', // #6F7A85
+					DEFAULT: 'hsl(var(--cinza-texto))', // Cinza para texto
 				},
 				'branco-puro': {
-					DEFAULT: 'hsl(var(--branco-puro))', // #FFFFFF
+					DEFAULT: 'hsl(var(--branco-puro))', // Branco puro
 				},
 				'borda-suave': {
-					DEFAULT: 'hsl(var(--borda-suave))', // #DCE3DA
+					DEFAULT: 'hsl(var(--borda-suave))', // Bordas suaves
+				},
+				'verde-claro': {
+					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro suave
 				},
 			},
 			fontFamily: {
