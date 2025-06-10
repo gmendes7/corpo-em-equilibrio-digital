@@ -3,12 +3,12 @@ import { Instagram, Award, Users, Clock } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 bg-background-claro overflow-hidden">
+    <section id="about" className="relative py-24 bg-white overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-musgo to-transparent"></div>
         <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23556B2F' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
       </div>
 
@@ -18,7 +18,7 @@ const About = () => {
           <div className="relative order-2 lg:order-1">
             <div className="relative">
               {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-background-claro/10 rounded-3xl blur-2xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-white/10 rounded-3xl blur-2xl"></div>
               <div className="absolute top-8 -right-8 w-32 h-32 bg-stone-800/20 rounded-full blur-3xl plant-gentle-sway"></div>
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-verde-musgo/15 rounded-full blur-3xl plant-gentle-sway-delayed"></div>
               
@@ -51,7 +51,7 @@ const About = () => {
           <div className="order-1 lg:order-2 space-y-8">
             <div className="staggered-fade-in space-y-6">
               {/* Section badge */}
-              <div className="inline-flex items-center gap-2 bg-verde-musgo/10 border border-verde-musgo/20 rounded-full px-4 py-2 text-sm font-semibold text-verde-musgo">
+              <div className="inline-flex items-center gap-2 bg-stone-100 border border-stone-300 rounded-full px-4 py-2 text-sm font-semibold text-stone-700">
                 <Clock size={16} />
                 Sobre a Especialista
               </div>
@@ -70,7 +70,7 @@ const About = () => {
               <div className="space-y-4">
                 <div className="bg-white rounded-2xl p-6 shadow-lg border border-stone-200 hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-verde-musgo/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center">
                       <Award className="w-6 h-6 text-verde-musgo" />
                     </div>
                     <div>
@@ -100,7 +100,7 @@ const About = () => {
               </div>
               
               {/* Quote */}
-              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-stone-50 rounded-2xl p-6 border-l-4 border-verde-musgo">
+              <blockquote className="relative bg-stone-50 rounded-2xl p-6 border-l-4 border-verde-musgo">
                 <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">&quot;</div>
                 <p className="text-stone-800 font-medium italic leading-relaxed pt-6">
                   Minha missão é transformar vidas através de uma medicina que vê o ser humano de forma integral, 
@@ -117,7 +117,7 @@ const About = () => {
                   href="https://www.instagram.com/drapatriciapolvora" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:ring-offset-background"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:ring-offset-white"
                 >
                   <Instagram size={20} />
                   <span>Seguir @drapatriciapolvora</span>
