@@ -19,26 +19,28 @@ const About = () => {
             <div className="relative">
               {/* Decorative elements */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-background-claro/10 rounded-3xl blur-2xl"></div>
-              <div className="absolute top-8 -right-8 w-32 h-32 bg-background-claro/20 rounded-full blur-3xl plant-gentle-sway"></div>
+              <div className="absolute top-8 -right-8 w-32 h-32 bg-stone-800/20 rounded-full blur-3xl plant-gentle-sway"></div>
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-verde-musgo/15 rounded-full blur-3xl plant-gentle-sway-delayed"></div>
               
-              {/* Main image - Updated with the new doctor image */}
-              <div className="relative bg-card rounded-3xl p-6 shadow-2xl border border-border card-hover">
-                <img 
-                  src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png" 
-                  alt="Dra. Patrícia Pólvora" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
+              {/* Main image - Made square and cropped */}
+              <div className="relative bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 card-hover">
+                <div className="w-full aspect-square overflow-hidden rounded-2xl shadow-lg bg-white">
+                  <img 
+                    src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png" 
+                    alt="Dra. Patrícia Pólvora" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
                 
                 {/* Professional badges */}
                 <div className="absolute -top-3 -left-3 bg-verde-musgo rounded-2xl p-3 shadow-xl">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 
-                <div className="absolute -bottom-3 -right-3 bg-card rounded-2xl p-3 shadow-xl border border-border">
+                <div className="absolute -bottom-3 -right-3 bg-white rounded-2xl p-3 shadow-xl border border-stone-200">
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-verde-musgo" />
-                    <span className="text-sm font-semibold text-foreground">500+ pacientes</span>
+                    <span className="text-sm font-semibold text-stone-800">500+ pacientes</span>
                   </div>
                 </div>
               </div>
@@ -56,24 +58,24 @@ const About = () => {
 
               {/* Headline */}
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-azul-escuro leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-stone-800 leading-tight">
                   Dra. <span className="text-verde-musgo">Patrícia Pólvora</span>
                 </h2>
-                <p className="text-xl text-cinza-texto font-light leading-relaxed">
+                <p className="text-xl text-stone-600 font-light leading-relaxed">
                   Especialista em medicina integrativa com foco em transformar vidas através de abordagens personalizadas e baseadas em evidências científicas.
                 </p>
               </div>
               
               {/* Experience cards */}
               <div className="space-y-4">
-                <div className="bg-card rounded-2xl p-6 shadow-lg border border-borda-suave hover:shadow-xl transition-all duration-300 card-hover">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-stone-200 hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-verde-musgo/10 rounded-xl flex items-center justify-center">
                       <Award className="w-6 h-6 text-verde-musgo" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-azul-escuro mb-2">Formação Acadêmica de Excelência</h3>
-                      <p className="text-cinza-texto leading-relaxed">
+                      <h3 className="font-bold text-stone-800 mb-2">Formação Acadêmica de Excelência</h3>
+                      <p className="text-stone-600 leading-relaxed">
                         Medicina pela Universidade Federal do Rio de Janeiro, especialização em Endocrinologia e Metabologia, 
                         com formação em Medicina Integrativa pela Harvard Medical School.
                       </p>
@@ -81,14 +83,14 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="bg-card rounded-2xl p-6 shadow-lg border border-borda-suave hover:shadow-xl transition-all duration-300 card-hover">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-stone-200 hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-background-claro/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center">
                       <Users className="w-6 h-6 text-verde-musgo" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-azul-escuro mb-2">Especializações Avançadas</h3>
-                      <p className="text-cinza-texto leading-relaxed">
+                      <h3 className="font-bold text-stone-800 mb-2">Especializações Avançadas</h3>
+                      <p className="text-stone-600 leading-relaxed">
                         Medicina Funcional, Nutrigenômica, Medicina Anti-aging e tratamentos inovadores 
                         para diabetes e distúrbios hormonais femininos.
                       </p>
@@ -98,9 +100,9 @@ const About = () => {
               </div>
               
               {/* Quote */}
-              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-background-claro/5 rounded-2xl p-6 border-l-4 border-verde-musgo">
+              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-stone-50 rounded-2xl p-6 border-l-4 border-verde-musgo">
                 <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">&quot;</div>
-                <p className="text-azul-escuro font-medium italic leading-relaxed pt-6">
+                <p className="text-stone-800 font-medium italic leading-relaxed pt-6">
                   Minha missão é transformar vidas através de uma medicina que vê o ser humano de forma integral, 
                   utilizando a ciência moderna aliada à sabedoria natural do corpo.
                 </p>
@@ -115,7 +117,7 @@ const About = () => {
                   href="https://www.instagram.com/drapatriciapolvora" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-background"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:ring-offset-background"
                 >
                   <Instagram size={20} />
                   <span>Seguir @drapatriciapolvora</span>
