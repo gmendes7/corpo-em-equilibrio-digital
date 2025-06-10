@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,13 +12,14 @@ export default {
 	safelist: [
 		"bg-verde-musgo",
 		"bg-azul-escuro", 
-		"bg-cinza-escuro",
-		"bg-azul-petroleo",
-		"bg-verde-claro",
+		"bg-background-claro",
+		"bg-cinza-texto",
+		"bg-branco-puro", 
 		"hover:bg-verde-musgo",
 		"hover:bg-azul-escuro",
 		"text-verde-musgo",
 		"text-azul-escuro",
+		"text-cinza-texto",
 		"border-borda-suave",
 		"after:bg-verde-musgo",
 		"gradient-text",
@@ -78,33 +80,24 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta suave baseada na imagem de referência
-				'cinza-escuro': {
-					DEFAULT: 'hsl(var(--cinza-escuro))', // Fundo principal
-				},
-				'azul-petroleo': {
-					DEFAULT: 'hsl(var(--azul-petroleo))', // Tom azulado
-				},
+				// Paleta solicitada com base no briefing
 				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // Verde suave #8BA443
+					DEFAULT: 'hsl(var(--verde-musgo))', // #7A9C32
 				},
 				'azul-escuro': {
-					DEFAULT: 'hsl(var(--azul-escuro))', // Azul escuro suave
-				},
-				'cinza-medio': {
-					DEFAULT: 'hsl(var(--cinza-medio))', // Cinza médio
+					DEFAULT: 'hsl(var(--azul-escuro))', // #1B2B36
 				},
 				'cinza-texto': {
-					DEFAULT: 'hsl(var(--cinza-texto))', // Cinza para texto
+					DEFAULT: 'hsl(var(--cinza-texto))', // #8E9AA3
 				},
 				'branco-puro': {
-					DEFAULT: 'hsl(var(--branco-puro))', // Branco puro
+					DEFAULT: 'hsl(var(--branco-puro))', // #FFFFFF
 				},
 				'borda-suave': {
-					DEFAULT: 'hsl(var(--borda-suave))', // Bordas suaves
+					DEFAULT: 'hsl(var(--borda-suave))', // #DCE3DA
 				},
-				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // Verde claro suave
+				'background-claro': {
+					DEFAULT: 'hsl(var(--background-claro))', // #F5F7F9
 				},
 			},
 			fontFamily: {
@@ -173,7 +166,7 @@ export default {
 			backgroundImage: {
 				'leaf-pattern': "url('/leaf-bg.png')",
 				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
-				'hero-gradient': 'linear-gradient(135deg, hsl(var(--cinza-escuro)), hsl(var(--azul-petroleo)))',
+				'hero-gradient': 'linear-gradient(135deg, hsl(var(--azul-escuro)), hsl(var(--azul-escuro)/0.8))',
 			},
 		}
 	},

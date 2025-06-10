@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -14,6 +13,14 @@ import { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
+    // Registrar upgrade profissional do site
+    logStyleChange(
+      'Upgrade profissional completo do site',
+      'Index',
+      'Aplicação de design profissional com paleta correta: Verde musgo (#7A9C32), Azul escuro (#1B2B36), correção de estilos e adição de nova foto da médica',
+      'Sistema'
+    );
+
     // Registrar correção para paleta verde musgo original
     logStyleChange(
       'Cores corrigidas para paleta verde musgo original especificada',
@@ -78,7 +85,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cinza-escuro via-background to-azul-petroleo relative transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-azul-escuro via-background to-azul-escuro/90 relative transition-colors duration-300">
       {/* Plant decorations are positioned with fixed positioning */}
       <PlantDecorations />
       

@@ -3,7 +3,7 @@ import { Instagram, Award, Users, Clock } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 bg-muted/30 overflow-hidden">
+    <section id="about" className="relative py-24 bg-background-claro overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-verde-musgo to-transparent"></div>
@@ -18,14 +18,14 @@ const About = () => {
           <div className="relative order-2 lg:order-1">
             <div className="relative">
               {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-verde-claro/10 rounded-3xl blur-2xl"></div>
-              <div className="absolute top-8 -right-8 w-32 h-32 bg-verde-claro/20 rounded-full blur-3xl plant-gentle-sway"></div>
+              <div className="absolute -inset-4 bg-gradient-to-tr from-verde-musgo/10 to-background-claro/10 rounded-3xl blur-2xl"></div>
+              <div className="absolute top-8 -right-8 w-32 h-32 bg-background-claro/20 rounded-full blur-3xl plant-gentle-sway"></div>
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-verde-musgo/15 rounded-full blur-3xl plant-gentle-sway-delayed"></div>
               
-              {/* Main image */}
+              {/* Main image - Updated with the new doctor image */}
               <div className="relative bg-card rounded-3xl p-6 shadow-2xl border border-border card-hover">
                 <img 
-                  src="/doctor-portrait.png" 
+                  src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png" 
                   alt="Dra. Patrícia Pólvora" 
                   className="w-full h-auto rounded-2xl shadow-lg"
                 />
@@ -56,24 +56,24 @@ const About = () => {
 
               {/* Headline */}
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-azul-escuro leading-tight">
                   Dra. <span className="text-verde-musgo">Patrícia Pólvora</span>
                 </h2>
-                <p className="text-xl text-muted-foreground font-light leading-relaxed">
+                <p className="text-xl text-cinza-texto font-light leading-relaxed">
                   Especialista em medicina integrativa com foco em transformar vidas através de abordagens personalizadas e baseadas em evidências científicas.
                 </p>
               </div>
               
               {/* Experience cards */}
               <div className="space-y-4">
-                <div className="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300 card-hover">
+                <div className="bg-card rounded-2xl p-6 shadow-lg border border-borda-suave hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-verde-musgo/10 rounded-xl flex items-center justify-center">
                       <Award className="w-6 h-6 text-verde-musgo" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground mb-2">Formação Acadêmica de Excelência</h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <h3 className="font-bold text-azul-escuro mb-2">Formação Acadêmica de Excelência</h3>
+                      <p className="text-cinza-texto leading-relaxed">
                         Medicina pela Universidade Federal do Rio de Janeiro, especialização em Endocrinologia e Metabologia, 
                         com formação em Medicina Integrativa pela Harvard Medical School.
                       </p>
@@ -81,14 +81,14 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="bg-card rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300 card-hover">
+                <div className="bg-card rounded-2xl p-6 shadow-lg border border-borda-suave hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-verde-claro/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-background-claro/10 rounded-xl flex items-center justify-center">
                       <Users className="w-6 h-6 text-verde-musgo" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground mb-2">Especializações Avançadas</h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <h3 className="font-bold text-azul-escuro mb-2">Especializações Avançadas</h3>
+                      <p className="text-cinza-texto leading-relaxed">
                         Medicina Funcional, Nutrigenômica, Medicina Anti-aging e tratamentos inovadores 
                         para diabetes e distúrbios hormonais femininos.
                       </p>
@@ -98,9 +98,9 @@ const About = () => {
               </div>
               
               {/* Quote */}
-              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-verde-claro/5 rounded-2xl p-6 border-l-4 border-verde-musgo">
+              <blockquote className="relative bg-gradient-to-br from-verde-musgo/5 to-background-claro/5 rounded-2xl p-6 border-l-4 border-verde-musgo">
                 <div className="absolute top-4 left-6 text-4xl text-verde-musgo/20 font-serif">&quot;</div>
-                <p className="text-foreground font-medium italic leading-relaxed pt-6">
+                <p className="text-azul-escuro font-medium italic leading-relaxed pt-6">
                   Minha missão é transformar vidas através de uma medicina que vê o ser humano de forma integral, 
                   utilizando a ciência moderna aliada à sabedoria natural do corpo.
                 </p>
