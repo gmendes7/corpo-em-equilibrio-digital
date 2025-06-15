@@ -1,4 +1,3 @@
-
 import { Instagram, Award, Users, Clock } from 'lucide-react';
 
 const AboutDoctor = () => {
@@ -6,7 +5,7 @@ const AboutDoctor = () => {
     <section id="about" className="relative py-24 bg-card overflow-hidden">
       {/* Linha superior decorativa */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
       </div>
       <div className="relative z-10 container-custom px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -65,12 +64,12 @@ const AboutDoctor = () => {
                 </div>
               </div>
               {/* Citação */}
-              <blockquote className="relative bg-background rounded-2xl p-6 border-l-4 border-primary">
-                <div className="absolute top-4 left-6 text-4xl text-primary/20 font-serif">&quot;</div>
+              <blockquote className="relative bg-background rounded-2xl p-6 border-l-4 border-secondary">
+                <div className="absolute top-4 left-6 text-4xl text-secondary/20 font-serif">&quot;</div>
                 <p className="text-foreground font-medium italic leading-relaxed pt-6">
                   Minha missão é transformar vidas através de uma medicina que enxerga o ser humano de forma integral.
                 </p>
-                <cite className="block text-sm text-primary font-semibold mt-3 not-italic">
+                <cite className="block text-sm text-secondary font-semibold mt-3 not-italic">
                   — Dra. Patrícia Pólvora
                 </cite>
               </blockquote>
@@ -79,7 +78,8 @@ const AboutDoctor = () => {
                   href="https://www.instagram.com/drapatriciapolvora"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-5 py-3 rounded-xl shadow hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:outline-none"
+                  className="inline-flex items-center gap-2 bg-secondary text-white font-semibold px-5 py-3 rounded-xl shadow hover:bg-secondary/90 focus:ring-2 focus:ring-secondary focus:outline-none"
+                  style={{ backgroundColor: '#503629' }}
                 >
                   <Instagram size={20} />
                   <span>@drapatriciapolvora</span>

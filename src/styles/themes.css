@@ -1,44 +1,43 @@
 
 @layer base {
   :root {
-    /* Nova paleta refinada: verde folha escuro (#3E5F46), azul leve profissional (#A8C3E5), branco puro (#FFFFFF), cinza super claro (#F5F7F9), cinza intermediário (#DDE3E7) */
-    --background: 245 247 249; /* Cinza super claro */
-    --foreground: 30 41 30; /* Verde folha escuro (texto principal) */
-    --primary: 62 95 70; /* Verde folha sofisticado #3E5F46 */
-    --primary-foreground: 255 255 255; /* Branco */
-    --secondary: 168 195 229; /* Azul suave #A8C3E5 */
-    --secondary-foreground: 30 41 30; /* Verde escuro para texto em azul */
-    --card: 255 255 255; /* Branco puro */
-    --card-foreground: 30 41 30;
+    /* Nova paleta refinada: verde escuro (#25412b), marrom sofisticado (#503629), branco puro (#FFFFFF), cinza claro (#F6F4F2) */
+    --background: 246 244 242; /* Cinza claro */
+    --foreground: 37 65 43; /* Verde escuro texto principal */
+    --primary: 37 65 43; /* Verde escuro sofisticado #25412b */
+    --primary-foreground: 255 255 255;
+    --secondary: 80 54 41; /* Marrom elegante #503629 */
+    --secondary-foreground: 255 255 255;
+    --card: 255 255 255;
+    --card-foreground: 37 65 43;
     --popover: 255 255 255;
-    --popover-foreground: 30 41 30;
-    --muted: 221 227 231; /* Cinza intermediário para tons suaves */
-    --muted-foreground: 90 103 118;
-    --accent: 62 95 70;
+    --popover-foreground: 37 65 43;
+    --muted: 206 198 191; /* Marrom acinzentado suave */
+    --muted-foreground: 37 65 43;
+    --accent: 80 54 41;
     --accent-foreground: 255 255 255;
-    --destructive: 231 76 60; /* vermelho suave */
+    --destructive: 231 76 60;
     --destructive-foreground: 255 255 255;
-    --border: 221 227 231; /* Igual ao muted */
+    --border: 206 198 191;
     --input: 255 255 255;
-    --ring: 62 95 70;
+    --ring: 80 54 41;
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --verde-folha: 62 95 70; /* #3E5F46 */
-    --azul-leve: 168 195 229; /* #A8C3E5 */
-    --cinza-texto: 90 103 118; /* #5A6776 */
+    --verde-escuro: 37 65 43; /* #25412b */
+    --marrom: 80 54 41; /* #503629 */
+    --cinza-texto: 80 70 65; /* #504641 (usando o marrom suave) */
     --branco-puro: 255 255 255;
-    --cinza-claro: 245 247 249; /* #F5F7F9 */
+    --cinza-claro: 246 244 242; /* #F6F4F2 */
   }
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 28 36 32; /* bem escuro */
-    --card: 36 47 41;
-    --card-foreground: 245 247 249;
-    --border: 36 47 41;
-    --muted: 90 103 118;
-    --muted-foreground: 221 227 231;
+    --background: 26 20 18;
+    --card: 37 32 28;
+    --card-foreground: 246 244 242;
+    --border: 37 32 28;
+    --muted: 80 54 41;
+    --muted-foreground: 246 244 242;
   }
 }
