@@ -1,43 +1,44 @@
 
 @layer base {
   :root {
-    /* Nova paleta: verde folha (#4C7A41), azul leve (#A3C2E4), branco puro (#FFFFFF), cinza claro (#F8F9FA) */
-    --background: 248 249 250; /* Cinza claro #F8F9FA */
-    --foreground: 44 62 49; /* Verde folha escuro para texto principal #2C3E31 */
-    --primary: 76 122 65; /* Verde folha #4C7A41 */
+    /* Nova paleta refinada: verde folha escuro (#3E5F46), azul leve profissional (#A8C3E5), branco puro (#FFFFFF), cinza super claro (#F5F7F9), cinza intermediário (#DDE3E7) */
+    --background: 245 247 249; /* Cinza super claro */
+    --foreground: 30 41 30; /* Verde folha escuro (texto principal) */
+    --primary: 62 95 70; /* Verde folha sofisticado #3E5F46 */
     --primary-foreground: 255 255 255; /* Branco */
-    --secondary: 163 194 228; /* Azul leve #A3C2E4 */
-    --secondary-foreground: 44 62 49; /* Verde escuro */
+    --secondary: 168 195 229; /* Azul suave #A8C3E5 */
+    --secondary-foreground: 30 41 30; /* Verde escuro para texto em azul */
     --card: 255 255 255; /* Branco puro */
-    --card-foreground: 44 62 49;
+    --card-foreground: 30 41 30;
     --popover: 255 255 255;
-    --popover-foreground: 44 62 49;
-    --muted: 183 199 193; /* Verde folha claro para elementos suaves */
-    --muted-foreground: 87 83 78;
-    --accent: 76 122 65;
+    --popover-foreground: 30 41 30;
+    --muted: 221 227 231; /* Cinza intermediário para tons suaves */
+    --muted-foreground: 90 103 118;
+    --accent: 62 95 70;
     --accent-foreground: 255 255 255;
-    --destructive: 239 68 68;
+    --destructive: 231 76 60; /* vermelho suave */
     --destructive-foreground: 255 255 255;
-    --border: 225 229 232; /* Azul leve #E1E5E8 */
+    --border: 221 227 231; /* Igual ao muted */
     --input: 255 255 255;
-    --ring: 76 122 65;
+    --ring: 62 95 70;
     --radius: 0.75rem;
-    /* Cores customizadas */
-    --verde-folha: 76 122 65; /* #4C7A41 */
-    --azul-leve: 163 194 228; /* #A3C2E4 */
-    --cinza-texto: 110 119 128; /* #6E7780 */
-    --branco-puro: 255 255 255; /* #FFFFFF */
-    --cinza-claro: 248 249 250; /* #F8F9FA */
+
+    /* Custom tokens */
+    --verde-folha: 62 95 70; /* #3E5F46 */
+    --azul-leve: 168 195 229; /* #A8C3E5 */
+    --cinza-texto: 90 103 118; /* #5A6776 */
+    --branco-puro: 255 255 255;
+    --cinza-claro: 245 247 249; /* #F5F7F9 */
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 32 43 36;
-    --card: 44 62 49;
-    --card-foreground: 248 249 250;
-    --border: 44 62 49;
-    --muted: 110 119 128;
-    --muted-foreground: 180 190 200;
+    --background: 28 36 32; /* bem escuro */
+    --card: 36 47 41;
+    --card-foreground: 245 247 249;
+    --border: 36 47 41;
+    --muted: 90 103 118;
+    --muted-foreground: 221 227 231;
   }
 }

@@ -1,4 +1,3 @@
-
 /**
  * Sistema de monitoramento de performance e métricas
  */
@@ -47,9 +46,14 @@ class PerformanceMonitor {
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        this.recordMetric('LCP', lastEntry.startTime, {
-          element: lastEntry.element?.tagName || 'unknown'
-        });
+        // Corrigido: lastEntry pode ser do tipo PerformanceEntry, mas element só existe em LargestContentfulPaint API
+        if ((lastEntry as any).element) {
+          this.recordMetric('LCP', lastEntry.startTime, {
+            element: (lastEntry as any).element?.tagName || 'unknown'
+          });
+        } else {
+          this.recordMetric('LCP', lastEntry.startTime);
+        }
       });
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
       this.observers.push(lcpObserver);

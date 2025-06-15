@@ -21,7 +21,7 @@ const Index = () => {
     };
   }, []);
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground font-lato">
       <Navbar />
       <HeroSection />
       <AboutDoctor />
@@ -29,7 +29,14 @@ const Index = () => {
       <Blog />
       <Contact />
       <Footer />
-      <FloatingWhatsApp />
+      {/* WhatsApp fixo no mobile */}
+      <div className="fixed bottom-4 right-4 z-50 block md:hidden">
+        <FloatingWhatsApp />
+      </div>
+      {/* Desktop: WhatsApp visível normalmente */}
+      <div className="hidden md:block">
+        <FloatingWhatsApp />
+      </div>
       <SystemDashboard />
     </div>
   );
