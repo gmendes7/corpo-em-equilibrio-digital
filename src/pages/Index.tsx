@@ -1,7 +1,7 @@
 
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
+import HeroSection from "../components/HeroSection";
+import AboutDoctor from "../components/AboutDoctor";
 import Specialties from "../components/Specialties";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
@@ -14,23 +14,17 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Track page view
     performanceMonitor.trackPageView('/');
-    
-    // Log system initialization
     logUpdate('chore', 'Sistema de monitoramento inicializado', 'Index', 'Performance monitoring, caching e testes automatizados ativados');
-    
     return () => {
-      // Cleanup performance monitor on unmount
       performanceMonitor.cleanup();
     };
   }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <Hero />
-      <About />
+      <HeroSection />
+      <AboutDoctor />
       <Specialties />
       <Blog />
       <Contact />
@@ -40,5 +34,4 @@ const Index = () => {
     </div>
   );
 };
-
 export default Index;
