@@ -21,63 +21,69 @@ const Contact = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 font-lato">Nome completo</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-input focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-lato"
+                    placeholder="Seu nome completo"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 font-lato">E-mail</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-input focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-lato"
+                    placeholder="seu@email.com"
                     required
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2 font-lato">Telefone</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-input focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-lato"
+                  placeholder="(00) 00000-0000"
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2 font-lato">Especialidade de interesse</label>
                 <select
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-input focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-lato"
+                  required
                 >
-                  <option value="">Selecione um assunto</option>
-                  <option value="appointment">Agendamento</option>
-                  <option value="information">Informações</option>
-                  <option value="partnership">Parcerias</option>
-                  <option value="other">Outro</option>
+                  <option value="">Selecione uma especialidade</option>
+                  <option value="medicina-integrativa">Medicina Integrativa</option>
+                  <option value="nutrologia">Nutrologia</option>
+                  <option value="endocrinologia">Endocrinologia</option>
+                  <option value="fitoterapia">Fitoterapia</option>
+                  <option value="outros">Outros</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 font-lato">Mensagem</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-verde-musgo focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-input focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none font-lato"
+                  placeholder="Conte um pouco sobre sua necessidade ou dúvida..."
                   required
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
-                  className="w-full btn-primary"
+                  className="w-full bg-primary text-primary-foreground font-bold px-6 py-4 rounded-xl shadow-lg hover:bg-primary/90 transition-all duration-300 font-lato"
                 >
                   Enviar Mensagem
                 </button>

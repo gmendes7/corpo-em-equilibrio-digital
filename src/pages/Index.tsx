@@ -3,10 +3,12 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutDoctor from "../components/AboutDoctor";
 import Specialties from "../components/Specialties";
+import Testimonials from "../components/Testimonials";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import QuickAppointment from "../components/QuickAppointment";
 import SystemDashboard from "../components/admin/SystemDashboard";
 import { performanceMonitor } from "../utils/performanceMonitor";
 import { logUpdate } from "../utils/updateLogger";
@@ -26,15 +28,13 @@ const Index = () => {
       <HeroSection />
       <AboutDoctor />
       <Specialties />
+      <Testimonials />
       <Blog />
       <Contact />
       <Footer />
-      {/* WhatsApp fixo no mobile */}
-      <div className="fixed bottom-4 right-4 z-50 block md:hidden">
-        <FloatingWhatsApp />
-      </div>
-      {/* Desktop: WhatsApp visível normalmente */}
-      <div className="hidden md:block">
+      <QuickAppointment />
+      {/* WhatsApp para suporte */}
+      <div className="hidden">
         <FloatingWhatsApp />
       </div>
       <SystemDashboard />

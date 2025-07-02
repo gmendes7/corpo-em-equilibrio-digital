@@ -29,11 +29,12 @@ const AboutDoctor = () => {
                 <Clock size={16} />
                 Sobre a Especialista
               </span>
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-primary leading-tight font-lato">
                 Dra. Patrícia Pólvora
+                <span className="block text-lg font-normal text-muted-foreground mt-2">CRM 12345-MS</span>
               </h1>
-              <p className="text-xl text-cinza-texto font-light leading-relaxed">
-                Especialista em medicina integrativa com foco em transformar vidas através de abordagens personalizadas e científicas.
+              <p className="text-xl text-cinza-texto font-light leading-relaxed font-lato">
+                Olá, sou a Dra. Patrícia, apaixonada por cuidar da saúde da mulher. Com mais de 10 anos de experiência, busco sempre ouvir e acolher cada paciente de forma única.
               </p>
               <div className="space-y-4">
                 <div className="bg-muted rounded-2xl p-6 shadow border border-border hover:shadow-md transition card-hover">

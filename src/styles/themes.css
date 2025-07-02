@@ -1,34 +1,36 @@
 
 @layer base {
   :root {
-    /* Nova paleta refinada: verde escuro (#25412b), marrom sofisticado (#503629), branco puro (#FFFFFF), cinza claro (#F6F4F2) */
-    --background: 246 244 242; /* Cinza claro */
-    --foreground: 37 65 43; /* Verde escuro texto principal */
-    --primary: 37 65 43; /* Verde escuro sofisticado #25412b */
+    /* Paleta médica profissional: azul saúde, verde suave, branco puro */
+    --background: 248 250 252; /* Azul muito claro #f8fafc */
+    --foreground: 15 23 42; /* Azul escuro profissional #0f172a */
+    --primary: 37 99 235; /* Azul médico #2563eb */
     --primary-foreground: 255 255 255;
-    --secondary: 80 54 41; /* Marrom elegante #503629 */
+    --secondary: 16 185 129; /* Verde saúde #10b981 */
     --secondary-foreground: 255 255 255;
     --card: 255 255 255;
-    --card-foreground: 37 65 43;
+    --card-foreground: 15 23 42;
     --popover: 255 255 255;
-    --popover-foreground: 37 65 43;
-    --muted: 206 198 191; /* Marrom acinzentado suave */
-    --muted-foreground: 37 65 43;
-    --accent: 80 54 41;
+    --popover-foreground: 15 23 42;
+    --muted: 241 245 249; /* Cinza azulado suave #f1f5f9 */
+    --muted-foreground: 100 116 139; /* Cinza médio #64748b */
+    --accent: 14 165 233; /* Azul claro #0ea5e9 */
     --accent-foreground: 255 255 255;
-    --destructive: 231 76 60;
+    --destructive: 239 68 68; /* Vermelho suave #ef4444 */
     --destructive-foreground: 255 255 255;
-    --border: 206 198 191;
+    --border: 226 232 240; /* Borda suave #e2e8f0 */
     --input: 255 255 255;
-    --ring: 80 54 41;
+    --ring: 37 99 235;
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --verde-escuro: 37 65 43; /* #25412b */
-    --marrom: 80 54 41; /* #503629 */
-    --cinza-texto: 80 70 65; /* #504641 (usando o marrom suave) */
+    /* Custom medical tokens */
+    --azul-medico: 37 99 235; /* #2563eb */
+    --verde-saude: 16 185 129; /* #10b981 */
+    --azul-claro: 14 165 233; /* #0ea5e9 */
+    --cinza-texto: 71 85 105; /* #475569 */
     --branco-puro: 255 255 255;
-    --cinza-claro: 246 244 242; /* #F6F4F2 */
+    --cinza-claro: 248 250 252; /* #f8fafc */
+    --azul-escuro: 15 23 42; /* #0f172a */
   }
 }
 @media (prefers-color-scheme: dark) {
