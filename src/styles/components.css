@@ -4,26 +4,26 @@
     @apply container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl;
   }
 
-  /* Button system - Design System Corpo em Equilíbrio */
+  /* Button system - Design System Magazine Médica */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-verde-folha text-white font-semibold rounded-2xl shadow-suave hover:bg-verde-escuro hover:shadow-media transition-all duration-300 font-lato;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-2xl shadow-suave hover:bg-primary/90 hover:shadow-media transition-all duration-300 font-lato;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-azul-leve text-white font-semibold rounded-2xl shadow-suave hover:bg-azul-leve/90 hover:shadow-media transition-all duration-300 font-lato;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-semibold rounded-2xl shadow-suave hover:bg-secondary/90 hover:shadow-media transition-all duration-300 font-lato;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-verde-folha text-verde-folha font-semibold rounded-2xl hover:bg-verde-folha hover:text-white transition-all duration-300 font-lato;
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 font-lato;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 text-verde-folha font-semibold rounded-2xl hover:bg-verde-claro/20 transition-all duration-300 font-lato;
+    @apply inline-flex items-center justify-center px-6 py-3 text-primary font-semibold rounded-2xl hover:bg-secondary/20 transition-all duration-300 font-lato;
   }
 
   /* Navigation */
   .nav-link {
-    @apply text-cinza-texto hover:text-verde-folha transition-colors duration-300 font-medium font-lato;
+    @apply text-muted-foreground hover:text-primary transition-colors duration-300 font-medium font-lato;
   }
 
   /* Typography system */
@@ -32,7 +32,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-cinza-texto mb-8 font-lato leading-relaxed;
+    @apply text-lg md:text-xl text-muted-foreground mb-8 font-lato leading-relaxed;
   }
 
   .card-title {
@@ -40,12 +40,12 @@
   }
 
   .card-description {
-    @apply text-cinza-texto font-lato leading-relaxed;
+    @apply text-muted-foreground font-lato leading-relaxed;
   }
 
   /* Card components */
   .card-base {
-    @apply bg-white rounded-2xl shadow-suave border border-cinza-borda overflow-hidden;
+    @apply bg-white rounded-2xl shadow-suave border border-border overflow-hidden;
   }
 
   .card-hover {
@@ -53,12 +53,12 @@
   }
 
   .card-interactive {
-    @apply card-hover cursor-pointer hover:border-verde-folha/30;
+    @apply card-hover cursor-pointer hover:border-primary/30;
   }
 
   /* Hero section */
   .hero-container {
-    @apply min-h-screen bg-gradient-to-br from-cinza-claro to-white flex items-center relative overflow-hidden;
+    @apply min-h-screen bg-gradient-to-br from-muted to-white flex items-center relative overflow-hidden;
   }
 
   .hero-content {
@@ -66,7 +66,7 @@
   }
 
   .hero-badge {
-    @apply inline-flex items-center gap-2 bg-verde-claro/20 border border-verde-folha/30 rounded-full px-4 py-2 text-sm font-medium text-verde-escuro backdrop-blur-sm;
+    @apply inline-flex items-center gap-2 bg-secondary/20 border border-primary/30 rounded-full px-4 py-2 text-sm font-medium text-accent-foreground backdrop-blur-sm;
   }
 
   .hero-title {
@@ -74,7 +74,7 @@
   }
 
   .hero-subtitle {
-    @apply text-lg md:text-xl text-cinza-texto font-light font-lato max-w-2xl;
+    @apply text-lg md:text-xl text-muted-foreground font-light font-lato max-w-2xl;
   }
 
   /* Specialty cards */
@@ -83,7 +83,7 @@
   }
 
   .specialty-icon {
-    @apply w-16 h-16 mx-auto mb-4 text-verde-folha group-hover:text-verde-escuro transition-colors duration-300;
+    @apply w-16 h-16 mx-auto mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300;
   }
 
   /* Testimonial cards */
@@ -92,7 +92,7 @@
   }
 
   .testimonial-content {
-    @apply text-cinza-texto font-lato italic mb-4 leading-relaxed;
+    @apply text-muted-foreground font-lato italic mb-4 leading-relaxed;
   }
 
   .testimonial-author {
@@ -100,7 +100,7 @@
   }
 
   .testimonial-avatar {
-    @apply w-12 h-12 rounded-full bg-verde-claro flex items-center justify-center text-verde-escuro font-bold;
+    @apply w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-accent-foreground font-bold;
   }
 
   /* Form components */
@@ -109,7 +109,7 @@
   }
 
   .form-input {
-    @apply w-full px-4 py-3 border border-cinza-borda rounded-2xl focus:outline-none focus:ring-2 focus:ring-verde-folha focus:border-transparent transition-all duration-300 font-lato;
+    @apply w-full px-4 py-3 border border-border rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 font-lato;
   }
 
   .form-textarea {
@@ -125,7 +125,7 @@
   }
 
   .form-success {
-    @apply text-verde-escuro text-sm mt-1 font-lato;
+    @apply text-accent-foreground text-sm mt-1 font-lato;
   }
 
   /* Blog components */
@@ -142,11 +142,11 @@
   }
 
   .blog-meta {
-    @apply text-sm text-cinza-texto font-lato mb-2;
+    @apply text-sm text-muted-foreground font-lato mb-2;
   }
 
   .blog-title {
-    @apply card-title mb-2 hover:text-verde-folha transition-colors;
+    @apply card-title mb-2 hover:text-primary transition-colors;
   }
 
   .blog-excerpt {
@@ -167,7 +167,7 @@
   }
 
   .footer-link {
-    @apply text-slate-300 hover:text-verde-claro transition-colors duration-300 font-lato;
+    @apply text-slate-300 hover:text-secondary transition-colors duration-300 font-lato;
   }
 
   /* Floating elements */
@@ -176,7 +176,7 @@
   }
 
   .floating-appointment {
-    @apply fixed bottom-6 left-6 z-50 bg-verde-folha text-white p-4 rounded-2xl shadow-media hover:bg-verde-escuro hover:shadow-hard transition-all duration-300 cursor-pointer;
+    @apply fixed bottom-6 left-6 z-50 bg-primary text-white p-4 rounded-2xl shadow-media hover:bg-primary/90 hover:shadow-hard transition-all duration-300 cursor-pointer;
   }
 
   /* Animations */
@@ -240,16 +240,16 @@
   }
 
   .focus-visible {
-    @apply outline-none ring-2 ring-verde-folha ring-offset-2;
+    @apply outline-none ring-2 ring-primary ring-offset-2;
   }
 
   /* Loading states */
   .loading-spinner {
-    @apply animate-spin rounded-full h-4 w-4 border-b-2 border-verde-folha;
+    @apply animate-spin rounded-full h-4 w-4 border-b-2 border-primary;
   }
 
   .pulse-loading {
-    @apply animate-pulse bg-cinza-claro rounded-2xl;
+    @apply animate-pulse bg-muted rounded-2xl;
   }
 
   /* Utility classes */
@@ -286,11 +286,11 @@
 
   /* Legacy classes for backward compatibility */
   .glass-effect {
-    @apply bg-white/95 backdrop-blur-md border border-cinza-borda/30;
+    @apply bg-white/95 backdrop-blur-md border border-border/30;
   }
 
   .gradient-text {
-    @apply text-transparent bg-gradient-to-r from-verde-folha to-azul-leve bg-clip-text;
+    @apply text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text;
   }
 
   /* Animations for elements */
