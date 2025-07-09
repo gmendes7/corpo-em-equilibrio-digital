@@ -40,7 +40,7 @@ const HeroSection = () => {
             
             <h1 className="hero-title">
               Cuidar da sua saúde com{" "}
-              <span className="block text-verde-folha">empatia e confiança</span>
+              <span className="block text-primary">empatia e confiança</span>
             </h1>
             
             <p className="hero-subtitle">
@@ -49,17 +49,17 @@ const HeroSection = () => {
             </p>
 
             {/* Indicadores de confiança */}
-            <div className="flex items-center gap-6 text-sm text-cinza-texto font-lato">
+            <div className="flex items-center gap-6 text-sm text-muted-foreground font-lato">
               <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <Star className="w-4 h-4 text-yellow-600 fill-current" />
                 <span>4.9/5 avaliações</span>
               </div>
               <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-red-400" />
+                <Heart className="w-4 h-4 text-primary" />
                 <span>500+ pacientes</span>
               </div>
               <div className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-verde-folha" />
+                <MessageCircle className="w-4 h-4 text-primary" />
                 <span>Atendimento online</span>
               </div>
             </div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
           {/* Imagem da médica otimizada */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-[350px] h-[350px] aspect-square rounded-2xl overflow-hidden shadow-media bg-gradient-to-br from-verde-claro/20 to-azul-leve/20 flex items-center justify-center border-2 border-verde-folha/20">
+              <div className="w-[350px] h-[350px] aspect-square rounded-2xl overflow-hidden shadow-media bg-gradient-to-br from-muted to-white flex items-center justify-center border-2 border-primary/20">
                 <img
                   src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png"
                   alt="Dra. Patrícia Pólvora - Médica especialista em Medicina Integrativa"
@@ -94,8 +94,8 @@ const HeroSection = () => {
                 />
               </div>
               {/* Elementos decorativos */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-verde-folha rounded-full animate-pulse-subtle"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-azul-leve rounded-full animate-pulse-subtle" style={{animationDelay: '1s'}}></div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-subtle"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full animate-pulse-subtle" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
         </div>

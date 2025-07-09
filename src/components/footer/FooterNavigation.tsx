@@ -11,7 +11,7 @@ const FooterNavigation = () => {
         <li>
           <button 
             onClick={() => scrollToSection('home')}
-            className="text-slate-300 hover:text-verde-claro transition-colors"
+            className="text-slate-300 hover:text-primary transition-colors"
           >
             Início
           </button>
@@ -19,7 +19,7 @@ const FooterNavigation = () => {
         <li>
           <button 
             onClick={() => scrollToSection('about')}
-            className="text-slate-300 hover:text-verde-claro transition-colors"
+            className="text-slate-300 hover:text-primary transition-colors"
           >
             Sobre
           </button>
@@ -27,7 +27,7 @@ const FooterNavigation = () => {
         <li>
           <button 
             onClick={() => scrollToSection('specialties')}
-            className="text-slate-300 hover:text-verde-claro transition-colors"
+            className="text-slate-300 hover:text-primary transition-colors"
           >
             Especialidades
           </button>
@@ -35,7 +35,7 @@ const FooterNavigation = () => {
         <li>
           <button 
             onClick={() => scrollToSection('blog')}
-            className="text-slate-300 hover:text-verde-claro transition-colors"
+            className="text-slate-300 hover:text-primary transition-colors"
           >
             Blog
           </button>
@@ -43,7 +43,7 @@ const FooterNavigation = () => {
         <li>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="text-slate-300 hover:text-verde-claro transition-colors"
+            className="text-slate-300 hover:text-primary transition-colors"
           >
             Contato
           </button>

@@ -10,23 +10,22 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	safelist: [
-		"bg-verde-folha",
-		"bg-verde-claro", 
 		"bg-verde-escuro",
-		"bg-azul-leve",
-		"bg-azul-claro",
-		"bg-cinza-texto",
-		"bg-cinza-claro",
-		"bg-branco-puro", 
-		"hover:bg-verde-folha",
-		"hover:bg-verde-claro",
-		"hover:bg-azul-leve",
-		"text-verde-folha",
+		"bg-marrom-escuro", 
+		"bg-marrom-medio",
+		"bg-cinza-escuro",
+		"bg-cinza-medio",
+		"bg-branco-puro",
+		"bg-cinza-claro", 
+		"hover:bg-verde-escuro",
+		"hover:bg-marrom-escuro",
+		"hover:bg-primary",
 		"text-verde-escuro",
-		"text-azul-leve",
-		"text-cinza-texto",
-		"border-cinza-borda",
-		"after:bg-verde-folha",
+		"text-marrom-escuro",
+		"text-cinza-escuro",
+		"text-primary",
+		"border-borda-escura",
+		"after:bg-verde-escuro",
 		"shadow-suave",
 		"shadow-media",
 		"rounded-2xl",
@@ -86,27 +85,30 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Design System Magazine Médica
-				'fundo': {
-					DEFAULT: 'hsl(var(--fundo))', // #F4F3F0
+				// Design System Cores Escuras Profissionais
+				'verde-escuro': {
+					DEFAULT: 'hsl(var(--verde-escuro))', // #1B4332
 				},
-				'verde': {
-					DEFAULT: 'hsl(var(--verde))', // #4CAF50
-				},
-				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // #81C784
-				},
-				'marrom': {
-					DEFAULT: 'hsl(var(--marrom))', // #3E2723
+				'marrom-escuro': {
+					DEFAULT: 'hsl(var(--marrom-escuro))', // #3C2414
 				},
 				'marrom-medio': {
-					DEFAULT: 'hsl(var(--marrom-medio))', // #795548
+					DEFAULT: 'hsl(var(--marrom-medio))', // #654321
 				},
-				'branco': {
-					DEFAULT: 'hsl(var(--branco))', // #FFFFFF
+				'cinza-escuro': {
+					DEFAULT: 'hsl(var(--cinza-escuro))', // #595959
 				},
-				'bege-claro': {
-					DEFAULT: 'hsl(var(--bege-claro))', // #f8f7f5
+				'cinza-medio': {
+					DEFAULT: 'hsl(var(--cinza-medio))', // #808080
+				},
+				'branco-puro': {
+					DEFAULT: 'hsl(var(--branco-puro))', // #FFFFFF
+				},
+				'cinza-claro': {
+					DEFAULT: 'hsl(var(--cinza-claro))', // #f8f8f8
+				},
+				'borda-escura': {
+					DEFAULT: 'hsl(var(--borda-escura))', // #c8c8c8
 				},
 			},
 			fontFamily: {

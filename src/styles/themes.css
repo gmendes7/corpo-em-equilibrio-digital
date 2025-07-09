@@ -1,36 +1,37 @@
 
 @layer base {
   :root {
-    /* Paleta Magazine Médica - Verde/Marrom */
-    --background: 244 243 240; /* Bege claro #F4F3F0 */
-    --foreground: 62 39 35; /* Marrom escuro #3E2723 */
-    --primary: 76 175 80; /* Verde destaque #4CAF50 */
+    /* Paleta Escura Profissional - Marrom Escuro, Verde Escuro e Branco */
+    --background: 255 255 255; /* Branco puro #FFFFFF */
+    --foreground: 60 36 20; /* Marrom muito escuro #3C2414 */
+    --primary: 27 67 50; /* Verde escuro #1B4332 */
     --primary-foreground: 255 255 255;
-    --secondary: 129 199 132; /* Verde claro #81C784 */
+    --secondary: 52 73 94; /* Azul acinzentado escuro #34495E */
     --secondary-foreground: 255 255 255;
     --card: 255 255 255;
-    --card-foreground: 62 39 35;
+    --card-foreground: 60 36 20;
     --popover: 255 255 255;
-    --popover-foreground: 62 39 35;
-    --muted: 248 247 245; /* Bege muito claro #f8f7f5 */
-    --muted-foreground: 121 85 72; /* Marrom médio #795548 */
-    --accent: 165 214 167; /* Verde mais claro #a5d6a7 */
-    --accent-foreground: 46 125 50; /* Verde escuro #2e7d32 */
-    --destructive: 244 67 54; /* Vermelho #f44336 */
+    --popover-foreground: 60 36 20;
+    --muted: 248 248 248; /* Cinza muito claro #f8f8f8 */
+    --muted-foreground: 89 89 89; /* Cinza escuro #595959 */
+    --accent: 40 116 166; /* Azul escuro #2874A6 */
+    --accent-foreground: 255 255 255;
+    --destructive: 169 68 66; /* Vermelho escuro #A94442 */
     --destructive-foreground: 255 255 255;
-    --border: 230 225 220; /* Borde bege #e6e1dc */
+    --border: 229 229 229; /* Borda cinza clara #e5e5e5 */
     --input: 255 255 255;
-    --ring: 76 175 80;
+    --ring: 27 67 50;
     --radius: 0.5rem;
 
-    /* Design System Magazine Médica */
-    --fundo: 244 243 240; /* #F4F3F0 */
-    --verde: 76 175 80; /* #4CAF50 */
-    --verde-claro: 129 199 132; /* #81C784 */
-    --marrom: 62 39 35; /* #3E2723 */
-    --marrom-medio: 121 85 72; /* #795548 */
-    --branco: 255 255 255; /* #FFFFFF */
-    --bege-claro: 248 247 245; /* #f8f7f5 */
+    /* Design System Cores Escuras */
+    --verde-escuro: 27 67 50; /* #1B4332 */
+    --marrom-escuro: 60 36 20; /* #3C2414 */
+    --marrom-medio: 101 67 33; /* #654321 */
+    --cinza-escuro: 89 89 89; /* #595959 */
+    --cinza-medio: 128 128 128; /* #808080 */
+    --branco-puro: 255 255 255; /* #FFFFFF */
+    --cinza-claro: 248 248 248; /* #f8f8f8 */
+    --borda-escura: 200 200 200; /* #c8c8c8 */
   }
 }
 @media (prefers-color-scheme: dark) {
