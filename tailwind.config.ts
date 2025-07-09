@@ -10,21 +10,27 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	safelist: [
-		"bg-verde-musgo",
-		"bg-azul-escuro", 
-		"bg-background-claro",
+		"bg-verde-folha",
+		"bg-verde-claro", 
+		"bg-verde-escuro",
+		"bg-azul-leve",
+		"bg-azul-claro",
 		"bg-cinza-texto",
+		"bg-cinza-claro",
 		"bg-branco-puro", 
-		"hover:bg-verde-musgo",
-		"hover:bg-azul-escuro",
-		"text-verde-musgo",
-		"text-azul-escuro",
+		"hover:bg-verde-folha",
+		"hover:bg-verde-claro",
+		"hover:bg-azul-leve",
+		"text-verde-folha",
+		"text-verde-escuro",
+		"text-azul-leve",
 		"text-cinza-texto",
-		"border-borda-suave",
-		"after:bg-verde-musgo",
-		"gradient-text",
-		"glass-effect",
-		"card-hover"
+		"border-cinza-borda",
+		"after:bg-verde-folha",
+		"shadow-suave",
+		"shadow-media",
+		"rounded-2xl",
+		"rounded-3xl"
 	],
 	prefix: "",
 	theme: {
@@ -80,24 +86,33 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta solicitada com base no briefing
-				'verde-musgo': {
-					DEFAULT: 'hsl(var(--verde-musgo))', // #7A9C32
+				// Design System Corpo em Equilíbrio
+				'verde-folha': {
+					DEFAULT: 'hsl(var(--verde-folha))', // #22c55e
 				},
-				'azul-escuro': {
-					DEFAULT: 'hsl(var(--azul-escuro))', // #1B2B36
+				'verde-claro': {
+					DEFAULT: 'hsl(var(--verde-claro))', // #86efac
+				},
+				'verde-escuro': {
+					DEFAULT: 'hsl(var(--verde-escuro))', // #166534
+				},
+				'azul-leve': {
+					DEFAULT: 'hsl(var(--azul-leve))', // #3b82f6
+				},
+				'azul-claro': {
+					DEFAULT: 'hsl(var(--azul-claro))', // #93c5fd
 				},
 				'cinza-texto': {
-					DEFAULT: 'hsl(var(--cinza-texto))', // #8E9AA3
+					DEFAULT: 'hsl(var(--cinza-texto))', // #4b5563
+				},
+				'cinza-claro': {
+					DEFAULT: 'hsl(var(--cinza-claro))', // #f8fafc
+				},
+				'cinza-borda': {
+					DEFAULT: 'hsl(var(--cinza-borda))', // #e5e7eb
 				},
 				'branco-puro': {
-					DEFAULT: 'hsl(var(--branco-puro))', // #FFFFFF
-				},
-				'borda-suave': {
-					DEFAULT: 'hsl(var(--borda-suave))', // #DCE3DA
-				},
-				'background-claro': {
-					DEFAULT: 'hsl(var(--background-claro))', // #F5F7F9
+					DEFAULT: 'hsl(var(--branco-puro))', // #ffffff
 				},
 			},
 			fontFamily: {
@@ -115,6 +130,8 @@ export default {
 				'3xl': '1.875rem',
 			},
 			boxShadow: {
+				'suave': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+				'media': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
 				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
 				'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
 				'hard': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',

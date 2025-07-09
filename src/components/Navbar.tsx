@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center px-6 md:px-12">
         {/* Logo */}
         <Link to="/" className="flex items-center group">
-          <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-verde-musgo group-hover:text-verde-musgo/80 transition-colors duration-300">
+          <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-verde-folha group-hover:text-verde-escuro transition-colors duration-300">
             CORPO EM <span className="font-bold">EQUILÍBRIO</span>
           </h1>
         </Link>

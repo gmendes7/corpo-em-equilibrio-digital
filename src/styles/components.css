@@ -1,39 +1,296 @@
-
 @layer components {
-  .btn-primary {
-    @apply bg-verde-musgo hover:bg-verde-musgo/90 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-verde-musgo/25 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-verde-musgo focus:ring-offset-2 focus:ring-offset-background;
-  }
-  
-  .btn-secondary {
-    @apply bg-azul-escuro hover:bg-azul-escuro/90 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-azul-escuro focus:ring-offset-2 focus:ring-offset-background;
-  }
-
-  .section {
-    @apply py-20 px-6 md:px-12 transition-colors duration-300;
-  }
-
+  /* Layout containers */
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl;
   }
 
+  /* Button system - Design System Corpo em Equilíbrio */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-verde-folha text-white font-semibold rounded-2xl shadow-suave hover:bg-verde-escuro hover:shadow-media transition-all duration-300 font-lato;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-azul-leve text-white font-semibold rounded-2xl shadow-suave hover:bg-azul-leve/90 hover:shadow-media transition-all duration-300 font-lato;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-verde-folha text-verde-folha font-semibold rounded-2xl hover:bg-verde-folha hover:text-white transition-all duration-300 font-lato;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 text-verde-folha font-semibold rounded-2xl hover:bg-verde-claro/20 transition-all duration-300 font-lato;
+  }
+
+  /* Navigation */
   .nav-link {
-    @apply relative text-muted-foreground hover:text-foreground font-medium transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-verde-musgo after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100;
+    @apply text-cinza-texto hover:text-verde-folha transition-colors duration-300 font-medium font-lato;
   }
 
-  .nav-link-active {
-    @apply text-foreground after:scale-x-100;
+  /* Typography system */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 font-playfair leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-cinza-texto mb-8 font-lato leading-relaxed;
+  }
+
+  .card-title {
+    @apply text-xl md:text-2xl font-bold text-foreground mb-3 font-playfair;
+  }
+
+  .card-description {
+    @apply text-cinza-texto font-lato leading-relaxed;
+  }
+
+  /* Card components */
+  .card-base {
+    @apply bg-white rounded-2xl shadow-suave border border-cinza-borda overflow-hidden;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply card-base transition-all duration-300 hover:shadow-media hover:-translate-y-1;
   }
 
+  .card-interactive {
+    @apply card-hover cursor-pointer hover:border-verde-folha/30;
+  }
+
+  /* Hero section */
+  .hero-container {
+    @apply min-h-screen bg-gradient-to-br from-cinza-claro to-white flex items-center relative overflow-hidden;
+  }
+
+  .hero-content {
+    @apply space-y-8 animate-fade-in;
+  }
+
+  .hero-badge {
+    @apply inline-flex items-center gap-2 bg-verde-claro/20 border border-verde-folha/30 rounded-full px-4 py-2 text-sm font-medium text-verde-escuro backdrop-blur-sm;
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground font-playfair;
+  }
+
+  .hero-subtitle {
+    @apply text-lg md:text-xl text-cinza-texto font-light font-lato max-w-2xl;
+  }
+
+  /* Specialty cards */
+  .specialty-card {
+    @apply card-hover p-6 text-center group;
+  }
+
+  .specialty-icon {
+    @apply w-16 h-16 mx-auto mb-4 text-verde-folha group-hover:text-verde-escuro transition-colors duration-300;
+  }
+
+  /* Testimonial cards */
+  .testimonial-card {
+    @apply card-base p-6 relative;
+  }
+
+  .testimonial-content {
+    @apply text-cinza-texto font-lato italic mb-4 leading-relaxed;
+  }
+
+  .testimonial-author {
+    @apply flex items-center gap-3;
+  }
+
+  .testimonial-avatar {
+    @apply w-12 h-12 rounded-full bg-verde-claro flex items-center justify-center text-verde-escuro font-bold;
+  }
+
+  /* Form components */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-cinza-borda rounded-2xl focus:outline-none focus:ring-2 focus:ring-verde-folha focus:border-transparent transition-all duration-300 font-lato;
+  }
+
+  .form-textarea {
+    @apply form-input resize-y min-h-[120px];
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2 font-lato;
+  }
+
+  .form-error {
+    @apply text-destructive text-sm mt-1 font-lato;
+  }
+
+  .form-success {
+    @apply text-verde-escuro text-sm mt-1 font-lato;
+  }
+
+  /* Blog components */
+  .blog-card {
+    @apply card-hover overflow-hidden;
+  }
+
+  .blog-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .blog-content {
+    @apply p-6;
+  }
+
+  .blog-meta {
+    @apply text-sm text-cinza-texto font-lato mb-2;
+  }
+
+  .blog-title {
+    @apply card-title mb-2 hover:text-verde-folha transition-colors;
+  }
+
+  .blog-excerpt {
+    @apply card-description text-sm;
+  }
+
+  /* Footer */
+  .footer-container {
+    @apply bg-gradient-to-t from-slate-800 to-slate-900 text-white pt-16 pb-8 relative overflow-hidden;
+  }
+
+  .footer-section {
+    @apply space-y-4;
+  }
+
+  .footer-title {
+    @apply text-lg font-semibold mb-4 text-white font-playfair;
+  }
+
+  .footer-link {
+    @apply text-slate-300 hover:text-verde-claro transition-colors duration-300 font-lato;
+  }
+
+  /* Floating elements */
+  .floating-whatsapp {
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-media hover:bg-green-600 hover:shadow-hard transition-all duration-300 cursor-pointer;
+  }
+
+  .floating-appointment {
+    @apply fixed bottom-6 left-6 z-50 bg-verde-folha text-white p-4 rounded-2xl shadow-media hover:bg-verde-escuro hover:shadow-hard transition-all duration-300 cursor-pointer;
+  }
+
+  /* Animations */
+  .animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Responsive helpers */
+  .container-section {
+    @apply py-16 md:py-24;
+  }
+
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Accessibility */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .focus-visible {
+    @apply outline-none ring-2 ring-verde-folha ring-offset-2;
+  }
+
+  /* Loading states */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-4 w-4 border-b-2 border-verde-folha;
+  }
+
+  .pulse-loading {
+    @apply animate-pulse bg-cinza-claro rounded-2xl;
+  }
+
+  /* Utility classes */
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .aspect-golden {
+    aspect-ratio: 1.618;
+  }
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .print-only {
+      display: block !important;
+    }
+  }
+
+  /* Legacy classes for backward compatibility */
   .glass-effect {
-    @apply bg-card/95 backdrop-blur-md border border-borda-suave/30;
+    @apply bg-white/95 backdrop-blur-md border border-cinza-borda/30;
   }
 
   .gradient-text {
-    @apply text-transparent bg-gradient-to-r from-verde-musgo to-azul-escuro bg-clip-text;
+    @apply text-transparent bg-gradient-to-r from-verde-folha to-azul-leve bg-clip-text;
   }
 
   /* Animations for elements */

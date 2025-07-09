@@ -1,67 +1,101 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, MessageCircle, Heart, Shield, Star } from "lucide-react";
+
 const HeroSection = () => {
   return (
     <>
-      {/* Chatbot widget integration */}
+      {/* Chatbot widget inteligente melhorado */}
       <script
         id="chatbase-widget"
         dangerouslySetInnerHTML={{
           __html: `
             window.chatbotConfig = {
-              welcomeMessage: "Olá! 👋 Como posso te ajudar?",
+              welcomeMessage: "Olá! 👋 Sou a assistente virtual da Dra. Patrícia. Como posso te ajudar hoje?",
               faq: [
-                { q: "Quais especialidades?", a: "Medicina Integrativa, Nutrologia e Fitoterapia." },
-                { q: "Como agendar?", a: "Clique em 'Agende sua Consulta' ou fale comigo." },
-                { q: "Onde é?", a: "Atendimento 100% online atualmente." }
+                { q: "Quais especialidades vocês atendem?", a: "Trabalhamos com Medicina Integrativa, Nutrologia e Fitoterapia. Nossa abordagem une medicina tradicional e terapias naturais." },
+                { q: "Como agendo uma consulta?", a: "Você pode agendar clicando no botão 'Agende sua Consulta' ou enviando uma mensagem aqui. Podemos enviar os valores por WhatsApp, deseja que eu envie?" },
+                { q: "Onde fica a clínica?", a: "Atendemos 100% online no momento para maior comodidade e segurança." },
+                { q: "Aceitam plano de saúde?", a: "Atualmente trabalhamos apenas com consultas particulares. Fornecemos recibo para reembolso se seu plano permitir." },
+                { q: "Qual o valor da consulta?", a: "Os valores variam conforme a especialidade. Posso enviar a tabela completa por WhatsApp. Deseja receber?" },
+                { q: "O que é medicina integrativa?", a: "É uma abordagem que une medicina convencional e terapias complementares, tratando o paciente de forma integral - corpo, mente e espírito." },
+                { q: "Atendem que tipos de problemas?", a: "Focamos em saúde da mulher, emagrecimento, menopausa, controle de diabetes, ansiedade, e medicina preventiva." },
+                { q: "Como funciona a consulta online?", a: "Realizamos videochamadas pelo WhatsApp ou plataforma médica. Você recebe orientações, prescrições e acompanhamento completo." }
               ],
-              contactLink: "https://wa.me/5567993417073"
+              contactLink: "https://wa.me/5567993417073?text=Olá! Vim do site e gostaria de agendar uma consulta."
             };
           `,
         }}
       />
       <script src="https://cdn.chatbase.com/widget.js" defer></script>
+      
       <section
         id="home"
-        className="min-h-screen bg-background flex items-center relative overflow-hidden"
+        className="hero-container"
       >
         <div className="container-custom grid lg:grid-cols-2 gap-16 py-24 items-center">
-          <div className="space-y-8">
-            <span className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-2 text-sm font-medium text-secondary backdrop-blur-sm">
+          <div className="hero-content">
+            <span className="hero-badge">
+              <Shield className="w-4 h-4" />
               Medicina Integrativa • CRM 12345-MS
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary font-lato">
+            
+            <h1 className="hero-title">
               Cuidar da sua saúde com{" "}
-              <span className="block text-secondary">empatia e confiança</span>
+              <span className="block text-verde-folha">empatia e confiança</span>
             </h1>
-            <p className="text-xl text-cinza-texto font-light font-lato">
-              Agende sua consulta com quem entende você. Medicina integrativa focada na saúde da mulher.
+            
+            <p className="hero-subtitle">
+              Agende sua consulta com quem entende você. Medicina integrativa focada na saúde da mulher, 
+              unindo ciência e cuidado humanizado.
             </p>
+
+            {/* Indicadores de confiança */}
+            <div className="flex items-center gap-6 text-sm text-cinza-texto font-lato">
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span>4.9/5 avaliações</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="w-4 h-4 text-red-400" />
+                <span>500+ pacientes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4 text-verde-folha" />
+                <span>Atendimento online</span>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-primary/90 transition-all duration-300 font-lato"
+                className="btn-primary gap-3 px-8 py-4 text-lg"
               >
                 Agende sua Consulta
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                className="group inline-flex items-center justify-center gap-3 bg-secondary text-secondary-foreground font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition-all duration-300 font-lato"
+                className="btn-secondary gap-3 px-8 py-4 text-lg"
               >
-                <Play size={18} className="text-white" />
+                <Play size={18} />
                 Conheça a Dra. Patrícia
               </button>
             </div>
           </div>
-          {/* Imagem circular otimizada */}
+          
+          {/* Imagem da médica otimizada */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-[350px] h-[350px] aspect-square rounded-full overflow-hidden shadow-lg bg-card flex items-center justify-center border-4 border-secondary">
-              <img
-                src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png"
-                alt="Foto da Dra. Patrícia Pólvora sorrindo"
-                className="w-full h-full object-cover object-center rounded-full"
-                loading="lazy"
-              />
+            <div className="relative">
+              <div className="w-[350px] h-[350px] aspect-square rounded-2xl overflow-hidden shadow-media bg-gradient-to-br from-verde-claro/20 to-azul-leve/20 flex items-center justify-center border-2 border-verde-folha/20">
+                <img
+                  src="/lovable-uploads/bb6f72a5-c130-46e7-9f11-99e6a9b55f75.png"
+                  alt="Dra. Patrícia Pólvora - Médica especialista em Medicina Integrativa"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  loading="eager"
+                />
+              </div>
+              {/* Elementos decorativos */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-verde-folha rounded-full animate-pulse-subtle"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-azul-leve rounded-full animate-pulse-subtle" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
         </div>
@@ -69,4 +103,5 @@ const HeroSection = () => {
     </>
   );
 };
+
 export default HeroSection;
