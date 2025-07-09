@@ -86,33 +86,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Design System Corpo em Equilíbrio
-				'verde-folha': {
-					DEFAULT: 'hsl(var(--verde-folha))', // #22c55e
+				// Design System Magazine Médica
+				'fundo': {
+					DEFAULT: 'hsl(var(--fundo))', // #F4F3F0
+				},
+				'verde': {
+					DEFAULT: 'hsl(var(--verde))', // #4CAF50
 				},
 				'verde-claro': {
-					DEFAULT: 'hsl(var(--verde-claro))', // #86efac
+					DEFAULT: 'hsl(var(--verde-claro))', // #81C784
 				},
-				'verde-escuro': {
-					DEFAULT: 'hsl(var(--verde-escuro))', // #166534
+				'marrom': {
+					DEFAULT: 'hsl(var(--marrom))', // #3E2723
 				},
-				'azul-leve': {
-					DEFAULT: 'hsl(var(--azul-leve))', // #3b82f6
+				'marrom-medio': {
+					DEFAULT: 'hsl(var(--marrom-medio))', // #795548
 				},
-				'azul-claro': {
-					DEFAULT: 'hsl(var(--azul-claro))', // #93c5fd
+				'branco': {
+					DEFAULT: 'hsl(var(--branco))', // #FFFFFF
 				},
-				'cinza-texto': {
-					DEFAULT: 'hsl(var(--cinza-texto))', // #4b5563
-				},
-				'cinza-claro': {
-					DEFAULT: 'hsl(var(--cinza-claro))', // #f8fafc
-				},
-				'cinza-borda': {
-					DEFAULT: 'hsl(var(--cinza-borda))', // #e5e7eb
-				},
-				'branco-puro': {
-					DEFAULT: 'hsl(var(--branco-puro))', // #ffffff
+				'bege-claro': {
+					DEFAULT: 'hsl(var(--bege-claro))', // #f8f7f5
 				},
 			},
 			fontFamily: {
